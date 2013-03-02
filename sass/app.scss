@@ -1,0 +1,26 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Base Variabel
+@import "partials/base";
+
+// Fonts
+@import "partials/fonts";
+
+// Bootstrap
+@import "partials/bootstrap/bootstrap";
+@import "partials/bootstrap/responsive";
+
+// Mixins
+@import "partials/mixins";
+
+// Overrides
+@import "partials/overrides";
+
+// Main Style
+@import "partials/page";
+
+// Additional Media Queries
+@import "partials/media";
