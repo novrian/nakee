@@ -19,15 +19,15 @@ define('POST_EXCERPT_LENGTH', 40);
  * .main classes
  */
 function roots_main_class() {
-  if (roots_display_sidebar()) {
-    // Classes on pages with the sidebar
+    if (roots_display_sidebar()) {
+        // Classes on pages with the sidebar
     $class = 'span8';
-  } else {
-    // Classes on full width pages
-    $class = 'span12';
-  }
+    } else {
+        // Classes on full width pages
+        $class = 'span12';
+    }
 
-  return $class;
+    return $class;
 }
 
 /**
@@ -43,31 +43,40 @@ function roots_sidebar_class() {
  * See lib/sidebar.php for more details
  */
 function roots_display_sidebar() {
-  $sidebar_config = new Roots_Sidebar(
-    /**
-     * Conditional tag checks (http://codex.wordpress.org/Conditional_Tags)
-     * Any of these conditional tags that return true won't show the sidebar
-     *
-     * To use a function that accepts arguments, use the following format:
-     *
-     * array('function_name', array('arg1', 'arg2'))
-     *
-     * The second element must be an array even if there's only 1 argument.
-     */
-    array(
-      'is_404',
-      'is_front_page'
-    ),
-    /**
-     * Page template checks (via is_page_template())
-     * Any of these page templates that return true won't show the sidebar
-     */
-    array(
-      'page-custom.php'
-    )
-  );
+    $sidebar_config = new Roots_Sidebar(
+        /**
+         * Conditional tag checks (http://codex.wordpress.org/Conditional_Tags)
+         * Any of these conditional tags that return true won't show the sidebar
+         *
+         * To use a function that accepts arguments, use the following format:
+         *
+         * array('function_name', array('arg1', 'arg2'))
+         *
+         * The second element must be an array even if there's only 1 argument.
+         */
+        array(
+            'is_404',
+            'is_front_page',
+            // Do Not Display Sidebar pada Halaman Portfolio Archive & Single
+            array(
+                'is_single',
+                array( 'nakee_portfolio' )
+            ),
+            array(
+                'is_archive',
+                array( 'nakee_portfolio' )
+            )
+        ),
+        /**
+         * Page template checks (via is_page_template())
+         * Any of these page templates that return true won't show the sidebar
+         */
+        array(
+            'page-custom.php'
+        )
+    );
 
-  return $sidebar_config->display;
+    return $sidebar_config->display;
 }
 
 /**
