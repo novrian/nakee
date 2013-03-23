@@ -101,7 +101,10 @@ add_action('init', 'nakee_taxonomy_settings');
  * Nakee Post Thumbnail Setting
  */
 function nakee_thumbnail_settings() {
-    // Default Post Thumbnails Size
-    set_post_thumbnail_size(100, 100, true);
+    set_post_thumbnail_size(100, 100, true);              // Default Thumbnail Size
+    add_image_size('portfolio-large', 1200, 619, true);   // Portfolio Large
+    add_image_size('portfolio-small', 500, 281, true);    // Portfolio Small
+    add_image_size('post-large', 800, 450, true);         // Post Large
+    add_image_size('post-small', 250, 250, true);         // Post Small
 }
-add_action('init', 'nakee_thumbnail_settings');
+add_action('after_setup_theme', 'nakee_thumbnail_settings');
