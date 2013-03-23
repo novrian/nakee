@@ -43,6 +43,15 @@ function roots_sidebar_class() {
  * See lib/sidebar.php for more details
  */
 function roots_display_sidebar() {
+    /**
+     * Tweaks
+     * 
+     * Do Not display sidebar on Single Portfolio
+     */
+    if (get_post_type() == 'nakee_portfolio') {
+        return false;
+    }
+    
     $sidebar_config = new Roots_Sidebar(
         /**
          * Conditional tag checks (http://codex.wordpress.org/Conditional_Tags)
@@ -57,11 +66,7 @@ function roots_display_sidebar() {
         array(
             'is_404',
             'is_front_page',
-            // Do Not Display Sidebar pada Halaman Portfolio Archive & Single
-            array(
-                'is_single',
-                array( 'nakee_portfolio' )
-            ),
+            // Do Not Display Sidebar pada Halaman Portfolio Archive
             array(
                 'is_archive',
                 array( 'nakee_portfolio' )
