@@ -37,7 +37,8 @@ function nakee_post_type_settings() {
         'supports' => array(
             'title',
             'editor',
-            'thumbnail'
+            'thumbnail',
+            'custom-fields'
         ),
         'has_archive' => true,
         'rewrite' => array(
