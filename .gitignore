@@ -36,3 +36,9 @@ $RECYCLE.BIN/
 
 ## SASS Ignores - "Sassy CSS" http://sass-lang.com/
 *.sass-cache
+
+# ROOTS IGNORE
+doc/*
+CHANGELOG.md
+CONTRIBUTING.md
+.editorconfig
