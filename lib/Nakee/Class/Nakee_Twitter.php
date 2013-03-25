@@ -40,7 +40,7 @@ class Nakee_Twitter {
      * @access private
      * @var string
      */
-    private static $_hashtag = 'uweb';
+    private static $_hashtag = 'web';
     
     /**
      * Constructor

@@ -20,8 +20,8 @@ function nakee_display_last_tweet() {
     $tweet = Nakee_Twitter::getInstance();
     $response = $tweet->getLastTweet();
     
-    if ($response['httpstatus'] !== 200) {
-        return "<strong class=\"tweet-text\">Bad Connection :(</strong>\n";
+    if ($response['httpstatus'] !== 200 || empty($response['statuses'])) {
+        return "<strong class=\"tweet-text\">No Recent Updates or Bad Connection :(</strong>\n";
     }
     
     foreach($response['statuses'] as $key => $data) {
