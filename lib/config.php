@@ -68,7 +68,7 @@ function roots_display_sidebar() {
             'is_front_page',
             // Do Not Display Sidebar pada Halaman Portfolio Archive
             array(
-                'is_archive',
+                'is_post_type_archive',
                 array( 'nakee_portfolio' )
             )
         ),

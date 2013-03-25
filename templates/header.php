@@ -18,7 +18,7 @@
      */
     $tagline = get_bloginfo('description');
     $header_class = null;
-    if (is_front_page() || (get_post_type() === 'nakee_portfolio') || is_archive('nakee_portfolio') || is_page('services')) {
+    if (is_front_page() || (get_post_type() === 'nakee_portfolio') || is_post_type_archive('nakee_portfolio') || is_page('services')) {
         $tagline = MAIN_TAGLINE;
         $header_class = 'nakee-main-header';
     } elseif (is_page('kontak')) {
