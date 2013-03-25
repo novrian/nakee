@@ -19,9 +19,16 @@ define('FACEBOOK_USERNAME', 'nono_gallank');
 
 // Twitter
 define('TWITTER_USERNAME', 'nono_gallankz');
+define('TWITTER_CONSUMER_KEY', 'JlpORYytJIIifXS63F5g');
+define('TWITTER_CONSUMER_SECRET', 'Igmct6GMyxN5y1XGoLXIr4tZH0vHEnbcfSrXrcKSU');
+define('TWITTER_ACCESS_TOKEN', '40679188-QsmsSj6uQrK0TXTKGBFjyw03BZUA2wlDulzj3j7AM');
+define('TWITTER_ACCESS_TOKEN_SECRET', 'lj3YQUsPTnMPBwvwbpt79CZwFuz7HHAZa0uNmXUo8A');
+
+// Github
+define('GITHUB_USERNAME', 'novrian');
 
 // RSS
-define('FEEBURNER_URL', 'http://blablabla.com');
+define('FEEDBURNER_URL', 'http://blablabla.com');
 
 // Gravatar Email
 define('GRAVATAR_EMAIL', 'me@novrian.info');
