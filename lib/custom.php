@@ -23,3 +23,6 @@ require_once locate_template('/lib/Nakee/widget.php');
 
 // Social Network Integration
 require_once locate_template('/lib/Nakee/social.php');
+
+// Nakee Tweaks
+require_once locate_template('/lib/Nakee/tweaks.php');
