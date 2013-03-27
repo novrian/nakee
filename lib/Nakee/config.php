@@ -12,6 +12,9 @@ define('MAIN_TAGLINE', "Passionate<br />\n<strong>Web Developer, Web Designer</s
 define('BLOG_TAGLINE', "Sedikit Jurnal tentang <b>Teknologi Web</b>");
 define('CONTACT_TAGLINE', "Konsultasi? Ada Kerjaan untuk Saya? Ngopi Yuk! :)");
 
+
+
+
 // {{{ API CONSTANTS
 
 // Facebook
@@ -33,5 +36,14 @@ define('FEEDBURNER_URL', 'http://blablabla.com');
 // Gravatar Email
 define('GRAVATAR_EMAIL', 'me@novrian.info');
 define('GRAVATAR_HASH', md5(strtolower(trim(GRAVATAR_EMAIL))));
+
+// }}}
+
+
+
+
+// {{{ WORDPRESS QUERY CONTANTS
+
+define('PORTFOLIO_PER_PAGE', 6);
 
 // }}}
