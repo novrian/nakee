@@ -45,3 +45,34 @@ function nakee_excerpt($limit = POST_EXCERPT_LENGTH) {
 // Remove Roots Related Excerpt Filter
 remove_filter('excerpt_length', 'roots_excerpt_length');
 remove_filter('excerpt_more', 'roots_excerpt_more');
+
+
+/**
+ * Custom WP-Pagenavi Nakee
+ * 
+ * @param string $size Pagination Size. Values: `normal | small | large | mini`
+ * @param string $position Pagination Aligned Position. Values: `left
+ *   | centered | right`
+ */
+function nakee_wp_pagenavi($size = null, $position = null) {
+    $class[] = "pagination";
+    if (!$size) {
+        $size = '';
+    }
+    
+    $class[] = (!$size) ? '' : "pagination-" . $size;
+    
+    if (!$position) {
+        $position = 'left';
+    }
+    
+    $class[] = "pagination-" . $position;
+    
+    $before = "<nav id=\"main-pagination\"><div class=\"" . implode(" ", $class) . "\"><ul>";
+    $after = "</ul></div>";
+    
+    return wp_pagenavi(array(
+        'before' => $before,
+        'after' => $after
+    ));
+}

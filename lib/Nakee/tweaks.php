@@ -36,3 +36,22 @@ function nakee_navmenu_css($classes, $item) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'nakee_navmenu_css', 5, 2);
+
+
+/**
+ * Nakee Pagination Bootstrap on WP-Pagenavi
+ * 
+ * @link https://illuminatikarate.com/blog/wordpress-how-to-customize-the-html-output-of-wp-pagenavi/ Richard Gabriel
+ */
+function nakee_pagination($html) {
+    $out = preg_replace("/\<span class\=[\"\']pages[\"\']\>[\w|\d|\s]{0,}\<\/span\>/", "", $html);
+    $out = preg_replace("/\<div class=[\"|\']wp-pagenavi[\"|\']\>/", "", $out);
+    $out = preg_replace("/\<\/div\>/", "", $out, 1);
+    $out = str_replace("<span ", "<li><span ", $out);
+    $out = str_replace("</span>", "</span></li>", $out);
+    $out = str_replace("<a ", "<li><a ", $out);
+    $out = str_replace("</a>", "</a></li>", $out);
+    
+    return $out;
+}
+add_filter('wp_pagenavi', 'nakee_pagination', 10);
