@@ -28,7 +28,8 @@ function nakee_get_title() {
  * @link http://www.itsabhik.com/wordpress-custom-excerpt-length/ Base on Abhik work, Thanks
  */
 function nakee_excerpt($limit = POST_EXCERPT_LENGTH) {
-    $content = explode(" ", get_the_content(), $limit);
+    $content = strip_tags(get_the_content(), '<br>');
+    $content = explode(" ", $content, $limit);
     $content = array_map('trim', $content);
     $excerpt = str_replace("\r", " ", $content);
     $excerpt = str_replace("\n", " ", $content);
