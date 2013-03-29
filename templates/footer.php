@@ -57,3 +57,10 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<?php
+// GLOBAL DEBUGGING
+if (WP_DEBUG) {
+    echo '<pre>Loading Time: <code>' . xdebug_time_index() . '</code></pre>';
+}
+?>
