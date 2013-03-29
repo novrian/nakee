@@ -47,3 +47,12 @@ define('GRAVATAR_HASH', md5(strtolower(trim(GRAVATAR_EMAIL))));
 define('PORTFOLIO_PER_PAGE', 6);
 
 // }}}
+
+
+
+
+// {{{ ANOTHER CONSTANS
+
+define('BREADCRUMBS_SEP', '/');     // Breadcrumbs Separator
+
+// }}}

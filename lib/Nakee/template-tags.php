@@ -76,3 +76,44 @@ function nakee_wp_pagenavi($size = null, $position = null) {
         'after' => $after
     ));
 }
+
+
+/**
+ * nakee_breadcrumbs()
+ * 
+ * Template Tags untuk output Yoast Breadcrumbs yang support
+ * dengan Twitter Bootstrap
+ * 
+ * @return void
+ */
+function nakee_breadcrumbs() {
+    if (!function_exists('yoast_breadcrumb')) {
+        return null;
+    }
+    
+    $crumbs = yoast_breadcrumb(null, null, false);
+    
+    // Hilangkan wrapper <span xmlns:v />
+    $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
+    $output = preg_replace("/\<\/span\>$/", "", $output);
+    
+    // Ambil Crumbs
+    $crumb = preg_split("/\40([\\" . BREADCRUMBS_SEP . "]{1,1})\40/", $output);
+    
+    // Manipulasi string output tiap crumbs
+    $crumb = array_map(
+        create_function('$crumb', '
+            if (preg_match(\'/\<span\40class=\"breadcrumb_last\"/\', $crumb)) {
+                return \'<li class="active">\' . $crumb . \'</li>\';
+            }
+            return \'<li>\' . $crumb . \' <span class="divider">' . BREADCRUMBS_SEP . '</span></li>\';
+        '),
+        $crumb
+    );
+    
+    // Bangun output HTML
+    $output = '<div class="breadcrumbs-container" xmlns:v="http://rdf.data-vocabulary.org/#"\><ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+    
+    // Print
+    echo $output;
+}
