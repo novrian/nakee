@@ -66,10 +66,15 @@ function roots_display_sidebar() {
         array(
             'is_404',
             'is_front_page',
-            // Do Not Display Sidebar pada Halaman Portfolio Archive
+            // Stop tampilkan Sidebar pada Halaman Portfolio Archive
             array(
                 'is_post_type_archive',
                 array( 'nakee_portfolio' )
+            ),
+            // Stop tampilkan Sidebar pada Halaman Services
+            array(
+                'is_page',
+                array( 'services' )
             )
         ),
         /**

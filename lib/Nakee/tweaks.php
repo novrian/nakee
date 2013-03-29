@@ -19,7 +19,7 @@ function nakee_navmenu_css($classes, $item) {
     global $post;
     $slug = sanitize_title($item->title);
     
-    if (get_post_type() == 'nakee_portfolio' || is_post_type_archive('nakee_portfolio') || is_page('services')) {
+    if (get_post_type() == 'nakee_portfolio' || is_post_type_archive('nakee_portfolio')) {
         if ($slug == 'portfolio') {
             $classes[] = 'current-menu-item';
         } else {
