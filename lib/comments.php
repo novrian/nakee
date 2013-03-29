@@ -28,7 +28,7 @@ class Roots_Walker_Comment extends Walker_Comment {
 
     extract($args, EXTR_SKIP); ?>
 
-  <li <?php comment_class('media comment-' . get_comment_ID()); ?>>
+  <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
     <?php echo get_avatar($comment, $size = '64'); ?>
     <div class="media-body">
       <h4 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
@@ -51,7 +51,7 @@ class Roots_Walker_Comment extends Walker_Comment {
       call_user_func($args['end-callback'], $comment, $args, $depth);
       return;
     }
-    echo "</li>\n";
+    echo "</div></li>\n";
   }
 }
 
