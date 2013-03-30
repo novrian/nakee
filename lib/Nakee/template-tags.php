@@ -210,3 +210,55 @@ function nakee_related_posts($count = 3) {
     // Print Output
     print $output;
 }
+
+
+/**
+ * nakee_title()
+ * 
+ * Template Tags untuk override roots_title()
+ * 
+ * @return void
+ */
+function nakee_title() {
+    if (is_front_page()) {
+        echo __('Portfolios', 'roots');
+    } elseif (is_archive()) {
+        $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+        if (is_tax('nakee_portfolio_category')) {
+            printf(__('Work on %s', 'roots'), $term->name);
+        } elseif (is_tax('nakee_technology')) {
+            printf(__('%s Technology', 'roots'), $term->name);
+        } else {
+            printf(__('%s Posts', 'roots'), single_term_title(null, FALSE));
+        }
+    } else {
+        echo roots_title();
+    }
+}
+
+
+/**
+ * nakee_wp_title()
+ * 
+ * Template Tags untuk override wp_title()
+ * 
+ * @return string
+ */
+function nakee_wp_title() {
+    if (is_front_page()) {
+        return get_bloginfo('name') . ' | ' . get_bloginfo('description');
+    } elseif (is_archive()) {
+        $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+        if (is_tax('nakee_portfolio_category')) {
+            return sprintf(__('Work on %s', 'roots'), $term->name) . ' | ' . get_bloginfo('name');
+        } elseif (is_tax('nakee_technology')) {
+            return sprintf(__('%s Technology', 'roots'), $term->name) . ' | ' . get_bloginfo('name');
+        } elseif (is_post_type_archive('nakee_portfolio')) {
+            return get_queried_object()->labels->name . ' | ' . get_bloginfo('name');
+        } else {
+            return sprintf(__('%s Posts', 'roots'), single_cat_title(null, false)) . ' | ' . get_bloginfo('name');
+        }
+    } else {
+        return wp_title(' | ', false, 'right');
+    }
+}
