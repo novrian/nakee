@@ -131,3 +131,82 @@ function nakee_breadcrumbs() {
     // Print
     echo $output;
 }
+
+
+/**
+ * nakee_related_posts
+ * 
+ * Template Tags untuk menampilkan Related Posts pada Loop Single Post
+ * 
+ * @param int $count
+ * @return void
+ */
+function nakee_related_posts($count = 3) {
+    global $post;
+    
+    // Ambil Tags
+    $tags = get_the_tags($post->ID);
+    
+    // Buat Query Random Post: Default Query
+    $related = new WP_Query(array(
+        'posts_per_page' => $count - 1,
+        'orderby' => 'rand'
+    ));
+    
+    if ($tags) {
+        // Display Related Posts
+        
+        $tagID = array_keys($tags); // Ambil Tag ID
+        
+        // Buat Query
+        $newQuery = new WP_Query(array(
+            'tag__in' => $tagID,
+            'post__not_in' => array( $post->ID ),
+            'posts_per_page' => $count,
+            'orderby' => 'rand'
+        ));
+        
+        // Jika Post dalam Tag yg ditemukan ada
+        // Maka buat variabel $related
+        if ($newQuery->have_posts()) {
+            $related = $newQuery;
+            wp_reset_query();
+        }
+    }
+    
+    $output = "";
+    
+    // Output Related Posts
+    if ($related->have_posts()) {
+        $output .= '<ul class="inline row-fluid">';
+        
+        while ($related->have_posts()) {
+            $related->the_post();
+            $output .= '<li class="span4">';
+            $output .= '<div class="related-post-item">';
+            $output .= '<figure>';
+            $output .= '<a href="' . get_permalink() . '" title="' . nakee_get_title() . '">';
+            $output .= (has_post_thumbnail())
+                ? get_the_post_thumbnail(null, 'post-small')
+                : wp_get_attachment_image($GLOBALS['nakee']['def-featured-img'][rand(0,3)], 'post-small') ;
+            $output .= '</a>';
+            $output .= '<figcaption><strong><a href="' . get_permalink() . '" title="' . nakee_get_title() . '">' . nakee_get_title() . '</a></strong></figcaption>';
+            $output .= '</figure>';
+            $output .= '</div>';
+            $output .= '</li>';
+        }
+        
+        $output .= '</ul>';
+    } else {
+        // Tidak ada Related Posts di temukan
+        $output .= '<div class="alert">';
+        $output .= __('<strong>Sorry!</strong> No Related Posts Found', 'roots');
+        $output .= '</div>';
+    }
+    
+    // Reset Query
+    wp_reset_query();
+    
+    // Print Output
+    print $output;
+}
