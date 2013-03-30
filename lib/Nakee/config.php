@@ -51,8 +51,16 @@ define('PORTFOLIO_PER_PAGE', 6);
 
 
 
-// {{{ ANOTHER CONSTANS
+// {{{ ANOTHER CONSTANS & VARIABLES
 
 define('BREADCRUMBS_SEP', '/');     // Breadcrumbs Separator
+
+// Variabel Default Featured Image ID
+$GLOBALS['nakee']['def-featured-img'] = array(
+    905,
+    901,
+    878,
+    887
+);
 
 // }}}
