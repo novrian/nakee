@@ -54,28 +54,41 @@ remove_filter('excerpt_more', 'roots_excerpt_more');
  * @param string $size Pagination Size. Values: `normal | small | large | mini`
  * @param string $position Pagination Aligned Position. Values: `left
  *   | centered | right`
+ * @param boolean $post WP Link Pages Switch
  */
-function nakee_wp_pagenavi($size = null, $position = null) {
-    $class[] = "pagination";
+function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
+    $class[] = "pagination";    // Set Main Class
+    
+    // Pagination Size Class
     if (!$size) {
         $size = '';
-    }
-    
+    }    
     $class[] = (!$size) ? '' : "pagination-" . $size;
     
+    // Pagination Position, default LEFT
     if (!$position) {
         $position = 'left';
-    }
-    
+    }    
     $class[] = "pagination-" . $position;
     
+    // Set Before & After Output
     $before = "<nav id=\"main-pagination\"><div class=\"" . implode(" ", $class) . "\"><ul>";
     $after = "</ul></div>";
     
-    return wp_pagenavi(array(
+    // Build Args
+    $args = array(
         'before' => $before,
         'after' => $after
-    ));
+    );
+    
+    // Cloning untuk wp_link_pages()
+    if ($post) {
+        $args = array_merge($args, array(
+            'type' => 'multipart'
+        ));
+    }
+    
+    return wp_pagenavi($args);
 }
 
 
