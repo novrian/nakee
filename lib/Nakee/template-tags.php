@@ -262,3 +262,25 @@ function nakee_wp_title() {
         return wp_title(' | ', false, 'right');
     }
 }
+
+
+/**
+ * is_nakee_element
+ * 
+ * Conditional Tag untuk menampilkan elemen penting dalam layout
+ * 
+ * @return boolean
+ */
+function is_nakee_element() {
+    global $post;
+    if (
+        is_front_page()
+        || (get_post_type() === 'nakee_portfolio')
+        || is_post_type_archive('nakee_portfolio')
+        || is_page('services')
+        || is_page('about') ) {
+        return true;
+    }
+    
+    return false;
+}
