@@ -1,6 +1,6 @@
 <footer class="content-info" role="contentinfo">
     
-    <?php if (is_front_page() || (get_post_type() === 'nakee_portfolio') || is_post_type_archive('nakee_portfolio') || is_page('services')) : ?>
+    <?php if (is_nakee_element()) : ?>
     
         <?php if (is_active_sidebar('frontpage-footer')) : ?>
     <div id="main-footer-widget">

@@ -49,7 +49,7 @@ function roots_display_sidebar() {
      * 
      * Do Not display sidebar on Single Portfolio
      */
-    if (get_post_type() == 'nakee_portfolio') {
+    if (is_nakee_element()) {
         return false;
     }
     
@@ -66,17 +66,7 @@ function roots_display_sidebar() {
          */
         array(
             'is_404',
-            'is_front_page',
-            // Stop tampilkan Sidebar pada Halaman Portfolio Archive
-            array(
-                'is_post_type_archive',
-                array( 'nakee_portfolio' )
-            ),
-            // Stop tampilkan Sidebar pada Halaman Services
-            array(
-                'is_page',
-                array( 'services' )
-            )
+            'is_front_page'
         ),
         /**
          * Page template checks (via is_page_template())
