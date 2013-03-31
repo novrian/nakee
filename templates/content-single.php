@@ -15,7 +15,11 @@
         </div>
         
         <footer>
-            <?php nakee_wp_pagenavi('small', null, true); ?>
+            <?php if (function_exists('wp_pagenavi') && function_exists('nakee_wp_pagenavi')) : ?>
+                <?php nakee_wp_pagenavi('small', null, true); ?>
+            <?php else : ?>
+                <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+            <?php endif; ?>
             <section id="<?php echo 'social-share-' . get_the_ID(); ?>" class="single-social">
                 <h3><?php echo __('Spread the Word', 'roots'); ?></h3>
                 <div class="single-section-container">
