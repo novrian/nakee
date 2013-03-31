@@ -277,6 +277,8 @@ function is_nakee_element() {
         is_front_page()
         || (get_post_type() === 'nakee_portfolio')
         || is_post_type_archive('nakee_portfolio')
+        || is_tax('nakee_portfolio_category')
+        || is_tax('nakee_technology')
         || is_page('services')
         || is_page('about') ) {
         return true;
