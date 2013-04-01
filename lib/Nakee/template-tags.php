@@ -228,6 +228,8 @@ function nakee_title() {
             printf(__('Work on %s', 'roots'), $term->name);
         } elseif (is_tax('nakee_technology')) {
             printf(__('%s Technology', 'roots'), $term->name);
+        } elseif (is_post_type_archive('nakee_portfolio')) {
+            echo __('Portfolios', 'roots');
         } else {
             printf(__('%s Posts', 'roots'), single_term_title(null, FALSE));
         }
