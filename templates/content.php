@@ -1,6 +1,7 @@
 <?php if (!have_posts()) : ?>
-    <div class="alert">
-        <?php _e('Sorry, no results were found.', 'roots'); ?>
+    <div class="alert alert-block">
+        <h4><?php _e('Ooops', 'roots'); ?></h4>
+        <p><?php _e('No results were found.', 'roots'); ?></p>
     </div>
     <?php get_search_form(); ?>
 <?php else : ?>
