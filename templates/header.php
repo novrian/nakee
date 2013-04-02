@@ -1,7 +1,7 @@
 <header class="banner" role="banner">
     <div class="container">
-        <h1><a class="brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
-        <h2 class="hide-text"><?php bloginfo('description'); ?></h2>
+        <h1 class="brand"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
+        <h2 class="hidden"><?php bloginfo('description'); ?></h2>
         <nav class="nav-main" role="navigation">
             <?php
             if (has_nav_menu('primary_navigation')) :
