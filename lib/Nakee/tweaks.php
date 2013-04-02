@@ -23,12 +23,16 @@ function nakee_navmenu_css($classes, $item) {
         if ($slug == 'portfolio') {
             $classes[] = 'current-menu-item';
         } else {
-            $classes = (array)get_post_meta($item->ID, '_menu_item_classes', true);
+            $classes = array_filter(
+                $classes,
+                create_function('$class', 'return in_array($class, array( "dropdown" ));')
+            );
+            $classes = array_merge($classes, (array)get_post_meta($item->ID, '_menu_item_classes', true));
         }
     } else {
         $classes = array_filter(
             $classes,
-            create_function('$class', 'return in_array($class, array("current-menu-item", "current-menu-parent", "current-menu-ancestor", "current_page_item", "current_page_parent", "current_page_ancestor"));')
+            create_function('$class', 'return in_array($class, array("current-menu-item", "current-menu-parent", "current-menu-ancestor", "current_page_item", "current_page_parent", "current_page_ancestor", "dropdown" ));')
         );
         $classes = array_merge($classes, get_post_meta($item->ID, '_menu_item_classes', true));
     }
