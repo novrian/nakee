@@ -1,1 +1,21 @@
 // Base.scss - Base Variables
+
+// Nakee Color
+$nakee_blue:        #7FB3E0; 
+$nakee_light_green: #67BFAD;
+$nakee_dark_green:  #1B3D40;
+$nakee_red:         #F25050;
+$nakee_coral:       #F2C48D;
+
+$nakee_link_color:          $nakee_red;
+$nakee_headings_color2:     $nakee_coral;
+
+
+
+
+// Overrides Bootstrap Variables
+// ----------------------------------------------------------------------------
+$linkColor: $nakee_link_color;
+$linkColorHover: darken($linkColor, 15%);
+
+$headingsColor: $nakee_dark_green;
