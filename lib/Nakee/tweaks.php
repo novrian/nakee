@@ -55,3 +55,25 @@ function nakee_pagination($html) {
     return $out;
 }
 add_filter('wp_pagenavi', 'nakee_pagination', 10);
+
+
+/**
+ * nakee_search_filter()
+ * 
+ * Filter untuk limit pencarian post
+ * 
+ * @param object WP_Query $query
+ * @return object WP_Query
+ */
+function nakee_search_filter($query) {
+    $post_type = array(
+        'post'
+    );
+    
+    if ($query->is_search()) {
+        $query->set('post_type', $post_type);
+    }
+    
+    return $query;
+}
+add_action('pre_get_posts', 'nakee_search_filter');

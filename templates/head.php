@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title><?php if (is_front_page()) { echo get_bloginfo('name') . ' | ' . get_bloginfo('description'); } else { wp_title('|', true, 'right'); } ?></title>
+  <title><?php echo nakee_wp_title(); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <?php wp_head(); ?>
