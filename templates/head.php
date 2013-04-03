@@ -11,4 +11,9 @@
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
+
+  <?php // TypeKit Scripts ?>
+  <script type="text/javascript" src="//use.typekit.net/kpm6ebn.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <?php // Stop TypeKit ?>
 </head>
