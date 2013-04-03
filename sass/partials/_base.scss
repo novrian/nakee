@@ -1,5 +1,7 @@
 // Base.scss - Base Variables
 
+@import "bootstrap/variables";
+
 // Nakee Color
 $nakee_blue:        #7FB3E0; 
 $nakee_light_green: #67BFAD;
@@ -10,12 +12,40 @@ $nakee_coral:       #F2C48D;
 $nakee_link_color:          $nakee_red;
 $nakee_headings_color2:     $nakee_coral;
 
+// Nakee Typo
+// $sansFontFamily:        "Helvetica Neue", Helvetica, "nimbus-sans", sans-serif;
+// $headingsFontFamily :   "Helvetica Neue", Helvetica, "museo-sans", sans-serif;
+$sansFontFamily:        "vera-sans", sans-serif;  // Testing Value
+$headingsFontFamily :   "museo-sans", sans-serif;   // Testing Value
 
-
-
-// Overrides Bootstrap Variables
-// ----------------------------------------------------------------------------
-$linkColor: $nakee_link_color;
-$linkColorHover: darken($linkColor, 15%);
+$baseFontSize:          14px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        20px;
+$altFontFamily:         $serifFontFamily;
 
 $headingsColor: $nakee_dark_green;
+
+$linkColor: $nakee_link_color;
+$linkColorHover: darken($linkColor, 15%);
+$linkColor2: #67BFAD;
+$linkColorHover2: darken($linkColor2, 15%);
+
+// Navbar
+$navbarHeight:                    40px;
+$navbarBackgroundHighlight:       #ffffff;
+$navbarBackground:                $navbarBackgroundHighlight;
+$navbarBorder:                    darken($navbarBackground, 12%);
+
+$navbarText:                      #777;
+$navbarLinkColor:                 $linkColor;
+$navbarLinkColorHover:            $white;
+$navbarLinkColorActive:           $white;
+$navbarLinkBackgroundHover:       $nakee_red;
+$navbarLinkBackgroundActive:      $grayDarker;
+
+// Dropdowns
+// -------------------------
+$dropdownLinkColor:             $linkColor;
+
+$dropdownLinkBackgroundActive:  $navbarLinkBackgroundActive;
+$dropdownLinkBackgroundHover:   $navbarLinkBackgroundHover;
