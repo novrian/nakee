@@ -2,6 +2,8 @@
 
 @import "bootstrap/variables";
 
+$fontAwesomePath: "../fonts/FontAwesome";
+
 // Nakee Color
 $nakee_blue:        #7FB3E0; 
 $nakee_light_green: #67BFAD;
@@ -15,7 +17,7 @@ $nakee_headings_color2:     $nakee_coral;
 // Nakee Typo
 // $sansFontFamily:        "Helvetica Neue", Helvetica, "nimbus-sans", sans-serif;
 // $headingsFontFamily :   "Helvetica Neue", Helvetica, "museo-sans", sans-serif;
-$sansFontFamily:        "vera-sans", sans-serif;  // Testing Value
+$sansFontFamily:        "open-sans", sans-serif;  // Testing Value
 $headingsFontFamily :   "museo-sans", sans-serif;   // Testing Value
 
 $baseFontSize:          14px;
