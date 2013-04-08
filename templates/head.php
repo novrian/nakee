@@ -16,4 +16,12 @@
   <script type="text/javascript" src="//use.typekit.net/kpm6ebn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <?php // Stop TypeKit ?>
+
+  <?php // Favicon ?>
+  <link rel="apple-touch-icon-precomposed apple-touch-icon favicon shortcut icon" href="<?php echo home_url(); ?>/assets/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo home_url(); ?>/assets/apple-touch-icon-57x57-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url(); ?>/assets/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url(); ?>/assets/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url(); ?>/assets/apple-touch-icon-144x144-precomposed.png">
+  <?php // Stop Favicon ?>
 </head>
