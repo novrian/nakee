@@ -16,7 +16,7 @@
                 <nav class="nav-main nav-collapse" role="navigation">
                     <?php
                     if (has_nav_menu('primary_navigation')) :
-                        wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
+                        wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav pull-right'));
                     endif;
                     ?>
                 </nav>
@@ -48,13 +48,17 @@
     
     <?php // Display Widget - Frontpage Teaser ?>
     <?php if (is_front_page() && is_active_sidebar('frontpage-teaser')) : ?>
-    
-    <div class="container">
-        <div class="row-fluid">
-            <?php dynamic_sidebar('frontpage-teaser'); ?>
+
+    <div class="nakee-front-teaser">
+        <div class="container">
+            <div class="row-fluid">
+                <?php dynamic_sidebar('frontpage-teaser'); ?>
+            </div>
         </div>
     </div>
         
     <?php endif; ?>
+
+    <div class="nakee-banner-border"></div>
     
 </header>
