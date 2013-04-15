@@ -21,7 +21,6 @@ function roots_add_rewrites($content) {
     'assets/css/(.*)'      => THEME_PATH . '/assets/css/$1',
     'assets/js/(.*)'       => THEME_PATH . '/assets/js/$1',
     'assets/img/(.*)'      => THEME_PATH . '/assets/img/$1',
-    'assets/(.*)'          => THEME_PATH . '/assets/$1',        // Rewrite root assets dir
     'assets/fonts/(.*)'    => THEME_PATH . '/assets/fonts/$1',  // Rewrite fonts dir
     'plugins/(.*)'         => RELATIVE_PLUGIN_PATH . '/$1'
   );
