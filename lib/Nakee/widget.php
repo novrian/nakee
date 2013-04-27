@@ -19,11 +19,13 @@ function display_technology($items = array()) {
     }
     
     foreach($items as $nmspace => $title) {
-        $item_out[] = '<abbr title="' . $title . '" data-toggle="tooltip" data-placement="top"><i class="technology-icon nakee-' . strtolower($nmspace) . '-icon"></i><span class="hide-text">' . $title . '</span></abbr>';
+        $item_out[] = '<li><abbr title="' . $title . '" rel="tooltip" data-toggle="tooltip" data-placement="top"><i class="technology-icon nakee-' . strtolower($nmspace) . '-icon"></i><span class="hide-text">' . $title . '</span></abbr></li>';
     }
     
     $output = '<section id="technology-widget" class="technology-widget">';
+    $output .= '<ul>';
     $output .= implode("", $item_out);
+    $output .= '</ul>';
     $output .= '</section>';
     
     return $output;
