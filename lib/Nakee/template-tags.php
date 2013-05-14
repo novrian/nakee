@@ -28,7 +28,13 @@ function nakee_get_title() {
  * @link http://www.itsabhik.com/wordpress-custom-excerpt-length/ Base on Abhik work, Thanks
  */
 function nakee_excerpt($limit = POST_EXCERPT_LENGTH) {
-    $content = strip_tags(get_the_content(), '<br>');
+    $content = strip_tags(get_the_content(false), '<br>');
+    $content = strip_shortcodes($content);
+
+    if (!trim($content)) {
+        return null;
+    }
+
     $content = explode(" ", $content, $limit);
     $content = array_map('trim', $content);
     $excerpt = str_replace("\r", " ", $content);
@@ -38,7 +44,7 @@ function nakee_excerpt($limit = POST_EXCERPT_LENGTH) {
         array_pop($excerpt);
         $excerpt = implode(" ", $excerpt) . roots_excerpt_more(null);
     } else {
-        $excerpt = implode(" ", $excerpt);
+        $excerpt = implode(" ", $excerpt) . roots_excerpt_more(null);
     }
     
     return $excerpt;
