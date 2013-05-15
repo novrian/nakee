@@ -1,6 +1,8 @@
 <footer class="content-info" role="contentinfo">
     
     <?php if (is_nakee_element()) : ?>
+
+    <div class="footer-triangle"></div>
     
         <?php if (is_active_sidebar('frontpage-footer')) : ?>
     <div id="main-footer-widget">
@@ -12,30 +14,29 @@
     </div>
         <?php endif; ?>
     
-    <div id="technology-widget">
+    <div class="technology-widget-container visible-desktop">
         <div class="container">
             <?php echo display_technology(array(
                 'html5' => 'HTML5',
                 'css3' => 'CSS3',
                 'jquery' => 'jQuery',
-                'jquery-ui' => 'jQuery UI',
                 'php' => 'PHP',
                 'mysql' => 'MySQL',
                 'git' => 'Git',
                 'ps' => 'Adobe Photoshop',
                 'ai' => 'Adobe Illustrator',
                 'sass' => 'SASS',
-                'compass' => 'Compass',
                 'ruby' => 'Ruby',
-                'cakephp' => 'cakePHP',
-                'wordpress' => 'Wordpress'
+                'cake' => 'cakePHP',
+                'wp' => 'Wordpress'
             )); ?>
         </div>
     </div>
     
     <?php endif; ?>
-    
-    <div id="footer-text">
+
+    <div class="footer-top-border"></div>
+    <div class="footer-text-container">
         <div class="container">
             <div class="row-fluid">
                 <div class="span6 footer-text">
@@ -43,11 +44,11 @@
                 </div>
                 <div class="span6 social-footer">
                     <ul class="inline pull-right">
-                        <li><a href="https://www.facebook.com/<?php echo FACEBOOK_USERNAME; ?>" class="url facebook" title="Like Me on Facebook"><span class="hide-text">Facebook</span></a></li>
-                        <li><a href="https://www.twitter.com/<?php echo TWITTER_USERNAME; ?>" class="url twitter" title="Get the Boring Tweets"><span class="hide-text">Twitter</span></a></li>
-                        <li><a href="https://www.github.com/<?php echo GITHUB_USERNAME; ?>" class="url github" title="Collaborate with me on Github"><span class="hide-text">Github</span></a></li>
-                        <li><a href="<?php echo FEEDBURNER_URL; ?>" class="url rss" title="Feed my blog updates"><span class="hide-text">Atom Feed</span></a></li>
-                        <li><a href="#top" class="to-top" title="Back to Top"><span class="hide-text">To Top</span></a></li>
+                        <li><a href="https://www.facebook.com/<?php echo FACEBOOK_USERNAME; ?>" class="url facebook" title="Like Me on Facebook"><i class="icon-facebook"></i><span class="hide-text">Facebook</span></a></li>
+                        <li><a href="https://www.twitter.com/<?php echo TWITTER_USERNAME; ?>" class="url twitter" title="Get the Boring Tweets"><i class="icon-twitter"></i><span class="hide-text">Twitter</span></a></li>
+                        <li><a href="https://www.github.com/<?php echo GITHUB_USERNAME; ?>" class="url github" title="Collaborate with me on Github"><i class="icon-github"></i><span class="hide-text">Github</span></a></li>
+                        <li><a href="<?php echo FEEDBURNER_URL; ?>" class="url rss" title="Feed my blog updates"><i class="icon-rss"></i><span class="hide-text">Atom Feed</span></a></li>
+                        <li><a href="#top" class="to-top" title="Back to Top"><i class="icon-chevron-up"></i><span class="hide-text">To Top</span></a></li>
                     </ul>
                 </div>
             </div>
