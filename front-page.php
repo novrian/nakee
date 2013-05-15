@@ -39,7 +39,7 @@ wp_reset_postdata(); // Reset Query
 <section class="portfolio-category">
     <h3 class="hide-text"><?php echo __('Portfolio Category', 'roots'); ?></h3>
     <ul class="inline">
-        <li><a href="<?php echo get_post_type_archive_link('nakee_portfolio'); ?>" title=""><?php _e('All'); ?></a></li>
+        <li><a href="<?php echo get_post_type_archive_link('nakee_portfolio'); ?>" title="<?php _e('View All Portfolios', 'roots'); ?>"><?php _e('All', 'roots'); ?></a></li>
     <?php wp_list_categories(array(
         'taxonomy' => 'nakee_portfolio_category',
         'hierarchical' => 0,
@@ -51,10 +51,10 @@ wp_reset_postdata(); // Reset Query
 <section id="last-tweet" class="last-tweet-widget">
     <h3 class="hide-text"><?php echo __('Latest Tweet', 'roots'); ?></h3>
     <div class="row-fluid">
-        <div class="twitter-logo span2">
+        <div class="twitter-logo">
             <span class="hide-text">Twitter Logo</span>
         </div>
-        <div class="tweet-container span10"><?php echo nakee_display_last_tweet(); ?></div>
+        <div class="tweet-container"><?php echo nakee_display_last_tweet(); ?></div>
     </div>
 </section>
 

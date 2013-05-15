@@ -16,13 +16,19 @@ get_template_part('templates/breadcrumbs');
     <article <?php post_class(); ?>>
             
         <header>
+            <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure large-figure">
+                <?php if (has_post_thumbnail()) : ?>
+                <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'portfolio-large', array(
+                    'class' => 'img-polaroid',
+                    'alt' => 'Portfolio : ' . get_the_title(),
+                    'title' => 'Portfolio : ' . get_the_title()
+                )); ?></a>
+                <?php else : ?>
+                <img src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
+                <?php endif; ?>
+            </figure>
             <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>
             <div class="entry-meta hide-text"><time datetime="<?php echo get_the_date("Y-m-d"); ?>" pubdate><?php echo get_the_date(); ?></time></div>
-            <figure class="portfolio-presentation">
-                <?php $thumbnail_full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' ); ?>
-                <a href="<?php echo $thumbnail_full[0]; ?>" title="Portfolio: <?php echo get_the_title(); ?>"><?php the_post_thumbnail('portfolio-large'); ?></a>
-                <figcaption><?php the_title(); ?></figcaption>
-            </figure>
         </header>
 
         <div class="entry-content">
@@ -35,12 +41,12 @@ get_template_part('templates/breadcrumbs');
                 <?php $categories = get_the_terms(get_the_ID(), 'nakee_portfolio_category'); ?>
                 <?php if ($categories && !is_wp_error($categories)) : ?>
                 <div class="span6">
-                    <section class="entry-category">
+                    <section class="portfolio-category-widget">
                         <h3><?php echo __('Categories', 'roots'); ?></h3>
-                        <div>
-                            <ul>
+                        <div class="single-widget-inner">
+                            <ul class="inline">
                             <?php foreach($categories as $key => $cat) : ?>
-                                <li><?php printf("<a href=\"%s\" rel=\"tag\">%s</a>", get_term_link($cat), $cat->name); ?></li>
+                                <li><?php printf(__("<a href=\"%s\" rel=\"tag tooltip\" title=\"View work on %s\">%s</a>", 'roots'), get_term_link($cat), $cat->name, $cat->name); ?></li>
                             <?php endforeach; ?>
                             </ul>
                         </div>
@@ -51,12 +57,12 @@ get_template_part('templates/breadcrumbs');
                 <?php $technologies = get_the_terms(get_the_ID(), 'nakee_technology'); ?>
                 <?php if ($technologies && !is_wp_error($technologies)) : ?>
                 <div class="span6">
-                    <section class="tag">
+                    <section class="portfolio-technology-widget">
                         <h3><?php echo __('Technologies', 'roots'); ?></h3>
-                        <div>
-                            <ul>
+                        <div class="single-widget-inner">
+                            <ul class="inline">
                                 <?php foreach($technologies as $key => $tech) : ?>
-                                <li><?php printf("<a href=\"%s\" rel=\"tag\">%s</a>", get_term_link($tech), $tech->name); ?></li>
+                                <li><?php printf( __("<a href=\"%s\" rel=\"tag tooltip\" title=\"View work base on %s technology\">%s</a>", 'roots'), get_term_link($tech), $tech->name, $tech->name); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>

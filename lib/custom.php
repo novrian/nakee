@@ -18,6 +18,9 @@ require_once locate_template('/lib/Nakee/init.php');
 // Nakee Template Tags
 require_once locate_template('/lib/Nakee/template-tags.php');
 
+// Nakee Hooks
+require_once locate_template('/lib/Nakee/hooks.php');
+
 // Nakee Widget
 require_once locate_template('/lib/Nakee/widget.php');
 

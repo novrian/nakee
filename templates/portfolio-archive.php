@@ -36,11 +36,21 @@ if (!isset($portfolio) || empty($portfolio)) {
     <div class="span4">
         <article id="<?php the_ID(); ?>" <?php post_class(); ?>>
             <header>
+                <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure small-figure">
+                    <?php if (has_post_thumbnail()) : ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'portfolio-small', array(
+                        'class' => 'img-polaroid',
+                        'alt' => 'Portfolio : ' . get_the_title(),
+                        'title' => 'Portfolio : ' . get_the_title()
+                    )); ?></a>
+                    <?php else : ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><img src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-500x281.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
+                    <?php endif; ?>
+                </figure>
                 <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Link: <?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h1>
                 <div class="entry-meta hide-text"><time datetime="<?php echo get_the_date('Y-m-d'); ?>" pubdate><?php echo get_the_date(); ?></time></div>
             </header>
             <div class="entry-summary">
-                <?php the_post_thumbnail('portfolio-small'); ?>
                 <?php echo nakee_excerpt(20); ?>
             </div>
             <footer>
