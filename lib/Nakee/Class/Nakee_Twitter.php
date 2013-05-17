@@ -6,7 +6,7 @@
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
  */
-require 'codebird.php';
+require('codebird-php' . DS . 'src' . DS . 'codebird.php');
 
 class Nakee_Twitter {
     
@@ -46,7 +46,7 @@ class Nakee_Twitter {
      * Constructor
      */
     private function __construct() {
-        $cb = Codebird::getInstance();
+        $cb = Codebird\Codebird::getInstance();
         
         if (!defined('TWITTER_USERNAME')) {
             throw new Exception("Tolong set Twitter Username di config.php");

@@ -1,0 +1,6 @@
+[submodule "lib/Nakee/Class/bitly-php"]
+	path = lib/Nakee/Class/bitly-php
+	url = git://github.com/Falicon/BitlyPHP.git
+[submodule "lib/Nakee/Class/codebird-php"]
+	path = lib/Nakee/Class/codebird-php
+	url = git://github.com/mynetx/codebird-php.git
