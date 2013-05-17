@@ -40,6 +40,10 @@ define('FEEDBURNER_URL', 'http://blablabla.com');
 define('GRAVATAR_EMAIL', 'me@novrian.info');
 define('GRAVATAR_HASH', md5(strtolower(trim(GRAVATAR_EMAIL))));
 
+// Bitly
+define('BITLY_USERNAME', 'nonokaki');
+define('BITLY_KEY', 'R_d16135cab8154604300f81f15c613ff0');
+
 // }}}
 
 
