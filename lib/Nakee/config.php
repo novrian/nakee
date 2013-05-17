@@ -7,6 +7,9 @@
  * @license http://www.gnu.org/licenses/gpl.html
  */
 
+// Utility Constant
+define('DS', DIRECTORY_SEPARATOR);
+
 // Variabel Tagline
 define('MAIN_TAGLINE', "Passionate<br />\n<strong>Web Developer, Web Designer</strong><br />\nFrom Makassar, <b>Indonesia</b>");
 define('BLOG_TAGLINE', "Sedikit Jurnal tentang <b>Teknologi Web</b>");
