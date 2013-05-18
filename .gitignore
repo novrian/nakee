@@ -41,7 +41,6 @@ $RECYCLE.BIN/
 doc/*
 CHANGELOG.md
 CONTRIBUTING.md
-.editorconfig
 
 # Nakee Ignore
 *.backup
