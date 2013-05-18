@@ -1,7 +1,7 @@
 <?php
 /**
  * Nakee Custom Template Tags
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
@@ -17,14 +17,14 @@ function nakee_get_title() {
     if (empty($title)) {
         return __('Untitled', 'roots');
     }
-    
+
     return $title;
 }
 
 
 /**
  * Custom Excerpt
- * 
+ *
  * @link http://www.itsabhik.com/wordpress-custom-excerpt-length/ Base on Abhik work, Thanks
  */
 function nakee_excerpt($limit = POST_EXCERPT_LENGTH) {
@@ -39,14 +39,13 @@ function nakee_excerpt($limit = POST_EXCERPT_LENGTH) {
     $content = array_map('trim', $content);
     $excerpt = str_replace("\r", " ", $content);
     $excerpt = str_replace("\n", " ", $content);
-    
+
     if (count($excerpt) >= $limit) {
         array_pop($excerpt);
-        $excerpt = implode(" ", $excerpt) . roots_excerpt_more(null);
-    } else {
-        $excerpt = implode(" ", $excerpt) . roots_excerpt_more(null);
     }
-    
+
+    $excerpt = '<p>' . implode(" ", $excerpt) . '&hellip;</p>' . nakee_excerpt_more(null);
+
     return $excerpt;
 }
 // Remove Roots Related Excerpt Filter
@@ -55,8 +54,19 @@ remove_filter('excerpt_more', 'roots_excerpt_more');
 
 
 /**
+ * Nakee Custom Excerpt More
+ *
+ * @param string
+ * @return string
+ */
+function nakee_excerpt_more($more) {
+  return '<a href="' . get_permalink() . '" class="more-link">' . __('Continued  &raquo;', 'roots') . '</a>';
+}
+
+
+/**
  * Custom WP-Pagenavi Nakee
- * 
+ *
  * @param string $size Pagination Size. Values: `normal | small | large | mini`
  * @param string $position Pagination Aligned Position. Values: `left
  *   | centered | right`
@@ -64,62 +74,62 @@ remove_filter('excerpt_more', 'roots_excerpt_more');
  */
 function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
     $class[] = "pagination";    // Set Main Class
-    
+
     // Pagination Size Class
     if (!$size) {
         $size = '';
-    }    
+    }
     $class[] = (!$size) ? '' : "pagination-" . $size;
-    
+
     // Pagination Position, default LEFT
     if (!$position) {
         $position = 'left';
-    }    
+    }
     $class[] = "pagination-" . $position;
-    
+
     // Set Before & After Output
     $before = "<nav id=\"main-pagination\"><div class=\"" . implode(" ", $class) . "\"><ul>";
     $after = "</ul></div>";
-    
+
     // Build Args
     $args = array(
         'before' => $before,
         'after' => $after
     );
-    
+
     // Cloning untuk wp_link_pages()
     if ($post) {
         $args = array_merge($args, array(
             'type' => 'multipart'
         ));
     }
-    
+
     return wp_pagenavi($args);
 }
 
 
 /**
  * nakee_breadcrumbs()
- * 
+ *
  * Template Tags untuk output Yoast Breadcrumbs yang support
  * dengan Twitter Bootstrap
- * 
+ *
  * @return void
  */
 function nakee_breadcrumbs() {
     if (!function_exists('yoast_breadcrumb')) {
         return null;
     }
-    
+
     $crumbs = yoast_breadcrumb(null, null, false);
-    
+
     // Hilangkan wrapper <span xmlns:v />
     $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
     $output = preg_replace("/\<\/span\>$/", "", $output);
-    
+
     // Ambil Crumbs
     $crumb = preg_split("/\40([\\" . BREADCRUMBS_SEP . "]{1,1})\40/", $output);
-    
+
     // Manipulasi string output tiap crumbs
     $crumb = array_map(
         create_function('$crumb', '
@@ -130,10 +140,10 @@ function nakee_breadcrumbs() {
         '),
         $crumb
     );
-    
+
     // Bangun output HTML
     $output = '<div class="breadcrumbs-container" xmlns:v="http://rdf.data-vocabulary.org/#"\><ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-    
+
     // Print
     echo $output;
 }
@@ -141,29 +151,29 @@ function nakee_breadcrumbs() {
 
 /**
  * nakee_related_posts
- * 
+ *
  * Template Tags untuk menampilkan Related Posts pada Loop Single Post
- * 
+ *
  * @param int $count
  * @return void
  */
 function nakee_related_posts($count = 3) {
     global $post;
-    
+
     // Ambil Tags
     $tags = get_the_tags($post->ID);
-    
+
     // Buat Query Random Post: Default Query
     $related = new WP_Query(array(
         'posts_per_page' => $count - 1,
         'orderby' => 'rand'
     ));
-    
+
     if ($tags) {
         // Display Related Posts
-        
+
         $tagID = array_keys($tags); // Ambil Tag ID
-        
+
         // Buat Query
         $newQuery = new WP_Query(array(
             'tag__in' => $tagID,
@@ -171,7 +181,7 @@ function nakee_related_posts($count = 3) {
             'posts_per_page' => $count,
             'orderby' => 'rand'
         ));
-        
+
         // Jika Post dalam Tag yg ditemukan ada
         // Maka buat variabel $related
         if ($newQuery->have_posts()) {
@@ -179,13 +189,13 @@ function nakee_related_posts($count = 3) {
             wp_reset_query();
         }
     }
-    
+
     $output = "";
-    
+
     // Output Related Posts
     if ($related->have_posts()) {
         $output .= '<ul class="inline row-fluid">';
-        
+
         while ($related->have_posts()) {
             $related->the_post();
             $output .= '<li class="span4">';
@@ -201,7 +211,7 @@ function nakee_related_posts($count = 3) {
             $output .= '</div>';
             $output .= '</li>';
         }
-        
+
         $output .= '</ul>';
     } else {
         // Tidak ada Related Posts di temukan
@@ -209,10 +219,10 @@ function nakee_related_posts($count = 3) {
         $output .= __('<strong>Sorry!</strong> No Related Posts Found', 'roots');
         $output .= '</div>';
     }
-    
+
     // Reset Query
     wp_reset_query();
-    
+
     // Print Output
     print $output;
 }
@@ -220,9 +230,9 @@ function nakee_related_posts($count = 3) {
 
 /**
  * nakee_title()
- * 
+ *
  * Template Tags untuk override roots_title()
- * 
+ *
  * @return void
  */
 function nakee_title() {
@@ -247,9 +257,9 @@ function nakee_title() {
 
 /**
  * nakee_wp_title()
- * 
+ *
  * Template Tags untuk override wp_title()
- * 
+ *
  * @return string
  */
 function nakee_wp_title() {
@@ -274,9 +284,9 @@ function nakee_wp_title() {
 
 /**
  * is_nakee_element
- * 
+ *
  * Conditional Tag untuk menampilkan elemen penting dalam layout
- * 
+ *
  * @return boolean
  */
 function is_nakee_element() {
@@ -291,6 +301,6 @@ function is_nakee_element() {
         || is_page('about') ) {
         return true;
     }
-    
+
     return false;
 }

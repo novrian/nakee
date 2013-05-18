@@ -14,7 +14,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
  * Configuration values
  */
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
-define('POST_EXCERPT_LENGTH', 140);
+define('POST_EXCERPT_LENGTH', 60);
 
 /**
  * .main classes
@@ -46,13 +46,13 @@ function roots_sidebar_class() {
 function roots_display_sidebar() {
     /**
      * Tweaks
-     * 
+     *
      * Do Not display sidebar on Single Portfolio
      */
     if (is_nakee_element()) {
         return false;
     }
-    
+
     $sidebar_config = new Roots_Sidebar(
         /**
          * Conditional tag checks (http://codex.wordpress.org/Conditional_Tags)
