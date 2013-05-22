@@ -1,6 +1,17 @@
 <?php get_template_part('templates/head'); ?>
 <body <?php body_class(); ?>>
 
+    <!-- FACEBOOK SCRIPT -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=501127929954047";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- FACEBOOK SCRIPT -->
+
   <!--[if lt IE 7]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
 
   <div id="no-script"><?php echo __('Please enable Javascripts, we\'ll not harm you. Trust me! :)', 'roots'); ?></div>

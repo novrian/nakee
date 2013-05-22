@@ -1,9 +1,9 @@
 <footer class="content-info" role="contentinfo">
-    
+
     <?php if (is_nakee_element()) : ?>
 
     <div class="footer-triangle"></div>
-    
+
         <?php if (is_active_sidebar('frontpage-footer')) : ?>
     <div id="main-footer-widget">
         <div class="container">
@@ -13,7 +13,7 @@
         </div>
     </div>
         <?php endif; ?>
-    
+
     <div class="technology-widget-container visible-desktop">
         <div class="container">
             <?php echo display_technology(array(
@@ -32,7 +32,7 @@
             )); ?>
         </div>
     </div>
-    
+
     <?php endif; ?>
 
     <div class="footer-top-border"></div>
@@ -54,8 +54,18 @@
             </div>
         </div>
     </div>
-    
+
 </footer>
+
+<!-- GPLUS SCRIPT -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- GPLUS SCRIPT -->
 
 <?php wp_footer(); ?>
 
