@@ -1,33 +1,47 @@
 <?php while (have_posts()) : the_post(); ?>
 
     <article <?php post_class(); ?>>
-        
-        <header>
-            <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>
-            <figure class="nakee-singlepost-thumbs">
-                <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo (has_post_thumbnail()) ? get_the_post_thumbnail(get_the_ID(), 'post-large') : wp_get_attachment_image($GLOBALS['nakee']['def-featured-img'][rand(0, 3)], 'post-large'); ?></a>
-            </figure>
-            <?php get_template_part('templates/entry-meta'); ?>
+
+        <header class="single-meta">
+
+            <div class="featured-image">
+                <figure class="nakee-post-thumbnails">
+                    <?php echo (has_post_thumbnail()) ? get_the_post_thumbnail(get_the_ID(), 'post-large') : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . WP_BASE . '/assets/img/featured.png" />'; ?>
+                </figure>
+            </div>
+            <div class="entry-meta">
+                <?php
+                $get_categories = get_the_category();
+                if ($get_categories) {
+                    foreach($get_categories as $key => $cat) {
+                        $categories[] = '<a href="' . get_category_link($cat->cat_ID) . '" rel="tag" title="' . sprintf(__('View posts on %s', 'roots'), $cat->name) . '">' . $cat->name . '</a>';
+                    }
+                }
+                ?>
+                <span class="entry-category"><?php printf(__('About %s', 'roots'), implode(", ", $categories)); ?></span>
+                <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>
+                <span class="hide-text byline author vcard"><?php echo __('By', 'roots'); ?> <?php echo get_the_author(); ?></a></span>
+                <time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date(); ?></time>
+            </div>
+
         </header>
-        
+
         <div class="entry-content">
             <?php the_content(); ?>
+            <div class="clearfix"></div>
         </div>
-        
+
         <footer>
             <?php if (function_exists('wp_pagenavi') && function_exists('nakee_wp_pagenavi')) : ?>
                 <?php nakee_wp_pagenavi('small', null, true); ?>
             <?php else : ?>
                 <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
             <?php endif; ?>
-            <section id="<?php echo 'social-share-' . get_the_ID(); ?>" class="single-social">
-                <h3><?php echo __('Spread the Word', 'roots'); ?></h3>
-                <div class="single-section-container">
-                    <strong>Share This</strong>
-                </div>
-            </section>
+
+            <?php get_template_part('templates/social-share'); ?>
+
         </footer>
-        
+
     </article>
 
     <aside id="<?php echo 'related-to-' . get_the_ID(); ?>" class="nakee-related-posts">

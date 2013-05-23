@@ -204,7 +204,7 @@ function nakee_related_posts($count = 3) {
             $output .= '<a href="' . get_permalink() . '" title="' . nakee_get_title() . '">';
             $output .= (has_post_thumbnail())
                 ? get_the_post_thumbnail(null, 'post-small')
-                : wp_get_attachment_image($GLOBALS['nakee']['def-featured-img'][rand(0,3)], 'post-small') ;
+                : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . WP_BASE . '/assets/img/featured-thumb.png" />' ;
             $output .= '</a>';
             $output .= '<figcaption><strong><a href="' . get_permalink() . '" title="' . nakee_get_title() . '">' . nakee_get_title() . '</a></strong></figcaption>';
             $output .= '</figure>';
