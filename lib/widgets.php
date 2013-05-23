@@ -12,12 +12,23 @@ function roots_widgets_init() {
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
   ));
-  
+
   /**
    * NAKEE CUSTOM SIDEBAR
    * --------------------------------------------------------------------------
    */
-  
+
+    // Sticky Sidebar
+    register_sidebar(array(
+        'name'          => __('Sticky Sidebar', 'roots'),
+        'id'            => 'sticky-sidebar',
+        'before_widget' => '<section class="widget sticky-widget %1$s %2$s"><div class="widget-inner">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+        'class'         => 'sticky-sidebar'
+    ));
+
   // frontpage teaser
   register_sidebar(array(
       'name'            => __('Front Page Teaser', 'roots'),
@@ -28,7 +39,7 @@ function roots_widgets_init() {
       'after_title'     => '</h3>',
       // 'class' => 'your-class-here'   // Custom Class
   ));
-  
+
   // frontpage footer
   register_sidebar(array(
       'name'            => __('Front Page Footer', 'roots'),
