@@ -44,3 +44,4 @@ CONTRIBUTING.md
 
 # Nakee Ignore
 *.backup
+lib/Nakee/config.php

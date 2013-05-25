@@ -13,7 +13,7 @@ define('DS', DIRECTORY_SEPARATOR);
 // Variabel Tagline
 define('MAIN_TAGLINE', "Passionate<br />\n<strong>Web Developer, Web Designer</strong><br />\nFrom Makassar, <b>Indonesia</b>");
 define('BLOG_TAGLINE', "Sedikit Jurnal tentang <b>Teknologi Web</b>");
-define('CONTACT_TAGLINE', "Konsultasi? Ada Kerjaan untuk Saya? Ngopi Yuk! :)");
+define('CONTACT_TAGLINE', "Konsultasi? <b>Ngopi Yuk! :)</b>");
 
 
 
@@ -21,28 +21,28 @@ define('CONTACT_TAGLINE', "Konsultasi? Ada Kerjaan untuk Saya? Ngopi Yuk! :)");
 // {{{ API CONSTANTS
 
 // Facebook
-define('FACEBOOK_USERNAME', 'nono_gallank');
+define('FACEBOOK_USERNAME', '');
 
 // Twitter
-define('TWITTER_USERNAME', 'nono_gallankz');
-define('TWITTER_CONSUMER_KEY', 'JlpORYytJIIifXS63F5g');
-define('TWITTER_CONSUMER_SECRET', 'Igmct6GMyxN5y1XGoLXIr4tZH0vHEnbcfSrXrcKSU');
-define('TWITTER_ACCESS_TOKEN', '40679188-QsmsSj6uQrK0TXTKGBFjyw03BZUA2wlDulzj3j7AM');
-define('TWITTER_ACCESS_TOKEN_SECRET', 'lj3YQUsPTnMPBwvwbpt79CZwFuz7HHAZa0uNmXUo8A');
+define('TWITTER_USERNAME', '');
+define('TWITTER_CONSUMER_KEY', '');
+define('TWITTER_CONSUMER_SECRET', '');
+define('TWITTER_ACCESS_TOKEN', '');
+define('TWITTER_ACCESS_TOKEN_SECRET', '');
 
 // Github
-define('GITHUB_USERNAME', 'novrian');
+define('GITHUB_USERNAME', '');
 
 // RSS
-define('FEEDBURNER_URL', 'http://blablabla.com');
+define('FEEDBURNER_URL', 'http://feedburner.com/your-url');
 
 // Gravatar Email
-define('GRAVATAR_EMAIL', 'me@novrian.info');
+define('GRAVATAR_EMAIL', 'me@example.com');
 define('GRAVATAR_HASH', md5(strtolower(trim(GRAVATAR_EMAIL))));
 
 // Bitly
-define('BITLY_USERNAME', 'nonokaki');
-define('BITLY_KEY', 'R_d16135cab8154604300f81f15c613ff0');
+define('BITLY_USERNAME', '');
+define('BITLY_KEY', '');
 
 // }}}
 
