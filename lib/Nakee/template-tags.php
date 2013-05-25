@@ -198,17 +198,15 @@ function nakee_related_posts($count = 3) {
 
         while ($related->have_posts()) {
             $related->the_post();
-            $output .= '<li class="span4">';
-            $output .= '<div class="related-post-item">';
-            $output .= '<figure>';
+            $output .= '<li class="span4 related-post-item">';
+
             $output .= '<a href="' . get_permalink() . '" title="' . nakee_get_title() . '">';
             $output .= (has_post_thumbnail())
                 ? get_the_post_thumbnail(null, 'post-small')
                 : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . WP_BASE . '/assets/img/featured-thumb.png" />' ;
+            $output .= '<strong>' . nakee_get_title() . '</strong>';
             $output .= '</a>';
-            $output .= '<figcaption><strong><a href="' . get_permalink() . '" title="' . nakee_get_title() . '">' . nakee_get_title() . '</a></strong></figcaption>';
-            $output .= '</figure>';
-            $output .= '</div>';
+
             $output .= '</li>';
         }
 
