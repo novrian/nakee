@@ -2,39 +2,778 @@
 
 /* ==========================================================================
    Base
-      ========================================================================== */
+   ========================================================================== */
 
-body { }
+::selectionn {
+    background-color: $selectionColor;
+    color: $white;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background-color: $selectionColor;
+    text-shadow: none;
+    color: $white;
+}
+
+body {
+
+    background: white image-url("main-background.png") repeat 0 0 scroll;
+
+    &.admin-bar {
+        padding-top: 28px;
+
+        .navbar-fixed-top {
+            top: 28px;
+        }
+    }
+
+}
+
+.nakee-front-teaser,
+.content-info {
+
+    @include responsive-full-width();
+    background: transparent image-url("footer-background.png") repeat 0 0 scroll;
+    padding: {
+        top: 15px;
+        bottom: 15px;
+    }
+
+    .widget-inner h3,
+    .widget-inner h4 {
+        @include single-text-shadow(0, 1px, 1px, false, darken($nakee_dark_green, 15%));
+        color: $nakee_coral;
+    }
+
+    .widget-inner > div {
+        @include single-text-shadow(0, 1px, 1px, false, darken($nakee_dark_green, 15%));
+        color: $grayLight;
+    }
+
+}
+
+.widget-inner h3 { font-size: 27px; }
 
 
-
-/* =============================================================================
+/* ==========================================================================
    Header
-      ========================================================================== */
+   ========================================================================== */
 
-.banner { }
+.navbar {
 
+    .brand {
+        margin: 0;
+        padding: 5px 0;
+        line-height: $navbarHeight;
+        text-indent: -9999em;
+
+        & > a {
+            @include logos-sprite(logo-hover);
+            display: block;
+            width: 163px;
+            height: 40px;
+        }
+
+        & > a:hover,
+        & > a:focus,
+        & > a:active {
+            @include logos-sprite(logo);
+        }
+    }
+
+    @media only screen and (min-width: 981px) {
+
+        .nav > li {
+
+            margin-right: 10px;
+
+            &:last-child { margin-right: 0; }
+
+        }
+
+        .nav > li > a {
+
+            @include reset-box-model;
+            @include border-radius(15px);
+            @include transition-property(background-color, color, border-color);
+            @include transition-duration(0.2s);
+            @include transition-timing-function(linear);
+            height: 30px;
+            margin-top: 10px;
+            padding: {
+                left: 16px;
+                right: 16px;
+            }
+            font-weight: bold;
+            line-height: 30px;
+            background: none;
+
+        }
+
+        .nav > li > a:hover,
+        .nav > li > a:focus {
+
+            @include sassy-button-gradient("simple", $linkColor, $linkColorHover, $white, "inset", false);
+            @include transition-property(background-color, color, border-color);
+            @include transition-duration(0.2s);
+            @include transition-timing-function(linear);
+            height: 29px;
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+
+        }
+
+        .nav > li > a:active {
+
+            @include sassy-button-gradient("simple", darken($linkColorHover, 8%), darken($linkColor, 8%), $white, "inset", false);
+            border-color: darken($linkColorHover, 8%);
+
+        }
+
+        .nav > .active > a,
+        .nav > .active > a:hover,
+        .nav > .active > a:focus,
+        .nav > .active > a:active,
+        .nav li.dropdown.open > .dropdown-toggle,
+        .nav li.dropdown.active > .dropdown-toggle,
+        .nav li.dropdown.open.active > .dropdown-toggle {
+
+            @include sassy-button-gradient("simple", $gray, darken($grayDark, 5%), $white, "inset", false);
+            height: 30px;
+            padding: 0 16px;
+
+        }
+
+        .nav .dropdown-toggle .caret { margin-top: 14px; }
+        .dropdown .caret { margin-left: 7px; }
+        .dropdown-menu { margin-top: 18px; }
+
+        .nav li.dropdown.open > .dropdown-toggle,
+        .nav li.dropdown.active > .dropdown-toggle,
+        .nav li.dropdown.open.active > .dropdown-toggle {
+            height: 29px;
+            padding: 0 15px;
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 979px) {
+    .navbar-fixed-top {
+        margin-bottom: 0;
+    }
+}
+
+.navbar-fixed-top .navbar-inner {
+    @include single-box-shadow(rgba(black, 0.5), 0, 1px, 5px);
+}
+
+.nakee-header {
+    @include single-text-shadow(0, 1px, 0, nil, white);
+    @include responsive-full-width;
+    padding: 15px 0;
+    background: transparent image-url("banner-background.png") repeat 50% 0 scroll;
+    border-bottom: 1px solid darken($nakee_dark_green, 10%);
+
+    h3 {
+        @include single-text-shadow($white, 0, -1px, 1px);
+        font-weight: 300;
+        font-size: 59px;
+        line-height: 1.5;
+        text-align: right;
+
+        & > strong,
+        & > b {
+            font-weight: bold;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        h3 { font-size: 44px; }
+    }
+}
+
+.nakee-main-header > .container {
+
+    padding: {
+        top: 30px;
+        bottom: 30px;
+    }
+
+    & > h3 {
+        text-align: center;
+    }
+
+    @include respond-to(desktop) {
+        & > h3 {
+            font-size: 72px;
+        }
+        & > h3 > strong {
+            font-size: 72px;
+        }
+    }
+}
+
+.nakee-front-teaser .widget {
+
+    .widget-inner > h3 {
+        font-size: 22.652px;
+        line-height: 1.25;
+
+        @media only screen and (max-width: 480px) { font-size: 20.652px; }
+    }
+
+    .widget-inner > div {
+        font-size: 13px;
+    }
+
+}
+
+.nakee-banner-border {
+
+    @include responsive-full-width;
+    @include single-box-shadow(black, 0, 1px, 2px);
+    height: 1px;
+    background-color: white;
+
+}
 
 
 /* ==========================================================================
    Content
-      ========================================================================== */
+   ========================================================================== */
 
-.content { }
+.content {
+    margin-top: 30px;
+}
 
 
 
 /* ==========================================================================
    Primary Content
-      ========================================================================== */
+   ========================================================================== */
 
-.main { }
+.main {
+    @include border-radius(15px);
+    @include single-box-shadow(rgba(black, 0.5), 0, 5px, 5px);
+    margin-bottom: 30px;
+    background-color: white;
+
+    @include respond-to(desktop) {
+        @include single-box-shadow(none);
+        margin-bottom: 0;
+        padding-bottom: 60px;
+        background: white image-url('main-border-1170.png') no-repeat 50% 100% scroll;
+
+        &[class*="span8"] {
+            background: white image-url('main-border-770.png') no-repeat 50% 100% scroll;
+        }
+    }
+
+}
+
+.page-header h1 { font-size: 45px; }
+
+.breadcrumbs-container {
+    margin-top: 20px;
+}
+
+.breadcrumb {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.main-container {
+    @include box-sizing(border-box);
+    margin-top: 1px;
+    padding: 1px 20px;
+}
+
+.blog article {
+
+    margin-bottom: $gridGutterWidth * 2;
+    padding-bottom: ($gridGutterWidth * 2) - 1;
+    border-bottom: 1px dashed $grayLighter;
+
+}
+
+.entry-title {
+    word-wrap: break-word;
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+    text-decoration: none;
+}
+
+figure.nakee-portfolio-figure {
+
+    img {
+        @include box-sizing(border-box);
+        @include single-box-shadow(none);
+        @include transition-property(box-shadow);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(linear);
+    }
+
+    img:hover {
+        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 6px);
+        @include transition-property(box-shadow);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(linear);
+    }
+
+}
+
+.blog .featured-image {
+    float: left;
+    max-width: 200px;
+}
+
+.blog .nakee-post-thumbnails a img {
+
+    @include single-box-shadow(none);
+    @include transition-property(box-shadow);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(linear);
+
+    &:hover,
+    &:focus {
+        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 6px);
+        @include transition-duration(0.4s);
+        @include transition-property("all");
+        @include transition-timing-function(linear);
+    }
+
+}
+
+.blog .entry-meta,
+.blog .entry-summary {
+
+    @media only screen and (min-width: 769px) {
+        margin-left: 200px + ($gridGutterWidth * 2);
+    }
+
+}
+
+.blog .entry-meta {
+    margin-bottom: $gridGutterWidth;
+}
+
+.blog .entry-category,
+.single .entry-category {
+    font-size: 12px;
+    text-transform: uppercase;
+
+    a {
+        font-weight: bold;
+    }
+}
+
+.updated {
+    font-family: $serifFontFamily;
+    font-size: 12px;
+    font-style: italic;
+    color: $grayLight;
+}
+
+.single header.single-meta {
+    position: relative;
+    margin: {
+        left: 0 - $gridGutterWidth;
+        right: 0 - $gridGutterWidth;
+        bottom: $gridGutterWidth;
+    }
+
+    .entry-meta {
+        position: absolute;
+        bottom: $gridGutterWidth;
+        width: 100%;
+        padding: 10px 0;
+        background-color: rgba($nakee_coral, 0.95);
+    }
+
+    @media only screen and (max-width: 768px) {
+        .entry-meta {
+            position: relative;
+            bottom: 0;
+        }
+    }
+
+    .entry-category,
+    .entry-title,
+    .updated {
+        margin: {
+            left: $gridGutterWidth;
+            right: $gridGutterWidth;
+        }
+    }
+
+    .entry-title {
+        @include single-text-shadow(darken($nakee_coral, 80%), 0, 1px, 1px);
+        color: $white;
+    }
+
+    .entry-category,
+    .updated {
+        color: $gray;
+    }
+
+}
+
+.single .entry-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &.subheader {
+            color: $nakee_light_green;
+        }
+    }
+
+    ul { list-style-type: square; }
+    ul.thumbnails { list-style-type: none; }
+
+    ol.number { list-style-type: decimal; }
+    ol.l-alpha { list-style-type: lower-alpha; }
+    ol.u-alpha { list-style-type: upper-alpha; }
+    ol.l-roman { list-style-type: lower-roman; }
+    ol.u-roman { list-style-type: upper-roman; }
+}
+
+.more-link {
+
+    @include sassy-button-gradient(simple, $linkColor, $linkColorHover, $white, raised, false);
+    @include border-radius(12px);
+    display: block;
+    float: right;
+    width: 87px;
+    margin-bottom: $gridGutterWidth;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+
+    @media only screen and (max-width: 799px) {
+        position: relative;
+        float: none;
+        left: 50%;
+        margin-left: 0 - (87px / 2);
+    }
+
+    &:hover,
+    &:focus {
+        @include sassy-button-gradient(simple, darken($linkColor, 5%), darken($linkColorHover, 5%), $white, raised, false);
+        text-decoration: none;
+    }
+
+    &:active {
+        @include sassy-button-gradient(simple, darken($linkColorHover, 5%), darken($linkColor, 5%), $white, raised, false);
+        border: 1px solid darken($linkColorHover, 10%);
+        outline: 0;
+    }
+
+}
+
+.blog .more-link {
+    margin-bottom: 0;
+}
+
+.contact-link {
+
+    @include border-radius(10px);
+    @include sassy-button-gradient('simple', $linkColor, $linkColorHover, $white, 'inset', false);
+    display: inline-block;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+        @include sassy-button-gradient('simple', $linkColor, darken($linkColorHover, 5%), $white, 'inset', false);
+        text-decoration: none;
+    }
+
+    &:active {
+        @include sassy-button-gradient('simple', darken($linkColorHover, 5%), $linkColor, $white, 'inset', false);
+        border: 1px solid darken($linkColorHover, 10%);
+    }
+
+}
+
+.pager,
+.pagination {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1223px) {
+
+    .pager, .pagination {
+        margin-bottom: 40px;
+    }
+
+}
+
+.single-section-container {
+    @include legacy-pie-clearfix;
+    @include pie-clearfix;
+    padding-bottom: $gridGutterWidth;
+    border-bottom: 1px dashed $grayLighter;
+}
+
+.single-social {
+    margin-top: $gridGutterWidth;
+    border-top: 1px dashed $grayLighter;
+}
+
+.social-button-wrap {
+    float: left;
+    max-width: 80px;
+    padding: {
+        right: $gridGutterWidth;
+    }
+}
+
+.related-post-item {
+
+    @media only screen and (max-width: 767px) {
+        &.span4 { float: left; }
+
+        max-width: 200px;
+        margin-bottom: $gridGutterWidth / 2;
+        &:last { margin-bottom: 0 }
+    }
+
+    @media only screen and (max-width: 480px) {
+        max-width: 100px;
+    }
+
+    a { word-wrap: break-word; }
+
+    a img {
+        @include single-box-shadow(none);
+        @include transition-property(box-shadow);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(linear);
+    }
+
+    a:hover img,
+    a:focus img {
+        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 6px);
+        @include transition-property(box-shadow);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(linear);
+    }
+
+    a strong {
+        display: inline-block;
+        margin-top: $gridGutterWidth / 2;
+        font-size: 18px;
+
+        @media only screen and (max-width: 767px) {
+            display: block;
+        }
+    }
+
+}
+
+/**
+ * Nakee Portfolio Post Type
+ *
+ */
+.home .type-nakee_portfolio,
+.archive .type-nakee_portfolio {
+
+    header {
+        position: relative;
+    }
+
+    h2.entry-title {
+        font-size: 22px;
+        line-height: 1.25;
+        text-align: center;
+    }
+
+    .nakee-portfolio-figure {
+        position: relative;
+    }
+
+    footer {
+
+        @media only screen and (max-width: 799px) {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+    }
+
+}
+
+.single-nakee_portfolio .type-nakee_portfolio {
+
+    header h1 { line-height: 1.5; text-align: center; }
+
+    .entry-content {
+        padding-bottom: 29px;
+        border-bottom: 1px solid #eee;
+        font-size: 22px;
+        line-height: 1.5;
+        color: $gray;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+
+    .single-widget-inner {
+
+        li > a {
+
+            @include transition-property(background-color, color);
+            @include transition-duration(0.3s);
+            @include transition-timing-function(linear);
+            display: block;
+            padding: 0 5px;
+            height: 30px;
+            line-height: 30px;
+
+        }
+
+        li > a:hover,
+        li > a:focus {
+
+            background-color: $linkColor;
+            text-decoration: none;
+            color: $white;
+
+        }
+
+        li > a:active {
+            @include single-text-shadow(darken($linkColorHover, 20%), 0, 0, 1px);
+            background-color: $linkColorHover;
+        }
+
+    }
+
+}
+
+section.portfolio-category {
+
+    margin-top: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    @media only screen and (min-width: 981px) {
+        border-top: 1px solid #eee;
+    }
+
+    h3 {
+        @include reset-box-model;
+    }
+
+    li > a {
+
+        @include transition-property(color);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(linear);
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+
+        &:hover,
+        &:focus {
+            @include transition-property(color);
+            @include transition-duration(0.3s);
+            @include transition-timing-function(linear);
+            text-decoration: none;
+        }
+
+    }
+
+}
+
+section.last-tweet-widget {
+
+    h3 { @include reset-box-model; }
+
+    .twitter-logo,
+    .tweet-container {
+        padding: {
+            top: 15px;
+            bottom: 15px;
+        }
+
+        @media only screen and (max-width: 979px) { text-align: center; }
+        @media only screen and (min-width: 769px) and (max-width: 1023px) {
+            @include box-sizing(border-box);
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .twitter-logo {
+
+        @include reset-box-model;
+        display: none;
+        visibility: hidden;
+
+        @include respond-to(desktop) {
+
+            display: block;
+            visibility: visible;
+            float: left;
+            width: 150px;
+            height: 150px;
+            padding: 15px;
+            background: transparent image-url('twitter-logo.png') no-repeat 50% 50% scroll;
+
+        }
+
+    }
+
+    .tweet-container {
+
+        @include respond-to(desktop) {
+
+            margin-left: 30px + 150;
+
+        }
+
+    }
+
+    .tweet-container .tweet-text {
+        font-size: 32px;
+        font-family: $serifFontFamily;
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1.5;
+
+        @media only screen and (max-width: 767px) { font-size: 22px; }
+    }
+
+    .tweet-time { text-align: right; color: $grayLight; }
+
+}
+
+nav.post-nav {
+    margin-bottom: $gridGutterWidth;
+}
+
+
 
 
 
 /* ==========================================================================
    Sidebar
-      ========================================================================== */
+   ========================================================================== */
 
 .sidebar { }
 
@@ -42,7 +781,7 @@ body { }
 
 /* ==========================================================================
    Posts
-      ========================================================================== */
+   ========================================================================== */
 
 .hentry header { }
 .hentry time { }
@@ -54,16 +793,155 @@ body { }
 
 /* ==========================================================================
    Footer
-      ========================================================================== */
+   ========================================================================== */
+.content-info {
+    padding-top: 0;
+}
 
-.content-info { }
+.footer-triangle {
+    @include responsive-full-width();
+    position: relative;
+    top: 0;
+    height: 10px;
+    padding-top: 15px;
+    background: transparent image-url('triangle.png') repeat-x 0 0 scroll;
+}
 
+.technology-widget-container {
+
+    padding: {
+        top: 10px;
+        bottom: 10px;
+    }
+    border: {
+        top: 1px solid darken($nakee_dark_green, 10%);
+    }
+    background-color: darken($nakee_dark_green, 5%);
+
+}
+
+.technology-widget {
+
+    ul {
+        @include reset-box-model();
+        @include reset-list-style();
+    }
+
+    ul li {
+        @include inline-block();
+    }
+
+    abbr {
+        margin-right: 19px;
+        text-decoration: none;
+        border-bottom: none;
+    }
+
+    li:last-child abbr {
+        margin: 0;
+    }
+
+    li > abbr > i {
+        @include inline-block();
+        width: 80px;
+        height: 80px;
+    }
+
+    i {
+        &.nakee-html5-icon { @include icons-sprite('html5-logo'); }
+        &.nakee-css3-icon { @include icons-sprite('css3-logo'); }
+        &.nakee-jquery-icon { @include icons-sprite('jquery-logo'); }
+        &.nakee-php-icon { @include icons-sprite('php-logo'); }
+        &.nakee-mysql-icon { @include icons-sprite('mysql-logo'); }
+        &.nakee-git-icon { @include icons-sprite('git-logo'); }
+        &.nakee-ps-icon { @include icons-sprite('ps-logo'); }
+        &.nakee-ai-icon { @include icons-sprite('ai-logo'); }
+        &.nakee-sass-icon { @include icons-sprite('sass-logo'); }
+        &.nakee-ruby-icon { @include icons-sprite('ruby-logo'); }
+        &.nakee-cake-icon { @include icons-sprite('cake-logo'); }
+        &.nakee-wp-icon { @include icons-sprite('wp-logo'); }
+    }
+
+    li:hover > abbr > i {
+        &.nakee-html5-icon { @include icons-sprite('html5-logo-hover'); }
+        &.nakee-css3-icon { @include icons-sprite('css3-logo-hover'); }
+        &.nakee-jquery-icon { @include icons-sprite('jquery-logo-hover'); }
+        &.nakee-php-icon { @include icons-sprite('php-logo-hover'); }
+        &.nakee-mysql-icon { @include icons-sprite('mysql-logo-hover'); }
+        &.nakee-git-icon { @include icons-sprite('git-logo-hover'); }
+        &.nakee-ps-icon { @include icons-sprite('ps-logo-hover'); }
+        &.nakee-ai-icon { @include icons-sprite('ai-logo-hover'); }
+        &.nakee-sass-icon { @include icons-sprite('sass-logo-hover'); }
+        &.nakee-ruby-icon { @include icons-sprite('ruby-logo-hover'); }
+        &.nakee-cake-icon { @include icons-sprite('cake-logo-hover'); }
+        &.nakee-wp-icon { @include icons-sprite('wp-logo-hover'); }
+    }
+
+}
+
+.footer-top-border {
+    background-color: darken($nakee_dark_green, 10%);
+    height: 1px;
+}
+
+.footer-text-container {
+    padding-top: 10px;
+    border-top: 1px solid desaturate(lighten($nakee_dark_green, 7%), 10%);
+}
+
+.footer-text {
+    @include single-text-shadow(darken($nakee_dark_green, 10%), 0, 1px, 1px);
+    line-height: 30px;
+    color: $grayLight;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-text,
+    .social-footer {
+        width: 100%;
+    }
+
+    .footer-text { text-align: center; }
+    .social-footer ul { float: none; text-align: center; }
+}
+
+.social-footer {
+
+    ul {
+        @include reset-box-model;
+    }
+
+    li a {
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+        vertical-align: middle;
+        color: $grayLight;
+    }
+
+    li a:hover,
+    li a:focus {
+        @include border-radius(50%);
+        text-decoration: none;
+        color: white;
+
+        &.facebook { background-color: $facebook; }
+        &.twitter { background-color: $twitter; }
+        &.github { background-color: $github; }
+        &.rss { background-color: $rss; }
+        &.to-top {}
+    }
+
+}
 
 
 /* ==========================================================================
    WordPress Generated Classes
-      See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
-         ========================================================================== */
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
 
 .aligncenter { display: block; margin: 0 auto; }
 .alignleft { float: left; }
