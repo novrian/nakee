@@ -39,7 +39,6 @@
             <?php endif; ?>
 
             <?php get_template_part('templates/social-share'); ?>
-
         </footer>
 
     </article>

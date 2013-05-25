@@ -1,7 +1,7 @@
 <?php
 /**
  * Portfolio Single Template
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
@@ -14,7 +14,7 @@ get_template_part('templates/breadcrumbs');
 <?php while (have_posts()) : the_post(); ?>
 
     <article <?php post_class(); ?>>
-            
+
         <header>
             <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure large-figure">
                 <?php if (has_post_thumbnail()) : ?>
@@ -69,11 +69,11 @@ get_template_part('templates/breadcrumbs');
                     </section>
                 </div>
                 <?php endif; ?>
-                
+
             </div>
 
         </footer>
-        
+
     </article>
 
     <nav class="post-nav">

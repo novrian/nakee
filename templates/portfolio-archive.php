@@ -1,7 +1,7 @@
 <?php
 /**
  * Portfolio Archive Template Part
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
@@ -24,11 +24,11 @@ if (!isset($portfolio) || empty($portfolio)) {
 <?php if ($portfolio->have_posts()) : ?>
 
 <div class="row-fluid">
-    
+
     <?php $result = 0; ?>
     <?php $total_post = $portfolio->post_count; ?>
     <?php while($portfolio->have_posts()) : $portfolio->the_post(); ?>
-    
+
         <?php if ($result % 3 === 0) : ?>
 </div>
 <div class="row-fluid">
@@ -47,7 +47,7 @@ if (!isset($portfolio) || empty($portfolio)) {
                     <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><img src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-500x281.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
                     <?php endif; ?>
                 </figure>
-                <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Link: <?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h1>
+                <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Link: <?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h2>
                 <div class="entry-meta hide-text"><time datetime="<?php echo get_the_date('Y-m-d'); ?>" pubdate><?php echo get_the_date(); ?></time></div>
             </header>
             <div class="entry-summary">
@@ -63,18 +63,18 @@ if (!isset($portfolio) || empty($portfolio)) {
         </article>
     </div>
         <?php $result++; ?>
-    
-    
+
+
     <?php endwhile; ?>
 </div>
-    
+
     <?php // Pagenavi ?>
     <?php if (function_exists('wp_pagenavi')) : ?>
-    
+
         <?php nakee_wp_pagenavi('large', 'centered'); ?>
-    
+
     <?php else : ?>
-    
+
         <?php if ($wp_query->max_num_pages > 1) : ?>
     <nav class="post-nav">
         <ul class="pager">
@@ -87,9 +87,9 @@ if (!isset($portfolio) || empty($portfolio)) {
         </ul>
     </nav>
         <?php endif; ?>
-    
+
     <?php endif; ?>
-    
+
 
 <?php else : ?>
 
