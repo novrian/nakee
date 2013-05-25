@@ -1,5 +1,5 @@
-Copyright (c) Novrian Y.F.
 Thanks to Ben Word and Scott Walkinshaw (Authors of Roots Starter Theme, this work base on theirs)
+Copyright (c) 2013 Novrian Yunan Firman
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
