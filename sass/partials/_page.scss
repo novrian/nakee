@@ -775,7 +775,156 @@ nav.post-nav {
    Sidebar
    ========================================================================== */
 
-.sidebar { }
+.sidebar {
+    h3 {
+        @include single-text-shadow($white, 0, 1px, 1px);
+        color: $gray;
+    }
+
+    .widget-inner {
+        p, li {
+            @include single-text-shadow($white, 0, 1px, 1px);
+            color: $gray;
+        }
+    }
+
+    .widget_recent_entries ul,
+    .widget_archive ul,
+    .widget_categories ul,
+    .widget_meta ul,
+    .widget_nav_menu .widget-inner > ul {
+        @include reset-box-model;
+
+        & > li {
+            &:first-child > a { border-top: none; }
+            &:last-child > a { border-bottom: none; }
+        }
+
+        & > li > a {
+            @include single-text-shadow($white, 0, -1px, 1px);
+            @include transition-property(background-color, border-color);
+            @include transition-duration(.15s);
+            @include transition-timing-function(linear);
+            display: block;
+            padding: 3px 0 3px $gridGutterWidth;
+            border: {
+                top: 1px solid $white;
+                bottom: 1px solid $grayLight;
+            }
+            line-height: 2;
+        }
+
+        & > li > a:hover,
+        & > li > a:active,
+        & > li.dropdown.open > a {
+            @include single-text-shadow(rgba($black, 0.4), 0, -1px, 1px);
+            @include transition-property(background-color, border-color);
+            @include transition-duration(0s);
+            @include transition-timing-function(linear);
+            border-top-color: rgba($white, 0.4);
+            border-bottom-color: rgba($black, 0.4);
+            background-color: $linkColor;
+            color: $white;
+            text-decoration: none;
+        }
+
+        & > li > a:active {
+            @include single-box-shadow(rgba($black, 0.4), 0, 1px, 4px, false, true);
+        }
+
+        a:hover,
+        a:active { text-decoration: none; }
+    }
+
+    .widget_recent_comments ul {
+        @include reset-box-model;
+
+        li {
+            line-height: 2;
+            padding: 3px 0 3px $gridGutterWidth;
+            border: {
+                top: 1px solid $white;
+                bottom: 1px solid $grayLight;
+            }
+        }
+
+        li:first-child { border-top: none; }
+        li:last-child { border-bottom: none; }
+    }
+
+    .widget_recent_entries .widget-inner span.post-date {
+        display: none !important;
+    }
+
+    .widget_nav_menu .widget-inner > ul {
+        .dropdown .caret {
+            margin: {
+                top: 12px;
+                left: 4px;
+            }
+            border-top-color: $linkColor;
+        }
+
+        .dropdown > a:hover > .caret,
+        .dropdown > a:active > .caret,
+        .dropdown.open > a:hover > .caret,
+        .dropdown.open > a:active > .caret {
+            border-top-color: $white;
+        }
+    }
+}
+
+.sticky-sidebar-container {
+    @include border-radius($gridGutterWidth / 2);
+    @include single-box-shadow(rgba($black, 0.4), 0, 2px, 2px);
+    @include box-sizing(border-box);
+    margin: {
+        bottom: $gridGutterWidth;
+    }
+    padding: 1px $gridGutterWidth $gridGutterWidth;
+    background-color: $white;
+}
+
+.sticky-widget .textwidget {
+
+    figure.nakee-gravatar {
+        width: 100%;
+
+        @media only screen and (min-width: 769px) { max-width: 100px; }
+
+        @media only screen and (max-width: 768px) { margin-bottom: $gridGutterWidth / 2; }
+    }
+
+    figure.nakee-gravatar.alignleft {
+        @media only screen and (max-width: 768px) {
+            float: none;
+            margin: {
+                right: 0;
+                left: 0;
+            }
+            text-align: center;
+        }
+    }
+
+    @media only screen and (min-width: 769px) {
+        p { margin-left: 100px + $gridGutterWidth; }
+    }
+
+    .social-link li a:hover,
+    .social-link li a:focus {
+        @include single-text-shadow(rgba($black, 0.4), 0, 1px, 1px);
+    }
+
+    .social-link[class*="align"] {
+        float: none;
+    }
+
+    .social-link.aligncenter { text-align: center; }
+    .social-link.alignright { text-align: right; }
+
+    .portfolio-link { float: right; }
+
+}
 
 
 
@@ -905,7 +1054,8 @@ nav.post-nav {
     .social-footer ul { float: none; text-align: center; }
 }
 
-.social-footer {
+.social-footer,
+.social-link {
 
     ul {
         @include reset-box-model;
@@ -935,6 +1085,16 @@ nav.post-nav {
         &.to-top {}
     }
 
+}
+
+.social-link { margin-bottom: $gridGutterWidth / 2; }
+.social-link li a {
+    &.facebook { color: $facebook; }
+    &.twitter { color: $twitter; }
+    &.github { color: $github; }
+
+    &:hover,
+    &:focus { color: $white; }
 }
 
 

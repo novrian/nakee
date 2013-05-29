@@ -20,10 +20,10 @@ $nakee_link_color:          $nakee_red;
 $nakee_headings_color2:     $nakee_coral;
 
 // Nakee Social Color
-$facebook: #3B5998;
-$twitter: #00ACED;
-$github: #171515;
-$rss: #FB9E3C;
+$facebook:  #3B5998;
+$twitter:   #00ACED;
+$github:    #171515;
+$rss:       #FB9E3C;
 
 // Nakee Typo
 // $sansFontFamily:        "Helvetica Neue", Helvetica, "nimbus-sans", sans-serif;
@@ -43,6 +43,15 @@ $linkColorHover: darken($linkColor, 15%);
 $linkColor2: #67BFAD;
 $linkColorHover2: darken($linkColor2, 15%);
 $selectionColor: #FF99DB;
+
+// Buttons
+// -------------------------
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnBorder:                         #ccc;
+
+$btnPrimaryBackground:              $linkColor;
+$btnPrimaryBackgroundHighlight:     $linkColorHover;
 
 // Navbar
 $navbarHeight:                    50px;
