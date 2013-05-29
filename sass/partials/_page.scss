@@ -885,14 +885,22 @@ nav.post-nav {
     background-color: $white;
 }
 
-.sticky-widget .textwidget {
+/* ==========================================================================
+   Widgets
+   ========================================================================== */
+.widget-inner .nakee-profile-widget {
 
     figure.nakee-gravatar {
         width: 100%;
 
         @media only screen and (min-width: 769px) { max-width: 100px; }
-
         @media only screen and (max-width: 768px) { margin-bottom: $gridGutterWidth / 2; }
+    }
+
+    &.nakee-widget-homepage figure.nakee-gravatar {
+
+        @media only screen and (min-width: 769px) { max-width: 150px; }
+
     }
 
     figure.nakee-gravatar.alignleft {
@@ -907,7 +915,9 @@ nav.post-nav {
     }
 
     @media only screen and (min-width: 769px) {
-        p { margin-left: 100px + $gridGutterWidth; }
+        p, address { margin-left: 100px + $gridGutterWidth; }
+        &.nakee-widget-homepage p,
+        &.nakee-widget-homepage address { margin-left: 150px + $gridGutterWidth; }
     }
 
     .social-link li a:hover,
@@ -924,6 +934,29 @@ nav.post-nav {
 
     .portfolio-link { float: right; }
 
+}
+
+.nakee-skills {
+    li strong.skill-title {
+        @include single-text-shadow(rgba($black, 0.8), 0, 1px, 1px);
+        font-size: 17px;
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    li div.progress {
+        @include border-radius(0);
+        margin-top: 5px;
+    }
+
+    li div.progress.nakee-progress .bar,
+    li div.progress.nakee-progress[class*="progress-info"] .bar,
+    li div.progress.nakee-progress[class*="progress-success"] .bar,
+    li div.progress.nakee-progress[class*="progress-warning"] .bar,
+    li div.progress.nakee-progress[class*="progress-danger"] .bar,{
+        @include background(linear-gradient(top, lighten(saturate($nakee_blue, 5%), 10%), rgba(darken($nakee_blue, 20%), 0.8)));
+        background-color: $nakee_blue;
+    }
 }
 
 
