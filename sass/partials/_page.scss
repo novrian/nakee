@@ -293,7 +293,9 @@ body {
     padding: 1px 20px;
 }
 
-.blog article {
+.blog article,
+.search article,
+.archive article {
 
     margin-bottom: $gridGutterWidth * 2;
     padding-bottom: ($gridGutterWidth * 2) - 1;
@@ -329,12 +331,16 @@ figure.nakee-portfolio-figure {
 
 }
 
-.blog .featured-image {
+.blog .featured-image,
+.search .featured-image,
+.archive .featured-image {
     float: left;
     max-width: 200px;
 }
 
-.blog .nakee-post-thumbnails a img {
+.blog .nakee-post-thumbnails a img,
+.search .nakee-post-thumbnails a img,
+.archive .nakee-post-thumbnails a img {
 
     @include single-box-shadow(none);
     @include transition-property(box-shadow);
@@ -351,26 +357,38 @@ figure.nakee-portfolio-figure {
 
 }
 
-.blog .entry-meta,
-.blog .entry-summary {
+.blog,
+.search,
+.archive {
 
-    @media only screen and (min-width: 769px) {
-        margin-left: 200px + ($gridGutterWidth * 2);
+    .entry-meta,
+    .entry-summary {
+        @media only screen and (min-width: 769px) {
+            margin-left: 200px + ($gridGutterWidth * 2);
+        }
     }
 
 }
 
-.blog .entry-meta {
-    margin-bottom: $gridGutterWidth;
+.blog,
+.search,
+.archive {
+    .entry-meta {
+        margin-bottom: $gridGutterWidth;
+    }
 }
 
-.blog .entry-category,
-.single .entry-category {
-    font-size: 12px;
-    text-transform: uppercase;
+.blog,
+.single,
+.archive,
+.search {
+    .entry-category {
+        font-size: 12px;
+        text-transform: uppercase;
 
-    a {
-        font-weight: bold;
+        a {
+            font-weight: bold;
+        }
     }
 }
 
@@ -480,8 +498,12 @@ figure.nakee-portfolio-figure {
 
 }
 
-.blog .more-link {
-    margin-bottom: 0;
+.blog,
+.archive,
+.search {
+    .more-link {
+        margin-bottom: 0;
+    }
 }
 
 .contact-link {
