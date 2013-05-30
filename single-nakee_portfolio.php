@@ -17,15 +17,25 @@ get_template_part('templates/breadcrumbs');
 
         <header>
             <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure large-figure">
-                <?php if (has_post_thumbnail()) : ?>
+                <?php /** if (has_post_thumbnail()) : ?>
                 <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'portfolio-large', array(
-                    'class' => 'img-polaroid',
+                    'class' => 'img-polaroid nakee-portfolio-popup',
                     'alt' => 'Portfolio : ' . get_the_title(),
                     'title' => 'Portfolio : ' . get_the_title()
                 )); ?></a>
                 <?php else : ?>
-                <img src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
-                <?php endif; ?>
+                <img class="img-polaroid nakee-portfolio-popup" src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
+                <?php endif; */ ?>
+                <?php
+                $src = WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png';
+                if (has_post_thumbnail()) {
+                    $src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-large' );
+                    $src = $src[0];
+                }
+                ?>
+                <a href="<?php echo $src; ?>" title="Portfolio: <?php the_title(); ?>" class="nakee-portfolio-popup">
+                    <img class="img-polaroid" src="<?php echo $src; ?>" alt="Portfolio: <?php the_title(); ?>" title="Portfolio: <?php the_title(); ?>">
+                </a>
             </figure>
             <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>
             <div class="entry-meta hide-text"><time datetime="<?php echo get_the_date("Y-m-d"); ?>" pubdate><?php echo get_the_date(); ?></time></div>

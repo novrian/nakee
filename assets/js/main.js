@@ -5,14 +5,14 @@
 jQuery(document).ready(function($) {
 
     /*
-    * Inspired by: 
+    * Inspired by:
     * http://designedbythomas.co.uk/blog/how-detect-width-web-browser-using-jquery
-    * 
-    * This script is ideal for getting specific class depending on device width 
+    *
+    * This script is ideal for getting specific class depending on device width
     * for enhanced theming. Media queries are fine in most cases but sometimes
-    * you want to target a specific JQuery call based on width. This will work 
+    * you want to target a specific JQuery call based on width. This will work
     * for that. Be sure to put it first in your script file. Note that you could
-    * also target the body class instead of 'html' as well. 
+    * also target the body class instead of 'html' as well.
     * Modify as needed
     */
     var current_width = $(window).width();
@@ -70,5 +70,12 @@ jQuery(document).ready(function($) {
             "padding-top" : $('.navbar-fixed-top').outerHeight(true) + "px"
         });
     }
+
+    /**
+     * Magnific Popup Init
+     */
+    $('.nakee-portfolio-popup').magnificPopup({
+        type : "image"
+    });
 
 });
