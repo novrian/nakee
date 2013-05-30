@@ -1,3 +1,4 @@
+<?php get_template_part('templates/breadcrumbs'); ?>
 <?php get_template_part('templates/page', 'header'); ?>
 
 <div class="alert">

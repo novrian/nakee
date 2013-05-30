@@ -244,8 +244,16 @@ function nakee_title() {
             printf(__('%s Technology', 'roots'), $term->name);
         } elseif (is_post_type_archive('nakee_portfolio')) {
             echo __('Portfolios', 'roots');
+        } elseif (is_day()) {
+            printf(__('Daily Archives: %s', 'roots'), get_the_date());
+        } elseif (is_month()) {
+            printf(__('Monthly Archives: %s', 'roots'), get_the_date('F Y'));
+        } elseif (is_year()) {
+            printf(__('Yearly Archives: %s', 'roots'), get_the_date('Y'));
+        } elseif (is_author()) {
+            printf(__('Author Archives: %s', 'roots'), get_the_author());
         } else {
-            printf(__('%s Posts', 'roots'), single_term_title(null, FALSE));
+            single_cat_title(__('Posts on '));
         }
     } else {
         echo roots_title();
@@ -271,8 +279,16 @@ function nakee_wp_title() {
             return sprintf(__('%s Technology', 'roots'), $term->name) . ' | ' . get_bloginfo('name');
         } elseif (is_post_type_archive('nakee_portfolio')) {
             return get_queried_object()->labels->name . ' | ' . get_bloginfo('name');
+        } elseif (is_day()) {
+            return sprintf(__('Daily Archives: %s', 'roots'), get_the_date()) . ' | ' . get_bloginfo('name');
+        } elseif (is_month()) {
+            return sprintf(__('Monthly Archives: %s', 'roots'), get_the_date('F Y')) . ' | ' . get_bloginfo('name');
+        } elseif (is_year()) {
+            return sprintf(__('Yearly Archives: %s', 'roots'), get_the_date('Y')) . ' | ' . get_bloginfo('name');
+        } elseif (is_author()) {
+            return sprintf(__('Author Archives: %s', 'roots'), get_the_author()) . ' | ' . get_bloginfo('name');
         } else {
-            return sprintf(__('%s Posts', 'roots'), single_cat_title(null, false)) . ' | ' . get_bloginfo('name');
+            return single_cat_title(__('Posts on ')) . ' | ' . get_bloginfo('name');
         }
     } else {
         return wp_title(' | ', false, 'right');

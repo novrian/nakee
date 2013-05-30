@@ -293,6 +293,13 @@ body {
     padding: 1px 20px;
 }
 
+.nakee-term-desc {
+    @include single-text-shadow($white, 0, 1px, 1px);
+    padding: 10px;
+    background-color: $nakee_main_bg;
+    border-bottom: 4px solid darken($nakee_main_bg, 5%);
+}
+
 .blog article,
 .search article,
 .archive article {
