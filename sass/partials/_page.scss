@@ -616,6 +616,23 @@ figure.nakee-portfolio-figure {
  * Nakee Portfolio Post Type
  *
  */
+.archive.post-type-archive-nakee_portfolio,
+.archive.tax-nakee_portfolio_category,
+.archive.tax-nakee_technology {
+
+    article { @include reset-box-model; }
+    .entry-summary { @include reset-box-model; }
+
+    .entry-meta {
+        @include reset-box-model;
+        @include hide-text;
+    }
+
+    .entry-category { @include hide-text; }
+    .more-link { margin-bottom: $gridGutterWidth; }
+
+}
+
 .home .type-nakee_portfolio,
 .archive .type-nakee_portfolio {
 

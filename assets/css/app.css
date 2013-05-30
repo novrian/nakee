@@ -9206,32 +9206,73 @@ figure.nakee-portfolio-figure img:hover {
  * Nakee Portfolio Post Type
  *
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003622}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003623}}
+.archive.post-type-archive-nakee_portfolio article,
+.archive.tax-nakee_portfolio_category article,
+.archive.tax-nakee_technology article {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003624}}
+.archive.post-type-archive-nakee_portfolio .entry-summary,
+.archive.tax-nakee_portfolio_category .entry-summary,
+.archive.tax-nakee_technology .entry-summary {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003626}}
+.archive.post-type-archive-nakee_portfolio .entry-meta,
+.archive.tax-nakee_portfolio_category .entry-meta,
+.archive.tax-nakee_technology .entry-meta {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003631}}
+.archive.post-type-archive-nakee_portfolio .entry-category,
+.archive.tax-nakee_portfolio_category .entry-category,
+.archive.tax-nakee_technology .entry-category {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003632}}
+.archive.post-type-archive-nakee_portfolio .more-link,
+.archive.tax-nakee_portfolio_category .more-link,
+.archive.tax-nakee_technology .more-link {
+  margin-bottom: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003639}}
 .home .type-nakee_portfolio header,
 .archive .type-nakee_portfolio header {
   position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003626}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003643}}
 .home .type-nakee_portfolio h2.entry-title,
 .archive .type-nakee_portfolio h2.entry-title {
   font-size: 22px;
   line-height: 1.25;
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003632}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003649}}
 .home .type-nakee_portfolio .nakee-portfolio-figure,
 .archive .type-nakee_portfolio .nakee-portfolio-figure {
   position: relative; }
 @media only screen and (max-width: 799px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003636}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003653}}
   .home .type-nakee_portfolio footer,
   .archive .type-nakee_portfolio footer {
     margin-bottom: 20px;
     border-bottom: 1px solid #eeeeee; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003649}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003666}}
 .single-nakee_portfolio .type-nakee_portfolio header h1 {
   line-height: 1.5;
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003651}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003668}}
 .single-nakee_portfolio .type-nakee_portfolio .entry-content {
   padding-bottom: 29px;
   border-bottom: 1px solid #eeeeee;
@@ -9239,10 +9280,10 @@ figure.nakee-portfolio-figure img:hover {
   line-height: 1.5;
   color: #555555; }
   @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003651}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003668}}
     .single-nakee_portfolio .type-nakee_portfolio .entry-content {
       font-size: 16px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003665}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003682}}
 .single-nakee_portfolio .type-nakee_portfolio .single-widget-inner li > a {
   -webkit-transition-property: background-color, color;
   -moz-transition-property: background-color, color;
@@ -9260,33 +9301,33 @@ figure.nakee-portfolio-figure img:hover {
   padding: 0 5px;
   height: 30px;
   line-height: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003678}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003695}}
 .single-nakee_portfolio .type-nakee_portfolio .single-widget-inner li > a:hover,
 .single-nakee_portfolio .type-nakee_portfolio .single-widget-inner li > a:focus {
   background-color: #f25050;
   text-decoration: none;
   color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003686}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003703}}
 .single-nakee_portfolio .type-nakee_portfolio .single-widget-inner li > a:active {
   text-shadow: 0 0 1px #860a0a;
   background-color: #e51111; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003695}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003712}}
 section.portfolio-category {
   margin-top: 15px;
   padding-top: 40px;
   padding-bottom: 40px;
   text-align: center; }
   @media only screen and (min-width: 981px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003695}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003712}}
     section.portfolio-category {
       border-top: 1px solid #eeeeee; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003706}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003723}}
   section.portfolio-category h3 {
     margin: 0;
     padding: 0;
     border: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003710}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003727}}
   section.portfolio-category li > a {
     -webkit-transition-property: color;
     -moz-transition-property: color;
@@ -9304,7 +9345,7 @@ section.portfolio-category {
     font-size: 16px;
     font-weight: bold;
     line-height: 1.5; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003721}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003738}}
     section.portfolio-category li > a:hover, section.portfolio-category li > a:focus {
       -webkit-transition-property: color;
       -moz-transition-property: color;
@@ -9320,23 +9361,23 @@ section.portfolio-category {
       transition-timing-function: linear;
       text-decoration: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003734}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003751}}
 section.last-tweet-widget h3 {
   margin: 0;
   padding: 0;
   border: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003737}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003754}}
 section.last-tweet-widget .twitter-logo,
 section.last-tweet-widget .tweet-container {
   padding-top: 15px;
   padding-bottom: 15px; }
   @media only screen and (max-width: 979px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003737}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003754}}
     section.last-tweet-widget .twitter-logo,
     section.last-tweet-widget .tweet-container {
       text-align: center; } }
   @media only screen and (min-width: 769px) and (max-width: 1023px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003737}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003754}}
     section.last-tweet-widget .twitter-logo,
     section.last-tweet-widget .tweet-container {
       -webkit-box-sizing: border-box;
@@ -9344,7 +9385,7 @@ section.last-tweet-widget .tweet-container {
       box-sizing: border-box;
       width: 100%;
       margin: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003751}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003768}}
 section.last-tweet-widget .twitter-logo {
   margin: 0;
   padding: 0;
@@ -9352,7 +9393,7 @@ section.last-tweet-widget .twitter-logo {
   display: none;
   visibility: hidden; }
   @media only screen and (min-width: 1224px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003751}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003768}}
     section.last-tweet-widget .twitter-logo {
       display: block;
       visibility: visible;
@@ -9362,10 +9403,10 @@ section.last-tweet-widget .twitter-logo {
       padding: 15px;
       background: transparent url('../img/twitter-logo.png?1366876904') no-repeat 50% 50% scroll; } }
 @media only screen and (min-width: 1224px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003771}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003788}}
   section.last-tweet-widget .tweet-container {
     margin-left: 180px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003781}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003798}}
 section.last-tweet-widget .tweet-container .tweet-text {
   font-size: 32px;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -9373,30 +9414,30 @@ section.last-tweet-widget .tweet-container .tweet-text {
   font-style: italic;
   line-height: 1.5; }
   @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003781}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003798}}
     section.last-tweet-widget .tweet-container .tweet-text {
       font-size: 22px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003791}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003808}}
 section.last-tweet-widget .tweet-time {
   text-align: right;
   color: #999999; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003795}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003812}}
 nav.post-nav {
   margin-bottom: 20px; }
 
 /* ==========================================================================
    Sidebar
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003808}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003825}}
 .sidebar h3 {
   text-shadow: 0 1px 1px white;
   color: #555555; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003814}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003831}}
 .sidebar .widget-inner p, .sidebar .widget-inner li {
   text-shadow: 0 1px 1px white;
   color: #555555; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003824}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003841}}
 .sidebar .widget_recent_entries ul,
 .sidebar .widget_archive ul,
 .sidebar .widget_categories ul,
@@ -9405,21 +9446,21 @@ nav.post-nav {
   margin: 0;
   padding: 0;
   border: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003828}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003845}}
   .sidebar .widget_recent_entries ul > li:first-child > a,
   .sidebar .widget_archive ul > li:first-child > a,
   .sidebar .widget_categories ul > li:first-child > a,
   .sidebar .widget_meta ul > li:first-child > a,
   .sidebar .widget_nav_menu .widget-inner > ul > li:first-child > a {
     border-top: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003829}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003846}}
   .sidebar .widget_recent_entries ul > li:last-child > a,
   .sidebar .widget_archive ul > li:last-child > a,
   .sidebar .widget_categories ul > li:last-child > a,
   .sidebar .widget_meta ul > li:last-child > a,
   .sidebar .widget_nav_menu .widget-inner > ul > li:last-child > a {
     border-bottom: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003832}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003849}}
   .sidebar .widget_recent_entries ul > li > a,
   .sidebar .widget_archive ul > li > a,
   .sidebar .widget_categories ul > li > a,
@@ -9443,7 +9484,7 @@ nav.post-nav {
     border-top: 1px solid white;
     border-bottom: 1px solid #999999;
     line-height: 2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003848}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003865}}
   .sidebar .widget_recent_entries ul > li > a:hover, .sidebar .widget_recent_entries ul > li > a:active, .sidebar .widget_recent_entries ul > li.dropdown.open > a,
   .sidebar .widget_archive ul > li > a:hover,
   .sidebar .widget_archive ul > li > a:active,
@@ -9475,7 +9516,7 @@ nav.post-nav {
     background-color: #f25050;
     color: white;
     text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003860}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003877}}
   .sidebar .widget_recent_entries ul > li > a:active,
   .sidebar .widget_archive ul > li > a:active,
   .sidebar .widget_categories ul > li > a:active,
@@ -9484,7 +9525,7 @@ nav.post-nav {
     -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4); }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003865}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003882}}
   .sidebar .widget_recent_entries ul a:hover,
   .sidebar .widget_recent_entries ul a:active,
   .sidebar .widget_archive ul a:hover,
@@ -9496,39 +9537,39 @@ nav.post-nav {
   .sidebar .widget_nav_menu .widget-inner > ul a:hover,
   .sidebar .widget_nav_menu .widget-inner > ul a:active {
     text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003868}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003885}}
 .sidebar .widget_recent_comments ul {
   margin: 0;
   padding: 0;
   border: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003871}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003888}}
   .sidebar .widget_recent_comments ul li {
     line-height: 2;
     padding: 3px 0 3px 20px;
     border-top: 1px solid white;
     border-bottom: 1px solid #999999; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003880}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003897}}
   .sidebar .widget_recent_comments ul li:first-child {
     border-top: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003881}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003898}}
   .sidebar .widget_recent_comments ul li:last-child {
     border-bottom: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003884}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003901}}
 .sidebar .widget_recent_entries .widget-inner span.post-date {
   display: none !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003889}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003906}}
 .sidebar .widget_nav_menu .widget-inner > ul .dropdown .caret {
   margin-top: 12px;
   margin-left: 4px;
   border-top-color: #f25050; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003900}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003917}}
 .sidebar .widget_nav_menu .widget-inner > ul .dropdown > a:hover > .caret,
 .sidebar .widget_nav_menu .widget-inner > ul .dropdown > a:active > .caret,
 .sidebar .widget_nav_menu .widget-inner > ul .dropdown.open > a:hover > .caret,
 .sidebar .widget_nav_menu .widget-inner > ul .dropdown.open > a:active > .caret {
   border-top-color: white; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003906}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003923}}
 .sticky-sidebar-container {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -9546,65 +9587,65 @@ nav.post-nav {
 /* ==========================================================================
    Widgets
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003922}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003939}}
 .widget-inner .nakee-profile-widget figure.nakee-gravatar {
   width: 100%; }
   @media only screen and (min-width: 769px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003922}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003939}}
     .widget-inner .nakee-profile-widget figure.nakee-gravatar {
       max-width: 100px; } }
   @media only screen and (max-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003922}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003939}}
     .widget-inner .nakee-profile-widget figure.nakee-gravatar {
       margin-bottom: 10px; } }
 @media only screen and (min-width: 769px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003929}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003946}}
   .widget-inner .nakee-profile-widget.nakee-widget-homepage figure.nakee-gravatar {
     max-width: 150px; } }
 @media only screen and (max-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003935}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003952}}
   .widget-inner .nakee-profile-widget figure.nakee-gravatar.alignleft {
     float: none;
     margin-right: 0;
     margin-left: 0;
     text-align: center; } }
 @media only screen and (min-width: 769px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003947}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003964}}
   .widget-inner .nakee-profile-widget p, .widget-inner .nakee-profile-widget address {
     margin-left: 120px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003949}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003966}}
   .widget-inner .nakee-profile-widget.nakee-widget-homepage p, .widget-inner .nakee-profile-widget.nakee-widget-homepage address {
     margin-left: 170px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003953}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003970}}
 .widget-inner .nakee-profile-widget .social-link li a:hover,
 .widget-inner .nakee-profile-widget .social-link li a:focus {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003957}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003974}}
 .widget-inner .nakee-profile-widget .social-link[class*="align"] {
   float: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003961}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003978}}
 .widget-inner .nakee-profile-widget .social-link.aligncenter {
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003962}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003979}}
 .widget-inner .nakee-profile-widget .social-link.alignright {
   text-align: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003964}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003981}}
 .widget-inner .nakee-profile-widget .portfolio-link {
   float: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003969}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003986}}
 .nakee-skills li strong.skill-title {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
   font-size: 17px;
   text-transform: uppercase;
   color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003976}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003993}}
 .nakee-skills li div.progress {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   margin-top: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\00003985}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031002}}
 .nakee-skills li div.progress.nakee-progress .bar,
 .nakee-skills li div.progress.nakee-progress[class*="progress-info"] .bar,
 .nakee-skills li div.progress.nakee-progress[class*="progress-success"] .bar,
@@ -9623,11 +9664,11 @@ nav.post-nav {
 /* ==========================================================================
    Footer
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031008}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031025}}
 .content-info {
   padding-top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031012}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031029}}
 .footer-triangle {
   position: relative;
   top: 0;
@@ -9635,27 +9676,27 @@ nav.post-nav {
   padding-top: 15px;
   background: transparent url('../img/triangle.png?1366883303') repeat-x 0 0 scroll; }
   @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031012}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031029}}
     .footer-triangle {
       margin-left: -20px;
       margin-right: -20px;
       padding-left: 20px;
       padding-right: 20px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031021}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031038}}
 .technology-widget-container {
   padding-top: 10px;
   padding-bottom: 10px;
   border-top: 1px solid #0c1b1c;
   background-color: #132c2e; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031053}}
 .technology-widget ul {
   margin: 0;
   padding: 0;
   border: 0;
   list-style: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031041}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031058}}
 .technology-widget ul li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -9663,15 +9704,15 @@ nav.post-nav {
   *vertical-align: auto;
   zoom: 1;
   *display: inline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031045}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031062}}
 .technology-widget abbr {
   margin-right: 19px;
   text-decoration: none;
   border-bottom: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031051}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031068}}
 .technology-widget li:last-child abbr {
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031055}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031072}}
 .technology-widget li > abbr > i {
   display: -moz-inline-stack;
   display: inline-block;
@@ -9681,116 +9722,116 @@ nav.post-nav {
   *display: inline;
   width: 80px;
   height: 80px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031062}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031079}}
 .technology-widget i.nakee-html5-icon {
   background-position: 0 -1710px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031063}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031080}}
 .technology-widget i.nakee-css3-icon {
   background-position: 0 -1980px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031064}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031081}}
 .technology-widget i.nakee-jquery-icon {
   background-position: 0 -1530px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031065}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031082}}
 .technology-widget i.nakee-php-icon {
   background-position: 0 -630px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031066}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031083}}
 .technology-widget i.nakee-mysql-icon {
   background-position: 0 -1260px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031067}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031084}}
 .technology-widget i.nakee-git-icon {
   background-position: 0 -1800px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031068}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031085}}
 .technology-widget i.nakee-ps-icon {
   background-position: 0 -720px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031069}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031086}}
 .technology-widget i.nakee-ai-icon {
   background-position: 0 -810px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031070}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031087}}
 .technology-widget i.nakee-sass-icon {
   background-position: 0 -900px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031071}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031088}}
 .technology-widget i.nakee-ruby-icon {
   background-position: 0 -270px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031072}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031089}}
 .technology-widget i.nakee-cake-icon {
   background-position: 0 -180px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031073}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031090}}
 .technology-widget i.nakee-wp-icon {
   background-position: 0 -1080px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031077}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031094}}
 .technology-widget li:hover > abbr > i.nakee-html5-icon {
   background-position: 0 -1440px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031078}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031095}}
 .technology-widget li:hover > abbr > i.nakee-css3-icon {
   background-position: 0 -2070px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031079}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031096}}
 .technology-widget li:hover > abbr > i.nakee-jquery-icon {
   background-position: 0 -1620px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031080}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031097}}
 .technology-widget li:hover > abbr > i.nakee-php-icon {
   background-position: 0 -540px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031081}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031098}}
 .technology-widget li:hover > abbr > i.nakee-mysql-icon {
   background-position: 0 -1170px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031082}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031099}}
 .technology-widget li:hover > abbr > i.nakee-git-icon {
   background-position: 0 -1890px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031083}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031100}}
 .technology-widget li:hover > abbr > i.nakee-ps-icon {
   background-position: 0 -360px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031084}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031101}}
 .technology-widget li:hover > abbr > i.nakee-ai-icon {
   background-position: 0 -450px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031085}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031102}}
 .technology-widget li:hover > abbr > i.nakee-sass-icon {
   background-position: 0 -990px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031086}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031103}}
 .technology-widget li:hover > abbr > i.nakee-ruby-icon {
   background-position: 0 -90px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031087}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031104}}
 .technology-widget li:hover > abbr > i.nakee-cake-icon {
   background-position: 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031088}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031105}}
 .technology-widget li:hover > abbr > i.nakee-wp-icon {
   background-position: 0 -1350px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031093}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031110}}
 .footer-top-border {
   background-color: #0c1b1c;
   height: 1px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031098}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031115}}
 .footer-text-container {
   padding-top: 10px;
   border-top: 1px solid #2c5053; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031120}}
 .footer-text {
   text-shadow: 0 1px 1px #0c1b1c;
   line-height: 30px;
   color: #999999; }
 
 @media only screen and (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031128}}
   .footer-text,
   .social-footer {
     width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031132}}
   .footer-text {
     text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031133}}
   .social-footer ul {
     float: none;
     text-align: center; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031139}}
 .social-footer ul,
 .social-link ul {
   margin: 0;
   padding: 0;
   border: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031143}}
 .social-footer li a,
 .social-link li a {
   display: block;
@@ -9801,7 +9842,7 @@ nav.post-nav {
   text-align: center;
   vertical-align: middle;
   color: #999999; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031155}}
 .social-footer li a:hover,
 .social-footer li a:focus,
 .social-link li a:hover,
@@ -9811,45 +9852,45 @@ nav.post-nav {
   border-radius: 50%;
   text-decoration: none;
   color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031160}}
   .social-footer li a:hover.facebook,
   .social-footer li a:focus.facebook,
   .social-link li a:hover.facebook,
   .social-link li a:focus.facebook {
     background-color: #3b5998; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031161}}
   .social-footer li a:hover.twitter,
   .social-footer li a:focus.twitter,
   .social-link li a:hover.twitter,
   .social-link li a:focus.twitter {
     background-color: #00aced; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031162}}
   .social-footer li a:hover.github,
   .social-footer li a:focus.github,
   .social-link li a:hover.github,
   .social-link li a:focus.github {
     background-color: #171515; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031163}}
   .social-footer li a:hover.rss,
   .social-footer li a:focus.rss,
   .social-link li a:hover.rss,
   .social-link li a:focus.rss {
     background-color: #fb9e3c; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031169}}
 .social-link {
   margin-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031171}}
 .social-link li a.facebook {
   color: #3b5998; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031172}}
 .social-link li a.twitter {
   color: #00aced; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031173}}
 .social-link li a.github {
   color: #171515; }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031176}}
 .social-link li a:hover, .social-link li a:focus {
   color: white; }
 
@@ -9857,20 +9898,20 @@ nav.post-nav {
    WordPress Generated Classes
    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031185}}
 .aligncenter {
   display: block;
   margin: 0 auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031186}}
 .alignleft {
   float: left; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031187}}
 .alignright {
   float: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/__server__\/novrian\.info\/wp-content\/themes\/Nakee\/sass\/partials\/_page\.scss}line{font-family:\000031188}}
 figure.alignnone {
   margin-left: 0;
   margin-right: 0; }
