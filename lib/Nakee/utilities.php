@@ -1,15 +1,18 @@
 <?php
 /**
  * Nakee Utilites Function
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
  */
 
+// Load Class
+require_once 'Class' . DS . 'Nakee_Category_Walker.php';
+
 /**
  * Nakee Custom Relative Date
- * 
+ *
  * @link http://stackoverflow.com/questions/2690504/php-producing-relative-date-time-from-timestamps Usman Ungur
  * @param int $secs
  * @return string
@@ -74,7 +77,7 @@ function nakee_relative_time($ts) {
 
 /**
  * Convert Twitter Date to UNIX Timestamp
- * 
+ *
  * @link http://stackoverflow.com/questions/6823537/best-way-to-change-twitter-api-datetimes-to-a-timestamp
  * @param string $date
  * @return int
