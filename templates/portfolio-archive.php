@@ -47,7 +47,7 @@ if (!isset($portfolio) || empty($portfolio)) {
                     <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><img src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-500x281.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
                     <?php endif; ?>
                 </figure>
-                <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Link: <?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h2>
+                <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Portfolio: <?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h2>
                 <div class="entry-meta hide-text"><time datetime="<?php echo get_the_date('Y-m-d'); ?>" pubdate><?php echo get_the_date(); ?></time></div>
             </header>
             <div class="entry-summary">
@@ -95,7 +95,7 @@ if (!isset($portfolio) || empty($portfolio)) {
 
 <div class="alert alert-block">
     <h4><?php _e('Sorry', 'roots'); ?></h4>
-    <p><?php _e('No Post match your criteria.', 'roots'); ?></p>
+    <p><?php _e('Portfolio belum tersedia', 'roots'); ?></p>
 </div>
 
 <?php endif; ?>

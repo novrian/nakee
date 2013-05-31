@@ -1,7 +1,7 @@
 <?php
 /**
  * Frontpage Template
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
@@ -43,7 +43,8 @@ wp_reset_postdata(); // Reset Query
     <?php wp_list_categories(array(
         'taxonomy' => 'nakee_portfolio_category',
         'hierarchical' => 0,
-        'title_li' => ''
+        'title_li' => '',
+        'walker' => new Nakee_Category_Walker()
     )); ?>
     </ul>
 </section>
@@ -57,36 +58,3 @@ wp_reset_postdata(); // Reset Query
         <div class="tweet-container"><?php echo nakee_display_last_tweet(); ?></div>
     </div>
 </section>
-
-<!--
-<h1>Portfolio</h1>
-<div class="row">
-    <div class="span4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed arcu sapien, venenatis at adipiscing sed, semper sed velit. Nam urna tortor, porta et tempus sit amet, ultrices a enim. Fusce ut pharetra nisi? Mauris pretium sodales scelerisque. Maecenas sollicitudin quam quam, id ultricies urna. Praesent tincidunt libero egestas massa vestibulum sodales. Ut dui justo, ultrices ut mollis sit amet, suscipit quis dolor. In et orci neque, non volutpat diam.
-    </p>
-    </div>
-    <div class="span4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed arcu sapien, venenatis at adipiscing sed, semper sed velit. Nam urna tortor, porta et tempus sit amet, ultrices a enim. Fusce ut pharetra nisi? Mauris pretium sodales scelerisque. Maecenas sollicitudin quam quam, id ultricies urna. Praesent tincidunt libero egestas massa vestibulum sodales. Ut dui justo, ultrices ut mollis sit amet, suscipit quis dolor. In et orci neque, non volutpat diam.
-    </p>
-    </div>
-    <div class="span4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed arcu sapien, venenatis at adipiscing sed, semper sed velit. Nam urna tortor, porta et tempus sit amet, ultrices a enim. Fusce ut pharetra nisi? Mauris pretium sodales scelerisque. Maecenas sollicitudin quam quam, id ultricies urna. Praesent tincidunt libero egestas massa vestibulum sodales. Ut dui justo, ultrices ut mollis sit amet, suscipit quis dolor. In et orci neque, non volutpat diam.
-    </p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="span8">
-        <h1>Blog</h1>
-        <div class="row-fluid">
-            <div class="span4" style="background-color: red;">&nbsp;</div>
-            <p class="span8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed arcu sapien, venenatis at adipiscing sed, semper sed velit. Nam urna tortor, porta et tempus sit amet, ultrices a enim. Fusce ut pharetra nisi? Mauris pretium sodales scelerisque. Maecenas sollicitudin quam quam, id ultricies urna. Praesent tincidunt libero egestas massa vestibulum sodales. Ut dui justo, ultrices ut mollis sit amet, suscipit quis dolor. In et orci neque, non volutpat diam.
-    </p>
-        </div>
-    </div>
-    <div class="span4">
-        <h1>Sidebar</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed arcu sapien, venenatis at adipiscing sed, semper sed velit. Nam urna tortor, porta et tempus sit amet, ultrices a enim. Fusce ut pharetra nisi? Mauris pretium sodales scelerisque. Maecenas sollicitudin quam quam, id ultricies urna. Praesent tincidunt libero egestas massa vestibulum sodales. Ut dui justo, ultrices ut mollis sit amet, suscipit quis dolor. In et orci neque, non volutpat diam.
-</p>
-    </div>
-</div>-->
