@@ -35,7 +35,7 @@
                 }
                 ?>
                 <span class="entry-category"><?php printf(__('About %s', 'roots'), implode(", ", $categories)); ?></span>
-                <h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo nakee_get_title(); ?></a></h1>
+                <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h1>
                 <span class="hide-text byline author vcard"><?php echo __('By', 'roots'); ?> <?php echo get_the_author(); ?></a></span>
                 <time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date(); ?></time>
             </div>
