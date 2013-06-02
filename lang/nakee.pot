@@ -1,0 +1,480 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nakee\n"
+"POT-Creation-Date: 2013-06-02 21:02+0800\n"
+"PO-Revision-Date: 2013-06-02 21:02+0800\n"
+"Last-Translator: Novrian Y. F. <me@novrian.info>\n"
+"Language-Team: Novrian Y. F. <me@novrian.info>\n"
+"Language: Bahasa Indonesia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../.\n"
+
+#: .././404.php:5
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: .././404.php:8
+msgid "It looks like this was the result of either:"
+msgstr ""
+
+#: .././404.php:10
+msgid "a mistyped address"
+msgstr ""
+
+#: .././404.php:11
+msgid "an out-of-date link"
+msgstr ""
+
+#: .././base.php:17
+msgid "Please enable Javascripts, we'll not harm you. Trust me! :)"
+msgstr ""
+
+#: .././front-page.php:40
+msgid "Portfolio Category"
+msgstr ""
+
+#: .././front-page.php:42
+msgid "View All Portfolios"
+msgstr ""
+
+#: .././front-page.php:42
+msgid "All"
+msgstr ""
+
+#: .././front-page.php:53
+msgid "Latest Tweet"
+msgstr ""
+
+#: .././single-nakee_portfolio.php:55 .././templates/entry-meta.php:19
+msgid "Categories"
+msgstr ""
+
+#: .././single-nakee_portfolio.php:59
+#, php-format
+msgid "<a href=\"%s\" rel=\"tag tooltip\" title=\"View work on %s\">%s</a>"
+msgstr ""
+
+#: .././single-nakee_portfolio.php:71
+msgid "Technologies"
+msgstr ""
+
+#: .././single-nakee_portfolio.php:75
+#, php-format
+msgid ""
+"<a href=\"%s\" rel=\"tag tooltip\" title=\"View work base on %s technology\">"
+"%s</a>"
+msgstr ""
+
+#: .././lib/activation.php:33 .././lib/activation.php:34
+msgid "Theme Activation"
+msgstr ""
+
+#: .././lib/activation.php:70
+#, php-format
+msgid "%s Theme Activation"
+msgstr ""
+
+#: .././lib/activation.php:85 .././lib/activation.php:87
+msgid "Create static front page?"
+msgstr ""
+
+#: .././lib/activation.php:89 .././lib/activation.php:102
+#: .././lib/activation.php:115 .././lib/activation.php:128
+#: .././lib/activation.php:141
+msgid "Yes"
+msgstr ""
+
+#: .././lib/activation.php:90 .././lib/activation.php:103
+#: .././lib/activation.php:116 .././lib/activation.php:129
+#: .././lib/activation.php:142
+msgid "No"
+msgstr ""
+
+#: .././lib/activation.php:93
+msgid "Create a page called Home and set it to be the static front page"
+msgstr ""
+
+#: .././lib/activation.php:98
+msgid "Change permalink structure?"
+msgstr ""
+
+#: .././lib/activation.php:100
+msgid "Update permalink structure?"
+msgstr ""
+
+#: .././lib/activation.php:106
+msgid "Change permalink structure to /&#37;postname&#37;/"
+msgstr ""
+
+#: .././lib/activation.php:111
+msgid "Change uploads folder?"
+msgstr ""
+
+#: .././lib/activation.php:113
+msgid "Update uploads folder?"
+msgstr ""
+
+#: .././lib/activation.php:119
+msgid "Change uploads folder to /assets/ instead of /wp-content/uploads/"
+msgstr ""
+
+#: .././lib/activation.php:124 .././lib/activation.php:126
+msgid "Create navigation menu?"
+msgstr ""
+
+#: .././lib/activation.php:132
+msgid "Create the Primary Navigation menu and set the location"
+msgstr ""
+
+#: .././lib/activation.php:137 .././lib/activation.php:139
+msgid "Add pages to menu?"
+msgstr ""
+
+#: .././lib/activation.php:145
+msgid "Add all current published pages to the Primary Navigation"
+msgstr ""
+
+#: .././lib/cleanup.php:382 .././lib/Nakee/template-tags.php:63
+msgid "Continued  &raquo;"
+msgstr ""
+
+#: .././lib/comments.php:35
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: .././lib/comments.php:36
+msgid "(Edit)"
+msgstr ""
+
+#: .././lib/comments.php:40
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: .././lib/init.php:11
+msgid "Primary Navigation"
+msgstr ""
+
+#: .././lib/utils.php:60
+msgid "Latest Posts"
+msgstr ""
+
+#: .././lib/utils.php:69 .././lib/Nakee/template-tags.php:248
+#: .././lib/Nakee/template-tags.php:283
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: .././lib/utils.php:71 .././lib/Nakee/template-tags.php:250
+#: .././lib/Nakee/template-tags.php:285
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: .././lib/utils.php:73 .././lib/Nakee/template-tags.php:252
+#: .././lib/Nakee/template-tags.php:287
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: .././lib/utils.php:75 .././lib/Nakee/template-tags.php:254
+#: .././lib/Nakee/template-tags.php:289
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: .././lib/utils.php:80
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: .././lib/utils.php:82
+msgid "Not Found"
+msgstr ""
+
+#: .././lib/utils.php:94
+#, php-format
+msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
+msgstr ""
+
+#: .././lib/widgets.php:8
+msgid "Primary Sidebar"
+msgstr ""
+
+#: .././lib/widgets.php:23
+msgid "Sticky Sidebar"
+msgstr ""
+
+#: .././lib/widgets.php:34
+msgid "Front Page Teaser"
+msgstr ""
+
+#: .././lib/widgets.php:45
+msgid "Front Page Footer"
+msgstr ""
+
+#: .././lib/widgets.php:74
+msgid "Use this widget to add a vCard"
+msgstr ""
+
+#: .././lib/widgets.php:76
+msgid "Roots: vCard"
+msgstr ""
+
+#: .././lib/widgets.php:103
+msgid "vCard"
+msgstr ""
+
+#: .././lib/Nakee/init.php:22 .././lib/Nakee/template-tags.php:238
+#: .././lib/Nakee/template-tags.php:246
+msgid "Portfolios"
+msgstr ""
+
+#: .././lib/Nakee/init.php:30
+msgid "Portfolio post types is use to save all portfolio post."
+msgstr ""
+
+#: .././lib/Nakee/init.php:65
+msgid "All Portfolio Categories"
+msgstr ""
+
+#: .././lib/Nakee/init.php:66
+msgid "Edit Portfolio Category"
+msgstr ""
+
+#: .././lib/Nakee/init.php:67
+msgid "View Portfolio Category"
+msgstr ""
+
+#: .././lib/Nakee/init.php:68
+msgid "Update Portfolio Category"
+msgstr ""
+
+#: .././lib/Nakee/init.php:69
+msgid "Add Portfolio Category"
+msgstr ""
+
+#: .././lib/Nakee/init.php:70
+msgid "New Portfolio Category"
+msgstr ""
+
+#: .././lib/Nakee/init.php:85
+msgid "All Technologies"
+msgstr ""
+
+#: .././lib/Nakee/init.php:86
+msgid "Edit Technology"
+msgstr ""
+
+#: .././lib/Nakee/init.php:87
+msgid "View Technology"
+msgstr ""
+
+#: .././lib/Nakee/init.php:88
+msgid "Update Technology"
+msgstr ""
+
+#: .././lib/Nakee/init.php:89
+msgid "Add Technology"
+msgstr ""
+
+#: .././lib/Nakee/init.php:90
+msgid "New Technology"
+msgstr ""
+
+#: .././lib/Nakee/template-tags.php:18
+msgid "Untitled"
+msgstr ""
+
+#: .././lib/Nakee/template-tags.php:217
+msgid "<strong>Sorry!</strong> No Related Posts Found"
+msgstr ""
+
+#: .././lib/Nakee/template-tags.php:242 .././lib/Nakee/template-tags.php:277
+#, php-format
+msgid "Work on %s"
+msgstr ""
+
+#: .././lib/Nakee/template-tags.php:244 .././lib/Nakee/template-tags.php:279
+#, php-format
+msgid "%s Technology"
+msgstr ""
+
+#: .././lib/Nakee/template-tags.php:256 .././lib/Nakee/template-tags.php:291
+msgid "Posts on "
+msgstr ""
+
+#: .././lib/Nakee/Class/Nakee_Category_Walker.php:31
+#, php-format
+msgid "View work on %s"
+msgstr ""
+
+#: .././lib/Nakee/Class/Nakee_Category_Walker.php:33
+#, php-format
+msgid "View all posts filed under %s"
+msgstr ""
+
+#: .././lib/Nakee/Class/Nakee_Category_Walker.php:49
+#, php-format
+msgid "Feed for all posts filed under %s"
+msgstr ""
+
+#: .././templates/comments.php:19
+msgid "&larr; Older comments"
+msgstr ""
+
+#: .././templates/comments.php:22
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: .././templates/comments.php:30 .././templates/comments.php:39
+msgid "<strong>Sorry!</strong> Comments are closed."
+msgstr ""
+
+#: .././templates/comments.php:46
+msgid "Leave a Reply"
+msgstr ""
+
+#: .././templates/comments.php:46
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: .././templates/comments.php:49
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: .././templates/comments.php:54
+#, php-format
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr ""
+
+#: .././templates/comments.php:55
+msgid "Log out of this account"
+msgstr ""
+
+#: .././templates/comments.php:55
+msgid "Log out &raquo;"
+msgstr ""
+
+#: .././templates/comments.php:58
+msgid "Name"
+msgstr ""
+
+#: .././templates/comments.php:60 .././templates/comments.php:65
+msgid " (required)"
+msgstr ""
+
+#: .././templates/comments.php:63
+msgid "Email (will not be published)"
+msgstr ""
+
+#: .././templates/comments.php:68
+msgid "Website"
+msgstr ""
+
+#: .././templates/comments.php:71
+msgid "Comment"
+msgstr ""
+
+#: .././templates/comments.php:73
+msgid "Submit Comment"
+msgstr ""
+
+#: .././templates/content-page.php:10 .././templates/content-single.php:23
+#: .././templates/content.php:39 .././templates/entry-meta.php:5
+#: .././templates/entry-meta.php:44
+msgid "By"
+msgstr ""
+
+#: .././templates/content-single.php:17 .././templates/content.php:33
+#, php-format
+msgid "View posts on %s"
+msgstr ""
+
+#: .././templates/content-single.php:21 .././templates/content.php:37
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: .././templates/content-single.php:38
+msgid "Pages:"
+msgstr ""
+
+#: .././templates/content-single.php:47
+msgid "Related Posts"
+msgstr ""
+
+#: .././templates/content.php:4
+msgid "Ooops"
+msgstr ""
+
+#: .././templates/content.php:5
+msgid "No results were found."
+msgstr ""
+
+#: .././templates/content.php:64 .././templates/portfolio-archive.php:82
+msgid "&larr; Older posts"
+msgstr ""
+
+#: .././templates/content.php:67 .././templates/portfolio-archive.php:85
+msgid "Newer posts &rarr;"
+msgstr ""
+
+#: .././templates/entry-meta.php:33
+msgid "Tags"
+msgstr ""
+
+#: .././templates/footer.php:43
+msgid "Copyright &copy; "
+msgstr ""
+
+#: .././templates/page-header.php:12
+msgid "Category"
+msgstr ""
+
+#: .././templates/page-header.php:12
+msgid "Tag"
+msgstr ""
+
+#: .././templates/page-header.php:18
+#, php-format
+msgid "Berikut adalah daftar jurnal yang termasuk dalam %s <strong>%s</strong>"
+msgstr ""
+
+#: .././templates/page-header.php:23
+#, php-format
+msgid ""
+"Berikut adalah hasil pencarian Jurnal dengan menggunakan query <em>%s</em>"
+msgstr ""
+
+#: .././templates/portfolio-archive.php:57
+msgid "Portfolio Categories: "
+msgstr ""
+
+#: .././templates/portfolio-archive.php:97
+msgid "Sorry"
+msgstr ""
+
+#: .././templates/portfolio-archive.php:98
+msgid "Portfolio belum tersedia"
+msgstr ""
+
+#: .././templates/searchform.php:2
+msgid "Search for:"
+msgstr ""
+
+#: .././templates/searchform.php:3
+msgid "Search"
+msgstr ""
+
+#: .././templates/social-share.php:2
+msgid "Spread the Word"
+msgstr ""

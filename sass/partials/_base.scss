@@ -1,0 +1,83 @@
+// Base.scss - Base Variables
+
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "sassy-buttons";
+
+@import "bootstrap/variables";
+
+$fontAwesomePath: "../fonts/FontAwesome";
+
+// Nakee Color
+$nakee_blue:        #7FB3E0;
+$nakee_light_green: #67BFAD;
+$nakee_dark_green:  #1B3D40;
+$nakee_red:         #F25050;
+$nakee_coral:       #F2C48D;
+$nakee_main_bg:     #F5F5F5;
+
+$nakee_link_color:          $nakee_red;
+$nakee_headings_color2:     $nakee_coral;
+
+// Nakee Social Color
+$facebook:  #3B5998;
+$twitter:   #00ACED;
+$github:    #171515;
+$rss:       #FB9E3C;
+
+// Nakee Typo
+// $sansFontFamily:        "Helvetica Neue", Helvetica, "nimbus-sans", sans-serif;
+// $headingsFontFamily :   "Helvetica Neue", Helvetica, "museo-sans", sans-serif;
+$sansFontFamily:        "open-sans", sans-serif;  // Testing Value
+$headingsFontFamily :   "museo-sans", sans-serif;   // Testing Value
+
+$baseFontSize:          14px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        20px;
+$altFontFamily:         $serifFontFamily;
+
+$headingsColor: $nakee_dark_green;
+
+$linkColor: $nakee_link_color;
+$linkColorHover: darken($linkColor, 15%);
+$linkColor2: #67BFAD;
+$linkColorHover2: darken($linkColor2, 15%);
+$selectionColor: #FF99DB;
+
+// Buttons
+// -------------------------
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnBorder:                         #ccc;
+
+$btnPrimaryBackground:              $linkColor;
+$btnPrimaryBackgroundHighlight:     $linkColorHover;
+
+// Navbar
+$navbarHeight:                    50px;
+$navbarBackgroundHighlight:       #ffffff;
+$navbarBackground:                $navbarBackgroundHighlight;
+$navbarBorder:                    darken($navbarBackground, 12%);
+
+$navbarText:                      #777;
+$navbarLinkColor:                 $linkColor;
+$navbarLinkColorHover:            $linkColorHover;
+$navbarLinkColorActive:           $white;
+$navbarLinkBackgroundHover:       $nakee_red;
+$navbarLinkBackgroundActive:      $grayDarker;
+
+// Dropdowns
+// -------------------------
+$dropdownLinkColor:             $linkColor;
+
+$dropdownLinkBackgroundActive:  $navbarLinkBackgroundActive;
+$dropdownLinkBackgroundHover:   $navbarLinkBackgroundHover;
+
+// Sprite Imports
+// -------------------------
+$backgrounds-layout: vertical;
+@import "logos/*.png";           // Logo
+
+$icons-spacing: 10px;
+@import "icons/*.png";

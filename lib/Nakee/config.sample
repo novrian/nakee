@@ -1,0 +1,68 @@
+<?php
+/**
+ * File Konfigurasi Nakee
+ *
+ * @author Novrian Y.F. <me@novrian.info>
+ * @copyright (c) 2013, Novrian Y.F.
+ * @license http://www.gnu.org/licenses/gpl.html
+ */
+
+// Version
+define('VER', '1.0.0b');
+
+// Utility Constant
+define('DS', DIRECTORY_SEPARATOR);
+
+// Variabel Tagline
+define('MAIN_TAGLINE', "Passionate<br />\n<strong>Web Developer, Web Designer</strong><br />\nFrom Makassar, <b>Indonesia</b>");
+define('BLOG_TAGLINE', "Sedikit Jurnal tentang <b>Teknologi Web</b>");
+define('CONTACT_TAGLINE', "Konsultasi? <b>Ngopi Yuk! :)</b>");
+
+
+
+
+// {{{ API CONSTANTS
+
+// Facebook
+define('FACEBOOK_USERNAME', '');
+
+// Twitter
+define('TWITTER_USERNAME', '');
+define('TWITTER_CONSUMER_KEY', '');
+define('TWITTER_CONSUMER_SECRET', '');
+define('TWITTER_ACCESS_TOKEN', '');
+define('TWITTER_ACCESS_TOKEN_SECRET', '');
+
+// Github
+define('GITHUB_USERNAME', '');
+
+// RSS
+define('FEEDBURNER_URL', 'http://feedburner.com/your-url');
+
+// Gravatar Email
+define('GRAVATAR_EMAIL', 'me@example.com');
+define('GRAVATAR_HASH', md5(strtolower(trim(GRAVATAR_EMAIL))));
+
+// Bitly
+define('BITLY_USERNAME', '');
+define('BITLY_KEY', '');
+
+// }}}
+
+
+
+
+// {{{ WORDPRESS QUERY CONTANTS
+
+define('PORTFOLIO_PER_PAGE', 6);
+
+// }}}
+
+
+
+
+// {{{ ANOTHER CONSTANS & VARIABLES
+
+define('BREADCRUMBS_SEP', '/');     // Breadcrumbs Separator
+
+// }}}
