@@ -253,7 +253,7 @@ function nakee_title() {
         } elseif (is_author()) {
             printf(__('Author Archives: %s', 'roots'), get_the_author());
         } else {
-            single_cat_title(__('Posts on '));
+            single_cat_title(__('Posts on ', 'roots'));
         }
     } else {
         echo roots_title();
@@ -288,7 +288,7 @@ function nakee_wp_title() {
         } elseif (is_author()) {
             return sprintf(__('Author Archives: %s', 'roots'), get_the_author()) . ' | ' . get_bloginfo('name');
         } else {
-            return single_cat_title(__('Posts on ')) . ' | ' . get_bloginfo('name');
+            return single_cat_title(__('Posts on ', 'roots')) . ' | ' . get_bloginfo('name');
         }
     } else {
         return wp_title(' | ', false, 'right');
