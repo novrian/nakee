@@ -17,15 +17,6 @@ get_template_part('templates/breadcrumbs');
 
         <header>
             <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure large-figure">
-                <?php /** if (has_post_thumbnail()) : ?>
-                <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo get_the_post_thumbnail(get_the_ID(), 'portfolio-large', array(
-                    'class' => 'img-polaroid nakee-portfolio-popup',
-                    'alt' => 'Portfolio : ' . get_the_title(),
-                    'title' => 'Portfolio : ' . get_the_title()
-                )); ?></a>
-                <?php else : ?>
-                <img class="img-polaroid nakee-portfolio-popup" src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
-                <?php endif; */ ?>
                 <?php
                 $src = WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png';
                 if (has_post_thumbnail()) {
