@@ -18,7 +18,7 @@ get_template_part('templates/breadcrumbs');
         <header>
             <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure large-figure">
                 <?php
-                $src = WP_BASE . '/' . THEME_PATH . '/no-portfolio-1200x619.png';
+                $src = WP_BASE . '/assets/img/no-portfolio-1200x619.png';
                 if (has_post_thumbnail()) {
                     $src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-large' );
                     $src = $src[0];

@@ -321,6 +321,12 @@ body {
 
 figure.nakee-portfolio-figure {
 
+    a.nakee-portfolio-popup {
+        cursor: -moz-zoom-in;
+        cursor: -webkit-zoom-in;
+        cursor: zoom-in;
+    }
+
     img {
         @include box-sizing(border-box);
         @include single-box-shadow(none);
