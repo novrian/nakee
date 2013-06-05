@@ -7,9 +7,6 @@
  * @license http://www.gnu.org/licenses/gpl.html
  */
 
-// Version
-define('VER', '1.0.0b');
-
 // Utility Constant
 define('DS', DIRECTORY_SEPARATOR);
 

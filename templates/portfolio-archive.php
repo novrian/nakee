@@ -44,7 +44,7 @@ if (!isset($portfolio) || empty($portfolio)) {
                         'title' => 'Portfolio : ' . get_the_title()
                     )); ?></a>
                     <?php else : ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><img src="<?php echo WP_BASE . '/' . THEME_PATH . '/no-portfolio-500x281.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
+                    <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><img class="img-polaroid" src="<?php echo WP_BASE . '/assets/img/no-portfolio-500x281.png' ?>" alt="<?php echo nakee_get_title(); ?>" title="<?php echo nakee_get_title(); ?>" /></a>
                     <?php endif; ?>
                 </figure>
                 <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Portfolio: <?php echo nakee_get_title(); ?>"><?php echo nakee_get_title(); ?></a></h2>
