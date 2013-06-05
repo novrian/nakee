@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nakee\n"
-"POT-Creation-Date: 2013-06-02 21:06+0800\n"
-"PO-Revision-Date: 2013-06-02 21:10+0800\n"
+"POT-Creation-Date: 2013-06-06 04:17+0800\n"
+"PO-Revision-Date: 2013-06-06 04:17+0800\n"
 "Last-Translator: Novrian Y. F. <me@novrian.info>\n"
 "Language-Team: Novrian Y. F. <me@novrian.info>\n"
 "Language: Bahasa Indonesia\n"
@@ -53,22 +53,22 @@ msgstr "Semua"
 msgid "Latest Tweet"
 msgstr "Tweet Terbaru"
 
-#: .././single-nakee_portfolio.php:55 .././templates/entry-meta.php:19
+#: .././single-nakee_portfolio.php:46 .././templates/entry-meta.php:19
 msgid "Categories"
 msgstr "Kategori"
 
-#: .././single-nakee_portfolio.php:59
+#: .././single-nakee_portfolio.php:50
 #, php-format
 msgid "<a href=\"%s\" rel=\"tag tooltip\" title=\"View work on %s\">%s</a>"
 msgstr ""
 "<a href=\"%s\" rel=\"tag tooltip\" title=\"Lihat hasil untuk Kategori %s\">"
 "%s</a>"
 
-#: .././single-nakee_portfolio.php:71
+#: .././single-nakee_portfolio.php:62
 msgid "Technologies"
 msgstr "Teknologi"
 
-#: .././single-nakee_portfolio.php:75
+#: .././single-nakee_portfolio.php:66
 #, php-format
 msgid ""
 "<a href=\"%s\" rel=\"tag tooltip\" title=\"View work base on %s technology\">"
@@ -240,6 +240,22 @@ msgstr "Roots: vCard"
 #: .././lib/widgets.php:103
 msgid "vCard"
 msgstr "vCard"
+
+#: .././lib/Nakee/hooks.php:19
+msgid ""
+"Jika ada tanggapan, kritik, saran, maupun pertanyaan tentang artikel ini, "
+"silahkan <a href=\"#disqus_thread\">meninggalkan komentar</a> anda. Silahkan "
+"menginput email anda pada form di bawah ini untuk menerima update jurnal "
+"terbaru dari saya. :)"
+msgstr ""
+
+#: .././lib/Nakee/hooks.php:22
+msgid "Email anda"
+msgstr ""
+
+#: .././lib/Nakee/hooks.php:23
+msgid "Langganan"
+msgstr ""
 
 #: .././lib/Nakee/init.php:22 .././lib/Nakee/template-tags.php:238
 #: .././lib/Nakee/template-tags.php:246
