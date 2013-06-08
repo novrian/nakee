@@ -850,7 +850,8 @@ nav.post-nav {
     .widget_archive ul,
     .widget_categories ul,
     .widget_meta ul,
-    .widget_nav_menu .widget-inner > ul {
+    .widget_nav_menu .widget-inner > ul,
+    .widget_links ul {
         @include reset-box-model;
 
         & > li {

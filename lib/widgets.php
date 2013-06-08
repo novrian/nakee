@@ -56,6 +56,23 @@ function roots_widgets_init() {
 }
 add_action('widgets_init', 'roots_widgets_init');
 
+
+/**
+ * Filter untuk menghilangkan output deskripsi dan rating
+ * pada widget Links
+ *
+ * @param  array $args
+ * @return array
+ */
+function nakee_widgets_link_args($args) {
+    $args['show_description'] = 0;
+    $args['show_rating'] = 0;
+    $args['show_images'] = 0;
+
+    return $args;
+}
+add_filter('widget_links_args', 'nakee_widgets_link_args');
+
 /**
  * Example vCard widget
  */
