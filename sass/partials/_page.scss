@@ -489,6 +489,7 @@ figure.nakee-portfolio-figure {
     padding: 2px 10px;
     font-size: 12px;
     text-align: center;
+    color: $white;
 
     @media only screen and (max-width: 799px) {
         position: relative;
@@ -501,12 +502,14 @@ figure.nakee-portfolio-figure {
     &:focus {
         @include sassy-button-gradient(simple, darken($linkColor, 5%), darken($linkColorHover, 5%), $white, raised, false);
         text-decoration: none;
+        color: $white;
     }
 
     &:active {
         @include sassy-button-gradient(simple, darken($linkColorHover, 5%), darken($linkColor, 5%), $white, raised, false);
         border: 1px solid darken($linkColorHover, 10%);
         outline: 0;
+        color: $white;
     }
 
 }
@@ -528,16 +531,19 @@ figure.nakee-portfolio-figure {
     height: 50px;
     line-height: 50px;
     text-align: center;
+    color: $white;
 
     &:hover,
     &:focus {
         @include sassy-button-gradient('simple', $linkColor, darken($linkColorHover, 5%), $white, 'inset', false);
         text-decoration: none;
+        color: $white;
     }
 
     &:active {
         @include sassy-button-gradient('simple', darken($linkColorHover, 5%), $linkColor, $white, 'inset', false);
         border: 1px solid darken($linkColorHover, 10%);
+        color: $white;
     }
 
 }
@@ -955,7 +961,8 @@ nav.post-nav {
 
     }
 
-    figure.nakee-gravatar.alignleft {
+    figure.nakee-gravatar[class*="alignleft"],
+    figure.nakee-gravatar[class*="alignright"] {
         @media only screen and (max-width: 768px) {
             float: none;
             margin: {
@@ -967,9 +974,14 @@ nav.post-nav {
     }
 
     @media only screen and (min-width: 769px) {
-        p, address { margin-left: 100px + $gridGutterWidth; }
-        &.nakee-widget-homepage p,
-        &.nakee-widget-homepage address { margin-left: 150px + $gridGutterWidth; }
+        figure[class*="alignleft"] ~ p,
+        figure[class*="alignleft"] ~ address { margin-left: 100px + $gridGutterWidth; }
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ address { margin-left: 150px + $gridGutterWidth; }
+        figure[class*="alignright"] ~ p,
+        figure[class*="alignright"] ~ address { margin-right: 100px + $gridGutterWidth; }
+        &.nakee-widget-homepage figure[class*="alignright"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignright"] ~ address { margin-right: 150px + $gridGutterWidth; }
     }
 
     .social-link li a:hover,
@@ -983,8 +995,6 @@ nav.post-nav {
 
     .social-link.aligncenter { text-align: center; }
     .social-link.alignright { text-align: right; }
-
-    .portfolio-link { float: right; }
 
 }
 

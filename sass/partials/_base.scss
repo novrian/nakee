@@ -9,6 +9,9 @@
 
 $fontAwesomePath: "../fonts/FontAwesome";
 
+// Bootstrap Color
+$white: #fff;
+
 // Nakee Color
 $nakee_blue:        #7FB3E0;
 $nakee_light_green: #67BFAD;
@@ -62,7 +65,7 @@ $navbarBorder:                    darken($navbarBackground, 12%);
 
 $navbarText:                      #777;
 $navbarLinkColor:                 $linkColor;
-$navbarLinkColorHover:            $linkColorHover;
+$navbarLinkColorHover:            $white;
 $navbarLinkColorActive:           $white;
 $navbarLinkBackgroundHover:       $nakee_red;
 $navbarLinkBackgroundActive:      $grayDarker;
