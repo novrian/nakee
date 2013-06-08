@@ -72,6 +72,11 @@ jQuery(document).ready(function($) {
     }
 
     /**
+     * Tooltip Init
+     */
+    $('[rel~="tooltip"]').tooltip();
+
+    /**
      * Magnific Popup Init
      */
     $('.nakee-portfolio-popup').magnificPopup({
