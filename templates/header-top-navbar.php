@@ -22,8 +22,9 @@
                 </nav>
             </div>
         </div>
+
     </div>
-    
+
     <?php
     /**
      * Banner Process
@@ -39,13 +40,13 @@
         $tagline = BLOG_TAGLINE;
     }
     ?>
-    
+
     <div class="nakee-header <?php echo stripslashes($header_class); ?>">
         <div class="container">
             <h3><?php echo stripslashes($tagline); ?></h3>
         </div>
     </div>
-    
+
     <?php // Display Widget - Frontpage Teaser ?>
     <?php if (is_front_page() && is_active_sidebar('frontpage-teaser')) : ?>
 
@@ -56,9 +57,9 @@
             </div>
         </div>
     </div>
-        
+
     <?php endif; ?>
 
     <div class="nakee-banner-border"></div>
-    
+
 </header>

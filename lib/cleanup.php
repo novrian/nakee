@@ -99,8 +99,8 @@ add_filter('wp_title', 'roots_wp_title', 10);
  */
 function roots_clean_style_tag($input) {
   preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
-  // Only display media if it's print
-  $media = $matches[3][0] === 'print' ? ' media="print"' : '';
+  // Only display media if it is meaningful
+  $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
 add_filter('style_loader_tag', 'roots_clean_style_tag');
@@ -138,33 +138,13 @@ add_filter('body_class', 'roots_body_class');
  * @author Scott Walkinshaw <scott.walkinshaw@gmail.com>
  */
 function roots_root_relative_url($input) {
-  // fix for site_url != home_url()
-  if(!is_admin() && site_url() != home_url() && stristr($input, 'wp-includes') === false) {
-  	$input = str_replace(site_url(), "", $input);
+  preg_match('|https?://([^/]+)(/.*)|i', $input, $matches);
+
+  if (isset($matches[1]) && isset($matches[2]) && $matches[1] === $_SERVER['SERVER_NAME']) {
+    return wp_make_link_relative($input);
+  } else {
+    return $input;
   }
-
-  $output = preg_replace_callback(
-    '!(https?://[^/|"]+)([^"]+)?!',
-    create_function(
-      '$matches',
-      // If full URL is home_url("/") and this isn't a subdir install, return a slash for relative root
-      'if (isset($matches[0]) && $matches[0] === home_url("/") && str_replace("http://", "", home_url("/", "http"))==$_SERVER["HTTP_HOST"]) { return "/";' .
-      // If domain is equal to home_url("/"), then make URL relative
-      '} elseif (isset($matches[0]) && strpos($matches[0], home_url("/")) !== false) { return $matches[2];' .
-      // If domain is not equal to home_url("/"), do not make external link relative
-      '} else { return $matches[0]; };'
-    ),
-    $input
-  );
-
-  // detect and correct for subdir installs
-  if($subdir = parse_url(home_url(), PHP_URL_PATH)) {
-  	if(substr($output, 0, strlen($subdir)) == (substr($output, strlen($subdir), strlen($subdir)))) {
-  		$output = substr($output, strlen($subdir));
-  	}
-  }
-
-  return $output;
 }
 
 function roots_enable_root_relative_urls() {
@@ -174,14 +154,10 @@ function roots_enable_root_relative_urls() {
 if (roots_enable_root_relative_urls()) {
   $root_rel_filters = array(
     'bloginfo_url',
-    'theme_root_uri',
-    'stylesheet_directory_uri',
-    'template_directory_uri',
-    'plugins_url',
     'the_permalink',
     'wp_list_pages',
     'wp_list_categories',
-    'wp_nav_menu',
+    'roots_wp_nav_menu_item',
     'the_content_more_link',
     'the_tags',
     'get_pagenum_link',
@@ -191,8 +167,8 @@ if (roots_enable_root_relative_urls()) {
     'year_link',
     'tag_link',
     'the_author_posts_link',
-  	'script_loader_src',
-  	'style_loader_src'
+    'script_loader_src',
+    'style_loader_src'
   );
 
   add_filters($root_rel_filters, 'roots_root_relative_url');
@@ -208,7 +184,6 @@ function roots_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
 add_filter('embed_oembed_html', 'roots_embed_wrap', 10, 4);
-add_filter('embed_googlevideo', 'roots_embed_wrap', 10, 2);
 
 /**
  * Add class="thumbnail" to attachment items
@@ -402,61 +377,6 @@ function roots_remove_default_description($bloginfo) {
   return ($bloginfo === $default_tagline) ? '' : $bloginfo;
 }
 add_filter('get_bloginfo_rss', 'roots_remove_default_description');
-
-/**
- * Allow more tags in TinyMCE including <iframe> and <script>
- */
-function roots_change_mce_options($options) {
-  $ext = 'pre[id|name|class|style],iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src],script[charset|defer|language|src|type]';
-
-  if (isset($initArray['extended_valid_elements'])) {
-    $options['extended_valid_elements'] .= ',' . $ext;
-  } else {
-    $options['extended_valid_elements'] = $ext;
-  }
-
-  return $options;
-}
-add_filter('tiny_mce_before_init', 'roots_change_mce_options');
-
-/**
- * Add additional classes onto widgets
- *
- * @link http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
- */
-function roots_widget_first_last_classes($params) {
-  global $my_widget_num;
-
-  $this_id = $params[0]['id'];
-  $arr_registered_widgets = wp_get_sidebars_widgets();
-
-  if (!$my_widget_num) {
-    $my_widget_num = array();
-  }
-
-  if (!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) {
-    return $params;
-  }
-
-  if (isset($my_widget_num[$this_id])) {
-    $my_widget_num[$this_id] ++;
-  } else {
-    $my_widget_num[$this_id] = 1;
-  }
-
-  $class = 'class="widget-' . $my_widget_num[$this_id] . ' ';
-
-  if ($my_widget_num[$this_id] == 1) {
-    $class .= 'widget-first ';
-  } elseif ($my_widget_num[$this_id] == count($arr_registered_widgets[$this_id])) {
-    $class .= 'widget-last ';
-  }
-
-  $params[0]['before_widget'] = preg_replace('/class=\"/', "$class", $params[0]['before_widget'], 1);
-
-  return $params;
-}
-add_filter('dynamic_sidebar_params', 'roots_widget_first_last_classes');
 
 /**
  * Redirects search results from /?s=query to /search/query/, converts %20 to +
