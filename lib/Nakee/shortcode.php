@@ -135,7 +135,7 @@ function nakee_base_url($atts, $content) {
         'class' => ''
     ), $atts ) );
 
-    $link = WP_BASE . '/' . urlencode(esc_attr($suf));
+    $link = home_url() . '/' . urlencode(esc_attr($suf));
     if (empty($content) || is_null($content)) { $content = $link; }
 
     return "<a href=\"$link\" title=\"" . esc_attr(strip_tags($content)) . "\" class=\"url " . esc_attr($class) . "\">$content</a>";

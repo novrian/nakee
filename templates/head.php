@@ -18,17 +18,17 @@
     <?php // Stop TypeKit ?>
 
     <?php // Favicon ?>
-    <link rel="apple-touch-icon-precomposed apple-touch-icon favicon shortcut icon" href="<?php echo WP_BASE . '/' . THEME_PATH; ?>/apple-touch-icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo WP_BASE . '/' . THEME_PATH; ?>/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo WP_BASE . '/' . THEME_PATH; ?>/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo WP_BASE . '/' . THEME_PATH; ?>/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo WP_BASE . '/' . THEME_PATH; ?>/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed apple-touch-icon favicon shortcut icon" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-144x144-precomposed.png">
     <?php // Stop Favicon ?>
 
     <?php // Selectivizr ?>
     <!--[if (gte IE 6)&(lte IE 8)]>
-    <script type="text/javascript" src="<?php echo WP_BASE . '/assets/js/vendor/selectivizr-min.js'; ?>"></script>
-    <noscript><link rel="stylesheet" href="<?php echo WP_BASE . '/assets/css/ie.css'; ?>" /></noscript>
+    <script type="text/javascript" src="<?php echo home_url() . '/assets/js/vendor/selectivizr-min.js'; ?>"></script>
+    <noscript><link rel="stylesheet" href="<?php echo home_url() . '/assets/css/ie.css'; ?>" /></noscript>
     <![endif]-->
     <?php // End Selectivizr ?>
 </head>

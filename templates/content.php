@@ -16,7 +16,7 @@
             <div class="featured-image visible-desktop">
                 <figure class="nakee-post-thumbnails">
                     <?php
-                    $featured_image = '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . WP_BASE . '/assets/img/featured-thumb.png" />';
+                    $featured_image = '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . home_url() . '/assets/img/featured-thumb.png" />';
                     if (has_post_thumbnail()) {
                         $featured_image = get_the_post_thumbnail(get_the_ID(), 'post-small');
                     }
