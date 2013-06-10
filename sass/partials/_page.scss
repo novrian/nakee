@@ -1040,6 +1040,18 @@ nav.post-nav {
    Footer
    ========================================================================== */
 .content-info {
+    margin-top: $gridGutterWidth;
+    padding-top: 0;
+}
+
+.page[class~="home"] .content-info,
+.page[class~="services"] .content-info,
+.page[class~="about"] .content-info,
+.single[class~="single-nakee_portfolio"] .content-info,
+.archive[class~="post-type-archive-nakee_portfolio"] .content-info,
+.archive[class~="tax-nakee_portfolio_category"] .content-info,
+.archive[class~="tax-nakee_technology"] .content-info {
+    margin-top: 0;
     padding-top: 0;
 }
 
