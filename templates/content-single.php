@@ -20,7 +20,7 @@
                 ?>
                 <span class="entry-category"><?php printf(__('About %s', 'roots'), implode(", ", $categories)); ?></span>
                 <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>
-                <span class="hide-text byline author vcard"><?php echo __('By', 'roots'); ?> <?php echo get_the_author(); ?></a></span>
+                <span class="hide-text byline author vcard"><?php echo __('By', 'roots'); ?> <?php echo get_the_author(); ?></span>
                 <time class="updated" datetime="<?php echo get_the_time('c'); ?>" pubdate><?php echo get_the_date(); ?></time>
             </div>
 

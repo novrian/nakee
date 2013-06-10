@@ -13,7 +13,7 @@ This is made base from Awesome [Roots Theme](http://www.rootstheme.com)
 
 ## Features
 
-* HTML5 Boilerplate’s markup and `.htaccess`
+* HTML5 Boilerplate’s markup
 * Bootstrap from Twitter
 * [Theme wrapper](doc/wrapper.md)
 * Root relative URLs
