@@ -310,6 +310,16 @@ body {
 
 }
 
+.page[class~="services"],
+.page[class~="about"] {
+
+    section .entry-content {
+        font-size: $biggerBaseFontSize;
+        line-height: 1.5;
+    }
+
+}
+
 .entry-title {
     word-wrap: break-word;
 }
@@ -725,7 +735,7 @@ article .entry-content {
     .entry-content {
         padding-bottom: 29px;
         border-bottom: 1px solid #eee;
-        font-size: 22px;
+        font-size: $biggerBaseFontSize;
         line-height: 1.5;
         color: $gray;
 
