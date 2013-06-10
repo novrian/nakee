@@ -456,26 +456,71 @@ figure.nakee-portfolio-figure {
 
 }
 
-.single .entry-content {
+article .entry-content {
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        &.subheader {
-            color: $nakee_light_green;
+        color: lighten($black, 25%);
+
+        &[class~="sub-heading"] {
+            color: darken($white, 40%);
         }
     }
 
     ul { list-style-type: square; }
     ul.thumbnails { list-style-type: none; }
 
-    ol.number { list-style-type: decimal; }
+    ol { list-style-type: decimal; }
     ol.l-alpha { list-style-type: lower-alpha; }
     ol.u-alpha { list-style-type: upper-alpha; }
     ol.l-roman { list-style-type: lower-roman; }
     ol.u-roman { list-style-type: upper-roman; }
+
+    ul, ol {
+        &[class~="h3"] > li > h3,
+        &[class~="h4"] > li > h4 { font-family: $sansFontFamily; }
+
+        &[class~="h3"] > li,
+        &[class~="h3"] > li > h3 { line-height: $baseLineHeight * 2; }
+
+        &[class~="h4"] > li,
+        &[class~="h4"] > li > h4 { line-height: $baseLineHeight; }
+
+        &[class~="h3"] > li { font-size: 24.5px; }
+        &[class~="h4"] > li { font-size: 17.5px; }
+
+        &[class~="h3"] > li p,
+        &[class~="h4"] > li p,
+        &[class~="h3"] > li ul li,
+        &[class~="h4"] > li ul li,
+        &[class~="h3"] > li ol li,
+        &[class~="h4"] > li ol li {
+            font-size: $baseFontSize;
+            line-height: $baseLineHeight;
+        }
+
+        &[class~="h3"] > li > h3,
+        &[class~="h4"] > li > h4 { margin: 0 0 10px; }
+    }
+}
+
+.single-nakee_portfolio article .entry-content {
+
+    ul[class~="h3"] > li,
+    ol[class~="h4"] > li {
+
+        & > p,
+        & > ul li,
+        & > ol li {
+            font-size: 22px;
+            line-height: 1.5;
+        }
+
+    }
+
 }
 
 .more-link {
