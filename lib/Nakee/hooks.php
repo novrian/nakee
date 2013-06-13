@@ -27,6 +27,8 @@ function nakee_suffix_content($content) {
     } elseif (get_post_type() == 'nakee_portfolio') {
         $suffix = '<p>Ingin menciptakan hal baru seperti ini, silahkan kontak saya menggunakan tombol di bawah :)</p>';
         $suffix .= sprintf('<a class="contact-link" href="%s" title="Yuk, konsultasi sambil ngopi"><i class="icon-user"></i>  Contact Me</a>', get_permalink_by_slug('kontak', 'page') . '?ref=' . get_the_ID());
+    } else {
+        return $content;
     }
 
     return $content . '<div class="clearfix"></div>' . $suffix;
