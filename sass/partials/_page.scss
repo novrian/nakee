@@ -1077,6 +1077,35 @@ nav.post-nav {
     }
 }
 
+.popular-posts .widget-inner {
+
+    ul.nakee-popular-posts li.media {
+        @include transition-property(padding, background-color);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-out);
+        margin: 0;
+        padding: ($gridGutterWidth - 1) 0 ($gridGutterWidth - 1);
+        border-top: 1px solid rgba($white, 0.8);
+        border-bottom: 1px solid rgba($grayLight, 0.8);
+
+        &:first-child { border-top: none; }
+        &:last-child { border-bottom: none; }
+
+        &:hover {
+            @include single-box-shadow(rgba($black, 0.4), 0, 2px, 2px);
+            padding: ($gridGutterWidth - 1) ($gridGutterWidth / 2);
+            border-bottom: 1px solid transparent;
+            background-color: $white;
+        }
+    }
+
+    ul.nakee-popular-posts li.media .media-summary {
+        margin: 0;
+        font-size: 10.6px;
+    }
+
+}
+
 
 
 /* ==========================================================================
