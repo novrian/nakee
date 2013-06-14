@@ -64,12 +64,24 @@ jQuery(document).ready(function($) {
      * Init Tweaks
      */
 	$('#no-script').hide();
+    $('<div id="top" />').prependTo('body').css({
+        "position"  : "absolute",
+        "top"       : 0
+    });
 
     if ($('.desktop').is('*') && $('.navbar-fixed-top').is('*')) {
         $('body').css({
             "padding-top" : $('.navbar-fixed-top').outerHeight(true) + "px"
         });
     }
+
+    // Localscroll Init
+    $.localScroll({
+        target      : $(window),
+        queue       : true,
+        duration    : 1000,
+        hash        : false
+    });
 
     /**
      * Tooltip Init

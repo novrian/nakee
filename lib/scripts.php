@@ -47,8 +47,12 @@ function roots_scripts() {
      */
     // Register Magnific Popup JS Core
     wp_register_script('nakee-magnific-popup', get_template_directory_uri() . '/assets/js/vendor/jquery.magnific-popup.js', array( 'jquery' ), null, true);
-    wp_enqueue_script('nakee-magnific-popup');
+    wp_register_script('nakee-scrollto', get_template_directory_uri() . '/assets/js/vendor/jquery.scrollTo.min.js', array( 'jquery' ), null, true );
+    wp_register_script('nakee-localscroll', get_template_directory_uri() . '/assets/js/vendor/jquery.localScroll.min.js', array( 'jquery' ), null, true);
 
+    wp_enqueue_script('nakee-scrollto');
+    wp_enqueue_script('nakee-localscroll');
+    wp_enqueue_script('nakee-magnific-popup');
     wp_enqueue_script('roots_plugins');
     wp_enqueue_script('roots_main');
 }
