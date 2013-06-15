@@ -324,6 +324,11 @@ body {
     word-wrap: break-word;
 }
 
+h1.entry-title {
+    font-size: 44.45px;
+    line-height: 1;
+}
+
 .entry-title a:hover,
 .entry-title a:focus {
     text-decoration: none;
@@ -473,6 +478,7 @@ article .entry-content {
     h4,
     h5,
     h6 {
+        font-weight: normal;
         color: lighten($black, 25%);
 
         &[class~="sub-heading"] {
@@ -567,6 +573,13 @@ article .entry-content {
         color: $white;
     }
 
+}
+
+.label[class~="nakee-label"] { padding: 4px 8px; }
+.label.nakee-label[class~="nakee-label-normal"] { font-size: 16.998px; }
+.label.nakee-label[class~="nakee-label-large"] {
+    padding: 8px 16px;
+    font-size: 22.652px;
 }
 
 .blog,
