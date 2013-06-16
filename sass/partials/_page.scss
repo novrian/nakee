@@ -513,7 +513,13 @@ article .entry-content {
         &[class~="h3"] > li ul li,
         &[class~="h4"] > li ul li,
         &[class~="h3"] > li ol li,
-        &[class~="h4"] > li ol li {
+        &[class~="h4"] > li ol li,
+        &[class~="h3"] > li table,
+        &[class~="h4"] > li table,
+        &[class~="h3"] > li address,
+        &[class~="h4"] > li address,
+        &[class~="h3"] > li span,
+        &[class~="h4"] > li span {
             font-size: $baseFontSize;
             line-height: $baseLineHeight;
         }
@@ -521,6 +527,62 @@ article .entry-content {
         &[class~="h3"] > li > h3,
         &[class~="h4"] > li > h4 { margin: 0 0 10px; }
     }
+
+    .wp-caption,
+    .size-full,
+    .size-large,
+    .size-medium,
+    .size-thumbnail { margin-bottom: $gridGutterWidth; }
+
+    .size-full,
+    .size-large,
+    .size-medium,
+    .size-thumbnail {
+        padding: 4px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0,0,0,.2);
+        @include box-shadow(0 1px 3px rgba(0,0,0,.1));
+    }
+
+    .wp-caption img[class*="size-"],
+    .wp-caption:hover img[class*="size-"],
+    .wp-caption a:hover img[class*="size-"],
+    .wp-caption a:active img[class*="size-"] {
+        padding: 0;
+        border: none;
+        @include single-box-shadow(none);
+    }
+
+    .wp-caption img { margin-bottom: 0; }
+    .wp-caption figcaption {
+        text-align: center;
+        font-size: 10px;
+        color: $grayLight;
+    }
+
+    .wp-caption,
+    a .size-full,
+    a .size-large,
+    a .size-medium,
+    a .size-thumbnail {
+        @include transition-property(all);
+        @include transition-duration(.4s);
+        @include transition-timing-function(linear);
+    }
+
+    .wp-caption:hover,
+    a:hover .size-full,
+    a:active .size-full,
+    a:hover .size-large,
+    a:active .size-large,
+    a:hover .size-medium,
+    a:active .size-medium,
+    a:hover .size-thumbnail,
+    a:active .size-thumbnail {
+        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 4px);
+    }
+
 }
 
 .single-nakee_portfolio article .entry-content {
@@ -580,6 +642,15 @@ article .entry-content {
 .label.nakee-label[class~="nakee-label-large"] {
     padding: 8px 16px;
     font-size: 22.652px;
+}
+
+.table {
+    tr > td {
+        &[class~="success"] { background-color: $successBackground; }
+        &[class~="warning"] { background-color: $warningBackground; }
+        &[class~="danger"] { background-color: $errorBackground; }
+        &[class~="info"] { background-color: $infoBackground; }
+    }
 }
 
 .blog,
