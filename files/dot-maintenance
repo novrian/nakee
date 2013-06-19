@@ -1,0 +1,37 @@
+<?php
+/**
+ * Wordpress Maintenance Files
+ *
+ * .maintenance ini adalah file maintenance yang digunakan wordpress untuk
+ * me-render halaman maintenance jika wordpress sedang mengupgrade core,
+ * ataupun plugin. Anda juga dapat memanfaatkan ini jika sedang melakukan
+ * patch terhadap wordpress anda
+ *
+ * Penggunaan:
+ * Cukup input UNIX Timestamp kapan anda menginginkan waktu maintenance
+ * selesai. Anda dapat googling untuk mencari UNIX Timestamp Generator
+ */
+
+// Unix Timestamp pada saat maintenance selesai
+define('END_MAINTENIS', 1);
+
+// Kurangi 10 menit waktu maintenance
+$maintenance = END_MAINTENIS - 600;
+
+/**
+ * Cek user login
+ *
+ * @author Matt Martz
+ * @return boolean
+ * @see http://sivel.net/2009/06/wordpress-maintenance-mode-without-a-plugin/
+ */
+function is_user_logged_in() {
+    $loggedin = false;
+    foreach ( (array) $_COOKIE as $cookie => $value ) {
+        if ( stristr($cookie, 'wordpress_logged_in_') )
+            $loggedin = true;
+    }
+    return $loggedin;
+}
+if ( ! stristr($_SERVER['REQUEST_URI'], '/wp-admin') && ! stristr($_SERVER['REQUEST_URI'], '/wp-login.php') && ! is_user_logged_in() && (END_MAINTENIS > 1) )
+    $upgrading = $maintenance;

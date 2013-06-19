@@ -1,0 +1,26 @@
+# =========================================================================== #
+#                                                                             #
+# ROOT MAINTENANCE MODE                                                       #
+#                                                                             #
+# Cukup hilangkan komentar `#` pada baris di bawah untuk mengaktifkan mode    #
+# maintenance kepada website secara keseluruhan                               #
+#                                                                             #
+# Thanks to : http://25yearsofprogramming.com/blog/20070704.htm               #
+# =========================================================================== #
+
+# RewriteEngine On
+# RewriteBase /
+# Ganti angka di bawah dengan IP Address anda :)
+# RewriteCond %{REMOTE_ADDR} !^111\.222\.333\.444$
+
+# Ganti path/to/maintenance.php ke path file maintenance anda
+# biasanya cukup /maintenance.php
+# RewriteCond %{REQUEST_URI} !^/maintenance\.php$
+# RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif|css|js) [NC]
+
+# Ganti example.com dengan nama domain anda
+# RewriteRule ^(.*)$ http://example.com/maintenance.php [R=307,L]
+
+# Deny Access to All
+# order allow,deny
+# deny from all
