@@ -471,7 +471,8 @@ figure.nakee-portfolio-figure {
 
 }
 
-article .entry-content {
+article .entry-content,
+section[class~="page"] .entry-content {
     h1,
     h2,
     h3,
