@@ -7,7 +7,7 @@
 
 @import "bootstrap/variables";
 
-$fontAwesomePath: "../fonts/FontAwesome";
+$FontAwesomePath: "../fonts/FontAwesome";
 
 // Bootstrap Color
 $white: #fff;
@@ -24,10 +24,10 @@ $nakee_link_color:          $nakee_red;
 $nakee_headings_color2:     $nakee_coral;
 
 // Nakee Social Color
-$facebook:  #3B5998;
-$twitter:   #00ACED;
-$github:    #171515;
-$rss:       #FB9E3C;
+$facebookColor:  #3B5998;
+$twitterColor:   #00ACED;
+$githubColor:    $grayDark;
+$rssColor:       #FB9E3C;
 
 // Nakee Typo
 // $sansFontFamily:        "Helvetica Neue", Helvetica, "nimbus-sans", sans-serif;

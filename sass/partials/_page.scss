@@ -316,6 +316,12 @@ body {
     section .entry-content {
         font-size: $biggerBaseFontSize;
         line-height: 1.5;
+
+        blockquote, blockquote p {
+            font-size: 22.652px;
+            line-height: 1.5;
+        }
+
     }
 
 }
@@ -1355,10 +1361,10 @@ nav.post-nav {
         text-decoration: none;
         color: white;
 
-        &.facebook { background-color: $facebook; }
-        &.twitter { background-color: $twitter; }
-        &.github { background-color: $github; }
-        &.rss { background-color: $rss; }
+        &.facebook { background-color: $facebookColor; }
+        &.twitter { background-color: $twitterColor; }
+        &.github { background-color: $githubColor; }
+        &.rss { background-color: $rssColor; }
         &.to-top {}
     }
 
@@ -1366,12 +1372,20 @@ nav.post-nav {
 
 .social-link { margin-bottom: $gridGutterWidth / 2; }
 .social-link li a {
-    &.facebook { color: $facebook; }
-    &.twitter { color: $twitter; }
-    &.github { color: $github; }
+    &.facebook { color: $facebookColor; }
+    &.twitter { color: $twitterColor; }
+    &.github { color: $grayDark; }
 
     &:hover,
     &:focus { color: $white; }
+}
+
+.social-footer li a.github {
+    &:hover,
+    &:focus {
+        background-color: $white;
+        color: $grayDark;
+    }
 }
 
 
