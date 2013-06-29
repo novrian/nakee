@@ -92,6 +92,9 @@ jQuery(document).ready(function($) {
      * Magnific Popup Init
      */
     $('.nakee-portfolio-popup').magnificPopup({
+        image : {
+            verticalFit : false
+        },
         type : "image"
     });
 

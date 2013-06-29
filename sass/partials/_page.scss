@@ -354,6 +354,8 @@ figure.nakee-portfolio-figure {
         @include transition-property(box-shadow);
         @include transition-duration(0.3s);
         @include transition-timing-function(linear);
+        display: block;
+        margin: 0 auto;
     }
 
     img:hover {
