@@ -72,7 +72,7 @@ function nakee_excerpt_more($more) {
  *   | centered | right`
  * @param boolean $post WP Link Pages Switch
  */
-function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
+function nakee_wp_pagenavi($size = null, $position = null, $post = false, $queryArgs = null) {
     $class[] = "pagination";    // Set Main Class
 
     // Pagination Size Class
@@ -89,7 +89,7 @@ function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
 
     // Set Before & After Output
     $before = "<nav id=\"main-pagination\"><div class=\"" . implode(" ", $class) . "\"><ul>";
-    $after = "</ul></div>";
+    $after = "</ul></div></nav>";
 
     // Build Args
     $args = array(
@@ -99,9 +99,11 @@ function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
 
     // Cloning untuk wp_link_pages()
     if ($post) {
-        $args = array_merge($args, array(
-            'type' => 'multipart'
-        ));
+        $args['type'] = 'multipart';
+    }
+
+    if ($queryArgs) {
+        $args['query'] = $queryArgs;
     }
 
     return wp_pagenavi($args);

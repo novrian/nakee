@@ -1,7 +1,7 @@
 <?php
 /**
  * Portfolio Post Type Template
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
@@ -18,12 +18,12 @@ get_template_part('templates/page', 'header');
  * with Sticky value is true
  */
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args = array(
+$portfolio_args = array(
     'post_type' => 'nakee_portfolio',
     'posts_per_page' => PORTFOLIO_PER_PAGE,
-    'paged' => $paged
+    'paged' => $paged,
 );
-$portfolio = new WP_Query($args);
+$portfolio = new WP_Query($portfolio_args);
 
 get_template_part('templates/portfolio', 'archive');
 

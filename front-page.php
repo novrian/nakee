@@ -17,7 +17,7 @@ get_template_part('templates/page', 'header');
  * Query Portfolio Post Type
  * with Sticky value is true
  */
-$args = array(
+$portfolio_args = array(
     'post_type' => 'nakee_portfolio',
     'meta_query' => array(
         array(
@@ -29,7 +29,7 @@ $args = array(
     ),
     'posts_per_page' => PORTFOLIO_PER_PAGE
 );
-$portfolio = new WP_Query($args);
+$portfolio = new WP_Query($portfolio_args);
 
 get_template_part('templates/portfolio', 'archive');
 
