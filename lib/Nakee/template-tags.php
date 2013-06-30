@@ -60,7 +60,7 @@ remove_filter('excerpt_more', 'roots_excerpt_more');
  * @return string
  */
 function nakee_excerpt_more($more) {
-  return '<a href="' . get_permalink() . '" class="more-link">' . __('Continued  &raquo;', 'roots') . '</a>';
+    return (is_nakee_element()) ? null : '<a href="' . get_permalink() . '" class="more-link">' . __('Continued  &raquo;', 'roots') . '</a>';
 }
 
 
