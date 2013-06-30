@@ -38,24 +38,44 @@ add_shortcode('nakee_alert','nakee_alert_box');
 
 
 /**
- * Example Box Label
+ * Label
  *
  * Label box untuk contoh kode program
  * Cara penggunaan :
- *	`[nakee_example class='class']content[/nakee_example]`
+ *	`[nakee_label class='class']content[/nakee_label]`
  *
  * @param mixed $atts
  * @param mixed $content
  * @return string
  */
-function nakee_example_box( $atts, $content=null ) {
+function nakee_label( $atts, $content=null ) {
 	extract( shortcode_atts( array(
-		'class' => 'example_box'
+		'class' => '',
+        'size' => 'normal'
 	), $atts ) );
-	$output = '<div class="'. strtolower(esc_attr($class)) .' nakee-example-box">'. do_shortcode($content) .'</div>';
+
+    $css = explode(" ", $class);
+    if (in_array("label-success", $css)) {
+        $icon = "<i class=\"icon-check\"></i>&nbsp;&nbsp;";
+    }
+
+    if (in_array("label-warning", $css) || in_array("label-important", $css)) {
+        $icon = "<i class=\"icon-exclamation-sign\"></i>&nbsp;&nbsp;";
+    }
+
+    if (in_array("label-info", $css)) {
+        $icon = "<i class=\"icon-info\"></i>&nbsp;&nbsp;";
+    }
+
+    $size_class = 'nakee-label-normal';
+    if ($size !== 'normal') { $size_class = 'nakee-label-' . strtolower(esc_attr($size)); }
+
+    $class .= ' ' . $size_class;
+
+	$output = '<div class="label '. strtolower(esc_attr($class)) .' nakee-label">'. do_shortcode($icon . $content) .'</div>';
 	return $output;
 }
-add_shortcode('nakee_example','nakee_example_box');
+add_shortcode('nakee_label','nakee_label');
 
 
 /**
@@ -135,7 +155,7 @@ function nakee_base_url($atts, $content) {
         'class' => ''
     ), $atts ) );
 
-    $link = WP_BASE . '/' . urlencode(esc_attr($suf));
+    $link = home_url() . '/' . urlencode(esc_attr($suf));
     if (empty($content) || is_null($content)) { $content = $link; }
 
     return "<a href=\"$link\" title=\"" . esc_attr(strip_tags($content)) . "\" class=\"url " . esc_attr($class) . "\">$content</a>";

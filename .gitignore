@@ -45,3 +45,5 @@ CONTRIBUTING.md
 # Nakee Ignore
 *.backup
 lib/Nakee/config.php
+assets/img/icons-*.png
+assets/img/logos-*.png

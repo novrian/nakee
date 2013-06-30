@@ -18,14 +18,17 @@ get_template_part('templates/breadcrumbs');
         <header>
             <figure id="<?php the_ID(); ?>-portfolio" class="nakee-portfolio-figure large-figure">
                 <?php
-                $src = WP_BASE . '/assets/img/no-portfolio-1200x619.png';
+                $src['thumb'] = home_url() . '/assets/img/no-portfolio-1200x619.png';
+                $src['full'] = $src['thumb'];
                 if (has_post_thumbnail()) {
-                    $src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-large' );
-                    $src = $src[0];
+                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'portfolio-large' );
+                    $src['thumb'] = $thumb[0];
+                    $full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
+                    $src['full'] = $full[0];
                 }
                 ?>
-                <a href="<?php echo $src; ?>" title="Portfolio: <?php the_title(); ?>" class="nakee-portfolio-popup">
-                    <img class="img-polaroid" src="<?php echo $src; ?>" alt="Portfolio: <?php the_title(); ?>" title="Portfolio: <?php the_title(); ?>">
+                <a href="<?php echo $src['full']; ?>" title="Portfolio: <?php the_title(); ?>" class="nakee-portfolio-popup">
+                    <img class="img-polaroid" src="<?php echo $src['thumb']; ?>" alt="Portfolio: <?php the_title(); ?>" title="Portfolio: <?php the_title(); ?>">
                 </a>
             </figure>
             <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>

@@ -60,7 +60,7 @@ remove_filter('excerpt_more', 'roots_excerpt_more');
  * @return string
  */
 function nakee_excerpt_more($more) {
-  return '<a href="' . get_permalink() . '" class="more-link">' . __('Continued  &raquo;', 'roots') . '</a>';
+    return (is_nakee_element()) ? null : '<a href="' . get_permalink() . '" class="more-link">' . __('Continued  &raquo;', 'roots') . '</a>';
 }
 
 
@@ -72,7 +72,7 @@ function nakee_excerpt_more($more) {
  *   | centered | right`
  * @param boolean $post WP Link Pages Switch
  */
-function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
+function nakee_wp_pagenavi($size = null, $position = null, $post = false, $queryArgs = null) {
     $class[] = "pagination";    // Set Main Class
 
     // Pagination Size Class
@@ -89,7 +89,7 @@ function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
 
     // Set Before & After Output
     $before = "<nav id=\"main-pagination\"><div class=\"" . implode(" ", $class) . "\"><ul>";
-    $after = "</ul></div>";
+    $after = "</ul></div></nav>";
 
     // Build Args
     $args = array(
@@ -99,9 +99,11 @@ function nakee_wp_pagenavi($size = null, $position = null, $post = false) {
 
     // Cloning untuk wp_link_pages()
     if ($post) {
-        $args = array_merge($args, array(
-            'type' => 'multipart'
-        ));
+        $args['type'] = 'multipart';
+    }
+
+    if ($queryArgs) {
+        $args['query'] = $queryArgs;
     }
 
     return wp_pagenavi($args);
@@ -203,7 +205,7 @@ function nakee_related_posts($count = 3) {
             $output .= '<a href="' . get_permalink() . '" title="' . nakee_get_title() . '">';
             $output .= (has_post_thumbnail())
                 ? get_the_post_thumbnail(null, 'post-small')
-                : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . WP_BASE . '/assets/img/featured-thumb.png" />' ;
+                : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . home_url() . '/assets/img/featured-thumb.png" />' ;
             $output .= '<strong>' . nakee_get_title() . '</strong>';
             $output .= '</a>';
 

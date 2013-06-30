@@ -310,8 +310,29 @@ body {
 
 }
 
+.page[class~="services"],
+.page[class~="about"] {
+
+    section .entry-content {
+        font-size: $biggerBaseFontSize;
+        line-height: 1.5;
+
+        blockquote, blockquote p {
+            font-size: 22.652px;
+            line-height: 1.5;
+        }
+
+    }
+
+}
+
 .entry-title {
     word-wrap: break-word;
+}
+
+h1.entry-title {
+    font-size: 44.45px;
+    line-height: 1;
 }
 
 .entry-title a:hover,
@@ -333,6 +354,8 @@ figure.nakee-portfolio-figure {
         @include transition-property(box-shadow);
         @include transition-duration(0.3s);
         @include transition-timing-function(linear);
+        display: block;
+        margin: 0 auto;
     }
 
     img:hover {
@@ -456,26 +479,135 @@ figure.nakee-portfolio-figure {
 
 }
 
-.single .entry-content {
+article .entry-content,
+section[class~="page"] .entry-content {
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        &.subheader {
-            color: $nakee_light_green;
+        font-weight: normal;
+        color: lighten($black, 25%);
+
+        &[class~="sub-heading"] {
+            color: darken($white, 40%);
         }
     }
 
     ul { list-style-type: square; }
     ul.thumbnails { list-style-type: none; }
 
-    ol.number { list-style-type: decimal; }
+    ol { list-style-type: decimal; }
     ol.l-alpha { list-style-type: lower-alpha; }
     ol.u-alpha { list-style-type: upper-alpha; }
     ol.l-roman { list-style-type: lower-roman; }
     ol.u-roman { list-style-type: upper-roman; }
+
+    ul, ol {
+        &[class~="h3"] > li > h3,
+        &[class~="h4"] > li > h4 { font-family: $sansFontFamily; }
+
+        &[class~="h3"] > li,
+        &[class~="h3"] > li > h3 { line-height: $baseLineHeight * 2; }
+
+        &[class~="h4"] > li,
+        &[class~="h4"] > li > h4 { line-height: $baseLineHeight; }
+
+        &[class~="h3"] > li { font-size: 24.5px; }
+        &[class~="h4"] > li { font-size: 17.5px; }
+
+        &[class~="h3"] > li p,
+        &[class~="h4"] > li p,
+        &[class~="h3"] > li ul li,
+        &[class~="h4"] > li ul li,
+        &[class~="h3"] > li ol li,
+        &[class~="h4"] > li ol li,
+        &[class~="h3"] > li table,
+        &[class~="h4"] > li table,
+        &[class~="h3"] > li address,
+        &[class~="h4"] > li address,
+        &[class~="h3"] > li span,
+        &[class~="h4"] > li span {
+            font-size: $baseFontSize;
+            line-height: $baseLineHeight;
+        }
+
+        &[class~="h3"] > li > h3,
+        &[class~="h4"] > li > h4 { margin: 0 0 10px; }
+    }
+
+    .wp-caption,
+    .size-full,
+    .size-large,
+    .size-medium,
+    .size-thumbnail { margin-bottom: $gridGutterWidth; }
+
+    .size-full,
+    .size-large,
+    .size-medium,
+    .size-thumbnail {
+        padding: 4px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0,0,0,.2);
+        @include box-shadow(0 1px 3px rgba(0,0,0,.1));
+    }
+
+    .wp-caption img[class*="size-"],
+    .wp-caption:hover img[class*="size-"],
+    .wp-caption a:hover img[class*="size-"],
+    .wp-caption a:active img[class*="size-"] {
+        padding: 0;
+        border: none;
+        @include single-box-shadow(none);
+    }
+
+    .wp-caption img { margin-bottom: 0; }
+    .wp-caption figcaption {
+        text-align: center;
+        font-size: 10px;
+        color: $grayLight;
+    }
+
+    .wp-caption,
+    a .size-full,
+    a .size-large,
+    a .size-medium,
+    a .size-thumbnail {
+        @include transition-property(all);
+        @include transition-duration(.4s);
+        @include transition-timing-function(linear);
+    }
+
+    .wp-caption:hover,
+    a:hover .size-full,
+    a:active .size-full,
+    a:hover .size-large,
+    a:active .size-large,
+    a:hover .size-medium,
+    a:active .size-medium,
+    a:hover .size-thumbnail,
+    a:active .size-thumbnail {
+        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 4px);
+    }
+
+}
+
+.single-nakee_portfolio article .entry-content {
+
+    ul[class~="h3"] > li,
+    ol[class~="h4"] > li {
+
+        & > p,
+        & > ul li,
+        & > ol li {
+            font-size: 22px;
+            line-height: 1.5;
+        }
+
+    }
+
 }
 
 .more-link {
@@ -489,6 +621,7 @@ figure.nakee-portfolio-figure {
     padding: 2px 10px;
     font-size: 12px;
     text-align: center;
+    color: $white;
 
     @media only screen and (max-width: 799px) {
         position: relative;
@@ -501,14 +634,32 @@ figure.nakee-portfolio-figure {
     &:focus {
         @include sassy-button-gradient(simple, darken($linkColor, 5%), darken($linkColorHover, 5%), $white, raised, false);
         text-decoration: none;
+        color: $white;
     }
 
     &:active {
         @include sassy-button-gradient(simple, darken($linkColorHover, 5%), darken($linkColor, 5%), $white, raised, false);
         border: 1px solid darken($linkColorHover, 10%);
         outline: 0;
+        color: $white;
     }
 
+}
+
+.label[class~="nakee-label"] { padding: 4px 8px; }
+.label.nakee-label[class~="nakee-label-normal"] { font-size: 16.998px; }
+.label.nakee-label[class~="nakee-label-large"] {
+    padding: 8px 16px;
+    font-size: 22.652px;
+}
+
+.table {
+    tr > td {
+        &[class~="success"] { background-color: $successBackground; }
+        &[class~="warning"] { background-color: $warningBackground; }
+        &[class~="danger"] { background-color: $errorBackground; }
+        &[class~="info"] { background-color: $infoBackground; }
+    }
 }
 
 .blog,
@@ -528,16 +679,19 @@ figure.nakee-portfolio-figure {
     height: 50px;
     line-height: 50px;
     text-align: center;
+    color: $white;
 
     &:hover,
     &:focus {
         @include sassy-button-gradient('simple', $linkColor, darken($linkColorHover, 5%), $white, 'inset', false);
         text-decoration: none;
+        color: $white;
     }
 
     &:active {
         @include sassy-button-gradient('simple', darken($linkColorHover, 5%), $linkColor, $white, 'inset', false);
         border: 1px solid darken($linkColorHover, 10%);
+        color: $white;
     }
 
 }
@@ -656,6 +810,11 @@ figure.nakee-portfolio-figure {
         position: relative;
     }
 
+    .entry-summary {
+        font-size: 13px;
+        color: $gray;
+    }
+
     footer {
 
         @media only screen and (max-width: 799px) {
@@ -674,7 +833,7 @@ figure.nakee-portfolio-figure {
     .entry-content {
         padding-bottom: 29px;
         border-bottom: 1px solid #eee;
-        font-size: 22px;
+        font-size: $biggerBaseFontSize;
         line-height: 1.5;
         color: $gray;
 
@@ -844,7 +1003,8 @@ nav.post-nav {
     .widget_archive ul,
     .widget_categories ul,
     .widget_meta ul,
-    .widget_nav_menu .widget-inner > ul {
+    .widget_nav_menu .widget-inner > ul,
+    .widget_links ul {
         @include reset-box-model;
 
         & > li {
@@ -955,7 +1115,8 @@ nav.post-nav {
 
     }
 
-    figure.nakee-gravatar.alignleft {
+    figure.nakee-gravatar[class*="alignleft"],
+    figure.nakee-gravatar[class*="alignright"] {
         @media only screen and (max-width: 768px) {
             float: none;
             margin: {
@@ -967,9 +1128,14 @@ nav.post-nav {
     }
 
     @media only screen and (min-width: 769px) {
-        p, address { margin-left: 100px + $gridGutterWidth; }
-        &.nakee-widget-homepage p,
-        &.nakee-widget-homepage address { margin-left: 150px + $gridGutterWidth; }
+        figure[class*="alignleft"] ~ p,
+        figure[class*="alignleft"] ~ address { margin-left: 100px + $gridGutterWidth; }
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ address { margin-left: 150px + $gridGutterWidth; }
+        figure[class*="alignright"] ~ p,
+        figure[class*="alignright"] ~ address { margin-right: 100px + $gridGutterWidth; }
+        &.nakee-widget-homepage figure[class*="alignright"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignright"] ~ address { margin-right: 150px + $gridGutterWidth; }
     }
 
     .social-link li a:hover,
@@ -983,8 +1149,6 @@ nav.post-nav {
 
     .social-link.aligncenter { text-align: center; }
     .social-link.alignright { text-align: right; }
-
-    .portfolio-link { float: right; }
 
 }
 
@@ -1011,6 +1175,35 @@ nav.post-nav {
     }
 }
 
+.popular-posts .widget-inner {
+
+    ul.nakee-popular-posts li.media {
+        @include transition-property(padding, background-color);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-out);
+        margin: 0;
+        padding: ($gridGutterWidth - 1) 0 ($gridGutterWidth - 1);
+        border-top: 1px solid rgba($white, 0.8);
+        border-bottom: 1px solid rgba($grayLight, 0.8);
+
+        &:first-child { border-top: none; }
+        &:last-child { border-bottom: none; }
+
+        &:hover {
+            @include single-box-shadow(rgba($black, 0.4), 0, 2px, 2px);
+            padding: ($gridGutterWidth - 1) ($gridGutterWidth / 2);
+            border-bottom: 1px solid transparent;
+            background-color: $white;
+        }
+    }
+
+    ul.nakee-popular-posts li.media .media-summary {
+        margin: 0;
+        font-size: 10.6px;
+    }
+
+}
+
 
 
 /* ==========================================================================
@@ -1029,6 +1222,18 @@ nav.post-nav {
    Footer
    ========================================================================== */
 .content-info {
+    margin-top: $gridGutterWidth;
+    padding-top: 0;
+}
+
+.page[class~="home"] .content-info,
+.page[class~="services"] .content-info,
+.page[class~="about"] .content-info,
+.single[class~="single-nakee_portfolio"] .content-info,
+.archive[class~="post-type-archive-nakee_portfolio"] .content-info,
+.archive[class~="tax-nakee_portfolio_category"] .content-info,
+.archive[class~="tax-nakee_technology"] .content-info {
+    margin-top: 0;
     padding-top: 0;
 }
 
@@ -1163,10 +1368,10 @@ nav.post-nav {
         text-decoration: none;
         color: white;
 
-        &.facebook { background-color: $facebook; }
-        &.twitter { background-color: $twitter; }
-        &.github { background-color: $github; }
-        &.rss { background-color: $rss; }
+        &.facebook { background-color: $facebookColor; }
+        &.twitter { background-color: $twitterColor; }
+        &.github { background-color: $githubColor; }
+        &.rss { background-color: $rssColor; }
         &.to-top {}
     }
 
@@ -1174,12 +1379,20 @@ nav.post-nav {
 
 .social-link { margin-bottom: $gridGutterWidth / 2; }
 .social-link li a {
-    &.facebook { color: $facebook; }
-    &.twitter { color: $twitter; }
-    &.github { color: $github; }
+    &.facebook { color: $facebookColor; }
+    &.twitter { color: $twitterColor; }
+    &.github { color: $grayDark; }
 
     &:hover,
     &:focus { color: $white; }
+}
+
+.social-footer li a.github {
+    &:hover,
+    &:focus {
+        background-color: $white;
+        color: $grayDark;
+    }
 }
 
 

@@ -6,7 +6,7 @@
 
             <div class="featured-image">
                 <figure class="nakee-post-thumbnails">
-                    <?php echo (has_post_thumbnail()) ? get_the_post_thumbnail(get_the_ID(), 'post-large') : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . WP_BASE . '/assets/img/featured.png" />'; ?>
+                    <?php echo (has_post_thumbnail()) ? get_the_post_thumbnail(get_the_ID(), 'post-large') : '<img alt="' . nakee_get_title() . '" title="' . nakee_get_title() . '" src="' . home_url() . '/assets/img/featured.png" />'; ?>
                 </figure>
             </div>
             <div class="entry-meta">
