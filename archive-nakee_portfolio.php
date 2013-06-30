@@ -28,3 +28,5 @@ $portfolio = new WP_Query($portfolio_args);
 get_template_part('templates/portfolio', 'archive');
 
 wp_reset_postdata(); // Reset to Normal Query
+
+get_template_part('templates/portfolio', 'category-link');
