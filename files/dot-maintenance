@@ -5,7 +5,10 @@
  * .maintenance ini adalah file maintenance yang digunakan wordpress untuk
  * me-render halaman maintenance jika wordpress sedang mengupgrade core,
  * ataupun plugin. Anda juga dapat memanfaatkan ini jika sedang melakukan
- * patch terhadap wordpress anda
+ * patch terhadap wordpress anda.
+ *
+ * Tempatkan file ini pada root wordpress anda
+ * yaitu lokasi dari konstanta ABSPATH
  *
  * Penggunaan:
  * Cukup input UNIX Timestamp kapan anda menginginkan waktu maintenance
