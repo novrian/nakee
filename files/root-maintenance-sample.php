@@ -12,7 +12,7 @@
  */
 
 // Lokasi folder wp-content anda
-define('CONTENT_DIR', dirname(__FILE__) . '/wp-content');
+define('CONTENT_DIR', dirname(__FILE__) . '/content');
 
 // Ambil file maintenance.php pada folder wp-content
 require_once CONTENT_DIR . '/maintenance.php';
