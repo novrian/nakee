@@ -3,37 +3,23 @@
 // --------------------------------------------------
 
 
-// Use the .menu class on any <li> element within the topbar or ul.tabs and you'll get some superfancy dropdowns
-.dropup,
-.dropdown {
-  position: relative;
-}
-.dropdown-toggle {
-  // The caret makes the toggle a bit too tall in IE7
-  *margin-bottom: -3px;
-}
-.dropdown-toggle:active,
-.open .dropdown-toggle {
-  outline: 0;
-}
-
 // Dropdown arrow/caret
 // --------------------
 .caret {
   display: inline-block;
   width: 0;
   height: 0;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
   vertical-align: top;
   border-top:   4px solid $black;
+=======
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   4px solid @dropdown-caret-color;
+>>>>>>> upstream/master:assets/less/dropdowns.less
   border-right: 4px solid transparent;
   border-left:  4px solid transparent;
   content: "";
-}
-
-// Place the caret
-.dropdown .caret {
-  margin-top: 8px;
-  margin-left: 2px;
 }
 
 // The dropdown menu (ul)
@@ -42,13 +28,18 @@
   position: absolute;
   top: 100%;
   left: 0;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
   z-index: $zindexDropdown;
+=======
+  z-index: @zindex-dropdown;
+>>>>>>> upstream/master:assets/less/dropdowns.less
   display: none; // none by default, but block on "open" of the menu
   float: left;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0; // override default ul
   list-style: none;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
   background-color: $dropdownBackground;
   border: 1px solid #ccc; // Fallback for IE7-8
   border: 1px solid $dropdownBorder;
@@ -59,6 +50,14 @@
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+=======
+  background-color: @dropdown-bg;
+  border: 1px solid @dropdown-fallback-border; // IE8 fallback
+  border: 1px solid @dropdown-border;
+  border-radius: @border-radius-base;
+  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+  .background-clip(padding-box);
+>>>>>>> upstream/master:assets/less/dropdowns.less
 
   // Aligns the dropdown menu to right
   &.pull-right {
@@ -68,7 +67,11 @@
 
   // Dividers (basically an hr) within the dropdown
   .divider {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
     @include nav-divider($dropdownDividerTop, $dropdownDividerBottom);
+=======
+    .nav-divider(@dropdown-divider-bg);
+>>>>>>> upstream/master:assets/less/dropdowns.less
   }
 
   // Links within the dropdown menu
@@ -77,14 +80,21 @@
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
     line-height: $baseLineHeight;
     color: $dropdownLinkColor;
     white-space: nowrap;
+=======
+    line-height: @line-height-base;
+    color: @dropdown-link-color;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+>>>>>>> upstream/master:assets/less/dropdowns.less
   }
 }
 
 // Hover/Focus state
 // -----------
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
 .dropdown-submenu:hover > a,
@@ -92,10 +102,20 @@
   text-decoration: none;
   color: $dropdownLinkColorHover;
   @include gradient-vertical($dropdownLinkBackgroundHover, darken($dropdownLinkBackgroundHover, 5%));
+=======
+.dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @dropdown-link-hover-color;
+    #gradient > .vertical(@start-color: @dropdown-link-hover-bg; @end-color: darken(@dropdown-link-hover-bg, 5%));
+  }
+>>>>>>> upstream/master:assets/less/dropdowns.less
 }
 
 // Active state
 // ------------
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
@@ -103,11 +123,23 @@
   text-decoration: none;
   outline: 0;
   @include gradient-vertical($dropdownLinkBackgroundActive, darken($dropdownLinkBackgroundActive, 5%));
+=======
+.dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: @dropdown-link-active-color;
+    text-decoration: none;
+    outline: 0;
+    #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
+  }
+>>>>>>> upstream/master:assets/less/dropdowns.less
 }
 
 // Disabled state
 // --------------
 // Gray out text and ensure the hover/focus state remains gray
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
@@ -121,20 +153,75 @@
   background-image: none; // Remove CSS gradient
   @include reset-filter();
   cursor: default;
+=======
+.dropdown-menu > .disabled > a {
+  &,
+  &:hover,
+  &:focus {
+    color: @gray-light;
+  }
+}
+// Nuke hover/focus effects
+.dropdown-menu > .disabled > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none; // Remove CSS gradient
+    .reset-filter();
+    cursor: not-allowed;
+  }
+>>>>>>> upstream/master:assets/less/dropdowns.less
 }
 
 // Open state for the dropdown
 // ---------------------------
 .open {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
   // IE7's z-index only goes to the nearest positioned ancestor, which would
   // make the menu appear below buttons that appeared later on the page
   *z-index: $zindexDropdown;
 
   & > .dropdown-menu {
+=======
+  // Show the menu
+  > .dropdown-menu {
+>>>>>>> upstream/master:assets/less/dropdowns.less
     display: block;
+  }
+
+  // Remove the outline when :focus is triggered
+  > a {
+    outline: 0;
   }
 }
 
+// Dropdown section headers
+// ---------------------------
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: @font-size-small;
+  line-height: @line-height-base;
+  color: @gray-light;
+}
+
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
+=======
+
+
+// Backdrop to catch body clicks on mobile, etc.
+// ---------------------------
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: @zindex-dropdown - 10;
+}
+
+>>>>>>> upstream/master:assets/less/dropdowns.less
 // Right aligned dropdowns
 // ---------------------------
 .pull-right > .dropdown-menu {
@@ -151,7 +238,11 @@
   // Reverse the caret
   .caret {
     border-top: 0;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
     border-bottom: 4px solid $black;
+=======
+    border-bottom: 4px solid @dropdown-caret-color;
+>>>>>>> upstream/master:assets/less/dropdowns.less
     content: "";
   }
   // Different positioning for bottom up menu
@@ -161,6 +252,7 @@
     margin-bottom: 1px;
   }
 }
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_dropdowns.scss
 
 // Sub menus
 // ---------------------------
@@ -235,3 +327,5 @@
   margin-top: 2px; // give it some space to breathe
   @include border-radius($baseBorderRadius);
 }
+=======
+>>>>>>> upstream/master:assets/less/dropdowns.less

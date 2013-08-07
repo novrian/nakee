@@ -12,7 +12,7 @@
     <figure class="nakee-post-thumbnails">
         <a href="<?php the_permalink(); ?>" title="<?php echo nakee_get_title(); ?>"><?php echo (has_post_thumbnail()) ? get_the_post_thumbnail(get_the_ID(), 'post-small') : wp_get_attachment_image($GLOBALS['nakee']['def-featured-img'][rand(0, 3)], 'post-small'); ?></a>
     </figure>
-    
+
     <?php $categories = get_the_category(); ?>
     <?php if ($categories) : ?>
     <section id="<?php echo 'category-' . get_the_ID(); ?>" class="nakee-secondary-tag-meta">
@@ -26,7 +26,7 @@
         </div>
     </section>
     <?php endif; ?>
-    
+
     <?php $tags = get_the_tags(); ?>
     <?php if ($tags) : ?>
     <section id="<?php echo 'tag-' . get_the_ID(); ?>" class="nakee-secondary-tag-meta">
@@ -40,9 +40,8 @@
         </div>
     </section>
     <?php endif; ?>
-    
+
     <p class="hide-text byline author vcard"><?php echo __('By', 'roots'); ?> <?php echo get_the_author(); ?></a></p>
 </div>
 
 <?php endif; ?>
-
