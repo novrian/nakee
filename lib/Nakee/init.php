@@ -1,9 +1,9 @@
 <?php
 /**
  * Nakee Init
- * 
+ *
  * Kumpulan fungsi-fungsi yang di-hooks pada init
- * 
+ *
  * @author Novrian Y.F. <me@novrian.info>
  * @copyright (c) 2013, Novrian Y.F.
  * @license http://www.gnu.org/licenses/gpl.html GNU/GPL License
@@ -14,38 +14,42 @@
  * Setting Custom Post Type
  */
 function nakee_post_type_settings() {
-    
+
     /**
      * Portfolio Post Type
      */
     register_post_type('nakee_portfolio', array(
-        'label' => __('Portfolios', 'roots'),
         'labels' => array(
-            'add_new' => _x('Add Portfolios', 'roots'),
-            'add_new_item' => _x('Add Portfolios', 'roots'),
-            'edit_item' => _x('Edit Portfolios', 'roots'),
-            'new_item' => _x('New Portfolios', 'roots'),
-            'view_item' => _x('View Portfolios', 'roots')
+            'name' => __('Portfolios', 'roots'),
+            'singular_name' => __('Portfolio', 'roots'),
+            'add_new' => _x('Add Portfolios', 'nakee_portfolio', 'roots'),
+            'add_new_item' => __('Add Portfolios', 'roots'),
+            'edit_item' => __('Edit Portfolios', 'roots'),
+            'new_item' => __('New Portfolios', 'roots'),
+            'view_item' => __('View Portfolios', 'roots'),
+            'search_items' => __('Search Portfolios', 'roots'),
+            'not_found' => __('No Portfolio found', 'roots'),
+            'not_found_in_trash' => __('No Portfolio found in Trash', 'roots')
         ),
         'description' => __('Portfolio post types is use to save all portfolio post.', 'roots'),
         'public' => true,
         'menu_position' => 5,
-        'taxonomies' => array(
-            'nakee_portfolio_category',
-            'nakee_technology'
-        ),
         'supports' => array(
             'title',
             'editor',
             'thumbnail',
             'custom-fields'
         ),
+        'taxonomies' => array(
+            'nakee_portfolio_category',
+            'nakee_technology'
+        ),
         'has_archive' => true,
         'rewrite' => array(
             'slug' => 'portfolio'
         )
     ));
-    
+
 }
 add_action('init', 'nakee_post_type_settings');
 
@@ -54,7 +58,7 @@ add_action('init', 'nakee_post_type_settings');
  * Setting Custom Taxonomy
  */
 function nakee_taxonomy_settings() {
-    
+
     /**
      * Kategori Portfolio
      */
@@ -74,7 +78,7 @@ function nakee_taxonomy_settings() {
         ),
         'hierarchical' => true
     ));
-    
+
     /**
      * Teknologi Portfolio
      */
@@ -93,7 +97,7 @@ function nakee_taxonomy_settings() {
             'slug' => 'teknologi'
         )
     ));
-    
+
 }
 add_action('init', 'nakee_taxonomy_settings');
 
