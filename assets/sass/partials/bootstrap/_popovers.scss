@@ -7,11 +7,16 @@
   position: absolute;
   top: 0;
   left: 0;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
   z-index: $zindexPopover;
+=======
+  z-index: @zindex-popover;
+>>>>>>> upstream/master:assets/less/popovers.less
   display: none;
-  max-width: 276px;
+  max-width: @popover-max-width;
   padding: 1px;
   text-align: left; // Reset given new insertion method
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
   background-color: $popoverBackground;
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
@@ -20,6 +25,16 @@
   border: 1px solid rgba(0,0,0,.2);
   @include border-radius(6px);
   @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+=======
+  background-color: @popover-bg;
+  -webkit-bg-clip: padding-box;
+     -moz-bg-clip: padding;
+  background-clip: padding-box;
+  border: 1px solid @popover-fallback-border-color;
+  border: 1px solid @popover-border-color;
+  border-radius: @border-radius-large;
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
+>>>>>>> upstream/master:assets/less/popovers.less
 
   // Overrides for proper insertion
   white-space: normal;
@@ -34,9 +49,10 @@
 .popover-title {
   margin: 0; // reset heading margin
   padding: 8px 14px;
-  font-size: 14px;
+  font-size: @font-size-base;
   font-weight: normal;
   line-height: 18px;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
   background-color: $popoverTitleBackground;
   border-bottom: 1px solid darken($popoverTitleBackground, 5%);
   @include border-radius(5px 5px 0 0);
@@ -44,6 +60,11 @@
   &:empty {
     display: none;
   }
+=======
+  background-color: @popover-title-bg;
+  border-bottom: 1px solid darken(@popover-title-bg, 5%);
+  border-radius: 5px 5px 0 0;
+>>>>>>> upstream/master:assets/less/popovers.less
 }
 
 .popover-content {
@@ -54,79 +75,147 @@
 //
 // .arrow is outer, .arrow:after is inner
 
-.popover .arrow,
-.popover .arrow:after {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
+.popover .arrow {
+  &,
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
 }
 .popover .arrow {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
   border-width: $popoverArrowOuterWidth;
 }
 .popover .arrow:after {
   border-width: $popoverArrowWidth;
+=======
+  border-width: @popover-arrow-outer-width;
+}
+.popover .arrow:after {
+  border-width: @popover-arrow-width;
+>>>>>>> upstream/master:assets/less/popovers.less
   content: "";
 }
 
 .popover {
   &.top .arrow {
     left: 50%;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
     margin-left: -$popoverArrowOuterWidth;
     border-bottom-width: 0;
     border-top-color: #999; // IE8 fallback
     border-top-color: $popoverArrowOuterColor;
     bottom: -$popoverArrowOuterWidth;
+=======
+    margin-left: -@popover-arrow-outer-width;
+    border-bottom-width: 0;
+    border-top-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-top-color: @popover-arrow-outer-color;
+    bottom: -@popover-arrow-outer-width;
+>>>>>>> upstream/master:assets/less/popovers.less
     &:after {
+      content: " ";
       bottom: 1px;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
       margin-left: -$popoverArrowWidth;
       border-bottom-width: 0;
       border-top-color: $popoverArrowColor;
+=======
+      margin-left: -@popover-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: @popover-arrow-color;
+>>>>>>> upstream/master:assets/less/popovers.less
     }
   }
   &.right .arrow {
     top: 50%;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
     left: -$popoverArrowOuterWidth;
     margin-top: -$popoverArrowOuterWidth;
     border-left-width: 0;
     border-right-color: #999; // IE8 fallback
     border-right-color: $popoverArrowOuterColor;
+=======
+    left: -@popover-arrow-outer-width;
+    margin-top: -@popover-arrow-outer-width;
+    border-left-width: 0;
+    border-right-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-right-color: @popover-arrow-outer-color;
+>>>>>>> upstream/master:assets/less/popovers.less
     &:after {
+      content: " ";
       left: 1px;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
       bottom: -$popoverArrowWidth;
       border-left-width: 0;
       border-right-color: $popoverArrowColor;
+=======
+      bottom: -@popover-arrow-width;
+      border-left-width: 0;
+      border-right-color: @popover-arrow-color;
+>>>>>>> upstream/master:assets/less/popovers.less
     }
   }
   &.bottom .arrow {
     left: 50%;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
     margin-left: -$popoverArrowOuterWidth;
     border-top-width: 0;
     border-bottom-color: #999; // IE8 fallback
     border-bottom-color: $popoverArrowOuterColor;
     top: -$popoverArrowOuterWidth;
+=======
+    margin-left: -@popover-arrow-outer-width;
+    border-top-width: 0;
+    border-bottom-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-bottom-color: @popover-arrow-outer-color;
+    top: -@popover-arrow-outer-width;
+>>>>>>> upstream/master:assets/less/popovers.less
     &:after {
+      content: " ";
       top: 1px;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
       margin-left: -$popoverArrowWidth;
       border-top-width: 0;
       border-bottom-color: $popoverArrowColor;
+=======
+      margin-left: -@popover-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: @popover-arrow-color;
+>>>>>>> upstream/master:assets/less/popovers.less
     }
   }
 
   &.left .arrow {
     top: 50%;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
     right: -$popoverArrowOuterWidth;
     margin-top: -$popoverArrowOuterWidth;
     border-right-width: 0;
     border-left-color: #999; // IE8 fallback
     border-left-color: $popoverArrowOuterColor;
+=======
+    right: -@popover-arrow-outer-width;
+    margin-top: -@popover-arrow-outer-width;
+    border-right-width: 0;
+    border-left-color: @popover-arrow-outer-fallback-color; // IE8 fallback
+    border-left-color: @popover-arrow-outer-color;
+>>>>>>> upstream/master:assets/less/popovers.less
     &:after {
+      content: " ";
       right: 1px;
       border-right-width: 0;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_popovers.scss
       border-left-color: $popoverArrowColor;
       bottom: -$popoverArrowWidth;
+=======
+      border-left-color: @popover-arrow-color;
+      bottom: -@popover-arrow-width;
+>>>>>>> upstream/master:assets/less/popovers.less
     }
   }
 

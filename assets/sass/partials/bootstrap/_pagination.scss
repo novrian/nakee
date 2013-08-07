@@ -1,9 +1,8 @@
 //
 // Pagination (multiple pages)
 // --------------------------------------------------
-
-// Space out pagination from surrounding content
 .pagination {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_pagination.scss
   margin: $baseLineHeight 0;
 }
 
@@ -69,14 +68,70 @@
 }
 .pagination-right {
   text-align: right;
+=======
+  display: inline-block;
+  padding-left: 0;
+  margin: @line-height-computed 0;
+  border-radius: @border-radius-base;
+  
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      float: left; // Collapse white-space
+      padding: 4px 12px;
+      line-height: @line-height-base;
+      text-decoration: none;
+      background-color: @pagination-bg;
+      border: 1px solid @pagination-border;
+      border-left-width: 0;
+    }
+    &:first-child {
+      > a,
+      > span {
+        border-left-width: 1px;
+        .border-left-radius(@border-radius-base);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius-base);
+      }
+    }
+  }
+  
+  > li > a:hover,
+  > li > a:focus,
+  > .active > a,
+  > .active > span {
+    background-color: @pagination-active-bg;
+  }
+  > .active > a,
+  > .active > span {
+    color: @pagination-active-color;
+    cursor: default;
+  }
+  
+  > .disabled {
+    > span,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: @pagination-disabled-color;
+      background-color: @pagination-bg;
+      cursor: not-allowed;
+    }
+  }
+>>>>>>> upstream/master:assets/less/pagination.less
 }
-
 
 // Sizing
 // --------------------------------------------------
 
 // Large
 .pagination-large {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_pagination.scss
   ul > li > a,
   ul > li > span {
     padding: $paddingLarge;
@@ -102,11 +157,32 @@
   ul > li:last-child > a,
   ul > li:last-child > span {
     @include border-right-radius($borderRadiusSmall);
+=======
+  > li {
+    > a,
+    > span {
+      padding: @padding-large-vertical @padding-large-horizontal;
+      font-size: @font-size-large;
+    }
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@border-radius-large);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius-large);
+      }
+    }
+>>>>>>> upstream/master:assets/less/pagination.less
   }
 }
 
 // Small
 .pagination-small {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_pagination.scss
   ul > li > a,
   ul > li > span {
     padding: $paddingSmall;
@@ -119,5 +195,25 @@
   ul > li > span {
     padding: $paddingMini;
     font-size: $fontSizeMini;
+=======
+  > li {
+    > a,
+    > span {
+      padding: @padding-small-vertical @padding-small-horizontal;
+      font-size: @font-size-small;
+    }
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@border-radius-small);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@border-radius-small);
+      }
+    }
+>>>>>>> upstream/master:assets/less/pagination.less
   }
 }

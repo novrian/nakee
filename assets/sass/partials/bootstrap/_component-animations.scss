@@ -2,6 +2,10 @@
 // Component animations
 // --------------------------------------------------
 
+// Heads up!
+//
+// We don't use the `.opacity()` mixin here since it causes a bug with text
+// fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
 
 .fade {
   opacity: 0;
@@ -12,11 +16,21 @@
 }
 
 .collapse {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+.collapsing {
   position: relative;
   height: 0;
   overflow: hidden;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_component-animations.scss
   @include transition(height .35s ease);
   &.in {
     height: auto;
   }
+=======
+  .transition(height .35s ease);
+>>>>>>> upstream/master:assets/less/component-animations.less
 }

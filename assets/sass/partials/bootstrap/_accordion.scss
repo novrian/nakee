@@ -5,30 +5,36 @@
 
 // Parent container
 .accordion {
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_accordion.scss
   margin-bottom: $baseLineHeight;
+=======
+  margin-bottom: @line-height-computed;
+>>>>>>> upstream/master:assets/less/accordion.less
 }
 
 // Group == heading + body
 .accordion-group {
   margin-bottom: 2px;
+<<<<<<< HEAD:assets/sass/partials/bootstrap/_accordion.scss
   border: 1px solid #e5e5e5;
   @include border-radius($baseBorderRadius);
+=======
+  border: 1px solid @accordion-border-color;
+  border-radius: @border-radius-base;
+>>>>>>> upstream/master:assets/less/accordion.less
 }
 .accordion-heading {
   border-bottom: 0;
-}
-.accordion-heading .accordion-toggle {
-  display: block;
-  padding: 8px 15px;
-}
 
-// General toggle styles
-.accordion-toggle {
-  cursor: pointer;
+  .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
 }
 
 // Inner needs the styles because you can't animate properly with any styles on the element
 .accordion-inner {
   padding: 9px 15px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid @accordion-border-color;
 }
