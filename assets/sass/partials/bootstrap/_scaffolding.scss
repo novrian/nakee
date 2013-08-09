@@ -3,47 +3,16 @@
 // --------------------------------------------------
 
 
-// Reset the box-sizing
-// -------------------------
-
-* {
-  .box-sizing(border-box);
-}
-
-
 // Body reset
 // -------------------------
 
-html {
-  font-size: 62.5%;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
 body {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_scaffolding.scss
   margin: 0;
   font-family: $baseFontFamily;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
   color: $textColor;
   background-color: $bodyBackground;
-=======
-  font-family: @font-family-base;
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
-}
-
-// Reset fonts for relevant elements
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
->>>>>>> upstream/master:assets/less/scaffolding.less
 }
 
 
@@ -51,44 +20,21 @@ textarea {
 // -------------------------
 
 a {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_scaffolding.scss
   color: $linkColor;
-=======
-  color: @link-color;
->>>>>>> upstream/master:assets/less/scaffolding.less
   text-decoration: none;
 }
 a:hover,
 a:focus {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_scaffolding.scss
   color: $linkColorHover;
-=======
-  color: @link-hover-color;
->>>>>>> upstream/master:assets/less/scaffolding.less
   text-decoration: underline;
-}
-a:focus {
-  .tab-focus();
 }
 
 
 // Images
 // -------------------------
 
-img {
-  vertical-align: middle;
-}
-
-// Responsive images (ensure images don't scale beyond their parents)
-.img-responsive {
-  display: inline-block;
-  max-width: 100%; // Part 1: Set a maximum relative to the parent
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
-}
-
 // Rounded corners
 .img-rounded {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_scaffolding.scss
   @include border-radius(6px);
 }
 
@@ -104,27 +50,4 @@ img {
 // Perfect circle
 .img-circle {
   @include border-radius(500px); // crank the border-radius so it works with most reasonably sized images
-=======
-  border-radius: @border-radius-large;
 }
-
-// Image thumbnails
-// See thumbnails.less for `.img-thumbnail`
-
-// Perfect circle
-.img-circle {
-  border-radius: 500px; // crank the border-radius so it works with most reasonably sized images
->>>>>>> upstream/master:assets/less/scaffolding.less
-}
-
-
-// Horizontal rules
-// -------------------------
-
-hr {
-  margin-top:    @line-height-computed;
-  margin-bottom: @line-height-computed;
-  border: 0;
-  border-top: 1px solid @hr-border;
-}
-

@@ -6,31 +6,25 @@
 // Inline and block code styles
 code,
 pre {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_code.scss
   padding: 0 3px 2px;
   @include font-family-monospace;
   font-size: $baseFontSize - 2;
   color: $grayDark;
   @include border-radius(3px);
-=======
-  font-family: @font-family-monospace;
->>>>>>> upstream/master:assets/less/code.less
 }
 
 // Inline code
 code {
   padding: 2px 4px;
-  font-size: 90%;
-  color: @code-color;
-  background-color: @code-bg;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
   white-space: nowrap;
-  border-radius: 4px;
 }
 
 // Blocks of code
 pre {
   display: block;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_code.scss
   padding: ($baseLineHeight - 1) / 2;
   margin: 0 0 $baseLineHeight / 2;
   font-size: $baseFontSize - 1; // 14px to 13px
@@ -47,28 +41,13 @@ pre {
   // Make prettyprint styles more spaced out for readability
   &.prettyprint {
     margin-bottom: $baseLineHeight;
-=======
-  padding: ((@line-height-computed - 1) / 2);
-  margin: 0 0 (@line-height-computed / 2);
-  font-size: (@font-size-base - 1); // 14px to 13px
-  line-height: @line-height-base;
-  word-break: break-all;
-  word-wrap: break-word;
-  color: @gray-dark;
-  background-color: @pre-bg;
-  border: 1px solid @pre-border-color;
-  border-radius: @border-radius-base;
-
-  // Make prettyprint styles more spaced out for readability
-  &.prettyprint {
-    margin-bottom: @line-height-computed;
->>>>>>> upstream/master:assets/less/code.less
   }
 
   // Account for some code outputs that place code tags in pre tags
   code {
     padding: 0;
     color: inherit;
+    white-space: pre;
     white-space: pre-wrap;
     background-color: transparent;
     border: 0;

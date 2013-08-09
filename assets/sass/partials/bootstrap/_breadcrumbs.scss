@@ -5,7 +5,6 @@
 
 .breadcrumb {
   padding: 8px 15px;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_breadcrumbs.scss
   margin: 0 0 $baseLineHeight;
   list-style: none;
   background-color: #f5f5f5;
@@ -15,26 +14,11 @@
     @include ie7-inline-block();
     text-shadow: 0 1px 0 $white;
     > .divider {
-=======
-  margin-bottom: @line-height-computed;
-  list-style: none;
-  background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
-  > li {
-    display: inline-block;
-    &+li:before {
-      content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
->>>>>>> upstream/master:assets/less/breadcrumbs.less
       padding: 0 5px;
-      color: @breadcrumb-color;
+      color: #ccc;
     }
   }
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_breadcrumbs.scss
   .active {
     color: $grayLight;
-=======
-  > .active {
-    color: @breadcrumb-active-color;
->>>>>>> upstream/master:assets/less/breadcrumbs.less
   }
 }

@@ -2,47 +2,25 @@
 // Button groups
 // --------------------------------------------------
 
-// Button carets
-.btn .caret {
-  border-top-color: @btn-default-color;
-}
-.dropup .btn .caret {
-  border-bottom-color: @btn-default-color;
-}
 
 // Make the div behave like a button
-.btn-group,
-.btn-group-vertical {
+.btn-group {
   position: relative;
   display: inline-block;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
   @include ie7-inline-block();
   font-size: 0; // remove as part 1 of font-size inline-block hack
   vertical-align: middle; // match .btn alignment given font-size hack above
   white-space: nowrap; // prevent buttons from wrapping when in tight spaces (e.g., the table on the tests page)
   @include ie7-restore-left-whitespace();
-=======
-  vertical-align: middle; // match .btn alignment given font-size hack above
-  > .btn {
-    position: relative;
-    float: left;
-    // Bring the "active" button to the front
-    &:hover,
-    &:active {
-      z-index: 2;
-    }
-  }
->>>>>>> upstream/master:assets/less/button-groups.less
 }
 
-// Prevent double borders when buttons are next to each other
-.btn-group .btn + .btn {
-  margin-left: -1px;
+// Space out series of button groups
+.btn-group + .btn-group {
+  margin-left: 5px;
 }
 
 // Optional: Group multiple button groups together for a toolbar
 .btn-toolbar {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
   font-size: 0; // Hack to remove whitespace that results from using inline-block
   margin-top: $baseLineHeight / 2;
   margin-bottom: $baseLineHeight / 2;
@@ -76,31 +54,11 @@
 }
 .btn-group > .btn-large {
   font-size: $fontSizeLarge;
-=======
-  .clearfix();
-
-  .btn-group {
-    float: left;
-  }
-  // Space out series of button groups
-  > .btn,
-  > .btn-group {
-    + .btn,
-    + .btn-group {
-      margin-left: 5px;
-    }
-  }
-}
-
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
->>>>>>> upstream/master:assets/less/button-groups.less
 }
 
 // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
 .btn-group > .btn:first-child {
   margin-left: 0;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
   @include border-top-left-radius($baseBorderRadius);
   @include border-bottom-left-radius($baseBorderRadius);
 }
@@ -120,33 +78,14 @@
 .btn-group > .large.dropdown-toggle {
   @include border-top-right-radius($borderRadiusLarge);
   @include border-bottom-right-radius($borderRadiusLarge);
-=======
-  &:not(:last-child):not(.dropdown-toggle) {
-    .border-right-radius(0);
-  }
-}
-// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > .dropdown-toggle:not(:first-child) {
-  .border-left-radius(0);
 }
 
-// Custom edits for including btn-groups within btn-groups (useful for including dropdown buttons within a btn-group)
-.btn-group > .btn-group {
-  float: left;
-}
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
->>>>>>> upstream/master:assets/less/button-groups.less
-}
-.btn-group > .btn-group:first-child {
-  > .btn:last-child,
-  > .dropdown-toggle {
-    .border-right-radius(0);
-  }
-}
-.btn-group > .btn-group:last-child > .btn:first-child {
-  .border-left-radius(0);
+// On hover/focus/active, bring the proper btn to front
+.btn-group > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group > .btn:active,
+.btn-group > .btn.active {
+  z-index: 2;
 }
 
 // On active and open, don't show outline
@@ -164,7 +103,6 @@
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
   @include box-shadow(inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
   *padding-top: 5px;
   *padding-bottom: 5px;
@@ -178,15 +116,14 @@
 .btn-group > .btn-small + .dropdown-toggle {
   *padding-top: 5px;
   *padding-bottom: 4px;
-=======
->>>>>>> upstream/master:assets/less/button-groups.less
 }
 .btn-group > .btn-large + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
+  *padding-top: 7px;
+  *padding-bottom: 7px;
 }
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
 .btn-group.open {
 
   // The clickable button for toggling the menu
@@ -218,22 +155,26 @@
   .btn-inverse.dropdown-toggle {
     background-color: $btnInverseBackgroundHighlight;
   }
-=======
-// The clickable button for toggling the menu
-// Remove the gradient and set the same inset shadow as the :active state
-.btn-group.open .dropdown-toggle {
-  .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
->>>>>>> upstream/master:assets/less/button-groups.less
 }
 
 
 // Reposition the caret
 .btn .caret {
+  margin-top: 8px;
   margin-left: 0;
 }
 // Carets in other button sizes
 .btn-large .caret {
-  border-width: 5px;
+  margin-top: 6px;
+}
+.btn-large .caret {
+  border-left-width:  5px;
+  border-right-width: 5px;
+  border-top-width:   5px;
+}
+.btn-mini .caret,
+.btn-small .caret {
+  margin-top: 8px;
 }
 // Upside down carets for .dropup
 .dropup .btn-large .caret {
@@ -241,7 +182,6 @@
 }
 
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
 
 // Account for other colors
 .btn-primary,
@@ -265,17 +205,10 @@
   display: inline-block; // makes buttons only take up the width they need
   @include ie7-inline-block();
 }
-=======
-// Vertical button groups
-// ----------------------
-
->>>>>>> upstream/master:assets/less/button-groups.less
 .btn-group-vertical > .btn {
   display: block;
   float: none;
-  width: 100%;
   max-width: 100%;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_button-groups.scss
   @include border-radius(0);
 }
 .btn-group-vertical > .btn + .btn {
@@ -293,41 +226,4 @@
 }
 .btn-group-vertical > .btn-large:last-child {
   @include border-radius(0 0 $borderRadiusLarge $borderRadiusLarge);
-=======
-  + .btn {
-    margin-top: -1px;
-  }
-}
-.btn-group-vertical .btn {
-  &:not(:first-child):not(:last-child) {
-    border-radius: 0;
-  }
-  &:first-child {
-    .border-bottom-radius(0);
-  }
-  &:last-child {
-    .border-top-radius(0);
-  }
-}
-
-
-// Justified button groups
-// ----------------------
-
-.btn-group-justified {
-  display: table;
-  width: 100%;
-  .btn {
-    float: none;
-    display: table-cell;
-    width: 1%;
-  }
-}
-
-
-// Checkbox and radio options
-.btn-group[data-toggle="buttons"] > .btn > input[type="radio"],
-.btn-group[data-toggle="buttons"] > .btn > input[type="checkbox"] {
-  display: none;
->>>>>>> upstream/master:assets/less/button-groups.less
 }

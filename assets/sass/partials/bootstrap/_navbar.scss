@@ -1,10 +1,13 @@
 //
-// Navbars
+// Navbars (Redux)
 // --------------------------------------------------
 
-// Wrapper and base class
+
+// COMMON STYLES
+// -------------
+
+// Base class and wrapper
 .navbar {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   overflow: visible;
   margin-bottom: $baseLineHeight;
 
@@ -23,21 +26,11 @@
   border: 1px solid $navbarBorder;
   @include border-radius($baseBorderRadius);
   @include box-shadow(0 1px 4px rgba(0,0,0,.065));
-=======
-  position: relative;
-  min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  margin-bottom: 20px;
-  padding-left: @navbar-padding-horizontal;
-  padding-right: @navbar-padding-horizontal;
-  background-color: @navbar-bg;
-  border-radius: @border-radius-base;
->>>>>>> upstream/master:assets/less/navbar.less
 
   // Prevent floats from breaking the navbar
   @include clearfix();
 }
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
 // Set width to auto for default container
 // We then reset it for fixed navbars in the #gridSystem mixin
 .navbar .container {
@@ -126,46 +119,22 @@
   .btn {
     display: inline-block;
     margin-bottom: 0;
-=======
-// Navbar nav links
-// -------------------------
-
-.navbar-nav {
-  // Space out from .navbar .brand and .btn-navbar when stacked in mobile views
-  margin-top: 10px;
-  margin-bottom: 15px;
-
-  > li > a {
-    padding-top: ((@navbar-height - @line-height-computed) / 2);
-    padding-bottom: ((@navbar-height - @line-height-computed) / 2);
-    color: @navbar-link-color;
-    line-height: 20px;
-    border-radius: @border-radius-base;
-    &:hover,
-    &:focus {
-      color: @navbar-link-hover-color;
-      background-color: @navbar-link-hover-bg;
-    }
->>>>>>> upstream/master:assets/less/navbar.less
   }
-  > .active > a {
-    &,
-    &:hover,
-    &:focus {
-      color: @navbar-link-active-color;
-      background-color: @navbar-link-active-bg;
+  input[type="image"],
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-top: 3px;
+  }
+  .input-append,
+  .input-prepend {
+    margin-top: 5px;
+    white-space: nowrap; // preven two  items from separating within a .navbar-form that has .pull-left
+    input {
+      margin-top: 0; // remove the margin on top since it's on the parent
     }
   }
-  > .disabled > a {
-    &,
-    &:hover,
-    &:focus {
-      color: @navbar-link-disabled-color;
-      background-color: @navbar-link-disabled-bg;
-    }
-  }
+}
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
 // Navbar search
 // -------------------------
 .navbar-search {
@@ -178,41 +147,33 @@
     padding: 4px 14px;
     @include font-sans-serif(13px, normal, 1);
     @include border-radius(15px); // redeclare because of specificity of the type attribute
-=======
-  // Right aligned contents
-  // Make them full width first so that they align properly on mobile
-  &.pull-right {
-    width: 100%;
->>>>>>> upstream/master:assets/less/navbar.less
   }
 }
 
 
 
-//
-// Navbar alignment options
-// --------------------------------------------------
-
 // Static navbar
+// -------------------------
+
 .navbar-static-top {
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   position: static;
   margin-bottom: 0; // remove 18px margin for default navbar
   .navbar-inner {
     @include border-radius(0);
   }
-=======
-  border-radius: 0;
->>>>>>> upstream/master:assets/less/navbar.less
 }
 
-// Fix the top/bottom navbars when screen real estate supports it
+
+
+// Fixed navbar
+// -------------------------
+
+// Shared (top/bottom) styles
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
   right: 0;
   left: 0;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   z-index: $zindexFixedNavbar;
   margin-bottom: 0; // remove 18px margin for default navbar
 }
@@ -255,46 +216,28 @@
   .navbar-inner {
     @include box-shadow(0 -1px 10px rgba(0,0,0,.1));
   }
-=======
-  z-index: @zindex-navbar-fixed;
-  border-radius: 0;
-}
-.navbar-fixed-top {
-  top: 0;
-}
-.navbar-fixed-bottom {
-  bottom: 0;
-  margin-bottom: 0; // override .navbar defaults
->>>>>>> upstream/master:assets/less/navbar.less
 }
 
 
 
-//
-// Navbar optional components
-// --------------------------------------------------
+// NAVIGATION
+// ----------
 
-// Brand/project name
-.navbar-brand {
+.navbar .nav {
+  position: relative;
+  left: 0;
   display: block;
-  max-width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: @navbar-padding-vertical @navbar-padding-horizontal;
-  font-size: @font-size-large;
-  font-weight: 500;
-  line-height: @line-height-computed;
-  color: @navbar-brand-color;
-  text-align: center;
-  &:hover,
-  &:focus {
-    color: @navbar-brand-hover-color;
-    text-decoration: none;
-    background-color: @navbar-brand-hover-bg;
-  }
+  float: left;
+  margin: 0 10px 0 0;
+}
+.navbar .nav.pull-right {
+  float: right; // redeclare due to specificity
+  margin-right: 0; // remove margin on float right nav
+}
+.navbar .nav > li {
+  float: left;
 }
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
 // Links
 .navbar .nav > li > a {
   float: none;
@@ -347,48 +290,14 @@
 }
 .btn-navbar .icon-bar + .icon-bar {
   margin-top: 3px;
-=======
-// Collapsible navbar toggle
-.navbar-toggle {
-  position: absolute;
-  top: floor((@navbar-height - 32) / 2);
-  right: 10px;
-  width: 48px;
-  height: 32px;
-  padding: 8px 12px;
-  background-color: transparent;
-  border: 1px solid @navbar-toggle-border-color;
-  border-radius: @border-radius-base;
-
-  &:hover,
-  &:focus {
-    background-color: @navbar-toggle-hover-bg;
-  }
-
-  // Bars
-  .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: @navbar-toggle-icon-bar-bg;
-    border-radius: 1px;
-  }
-  .icon-bar + .icon-bar {
-    margin-top: 4px;
-  }
 }
 
-// Navbar form
-.navbar-form {
-  .form-inline();
-  .navbar-vertical-align(@input-height-base); // Vertically center in navbar
->>>>>>> upstream/master:assets/less/navbar.less
-}
+
 
 // Dropdown menus
+// --------------
 
 // Menu position and menu carets
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
 .navbar .nav > li > .dropdown-menu {
   &:before {
     content: '';
@@ -452,53 +361,13 @@
 .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
   border-top-color: $navbarLinkColorActive;
   border-bottom-color: $navbarLinkColorActive;
-=======
-.navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-// Menu position and menu caret support for dropups via extra dropup class
-.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-// Dropdown menu items and carets
-.navbar-nav {
-  // Caret should match text color on hover
-  > .dropdown > a:hover .caret,
-  > .dropdown > a:focus .caret {
-    border-top-color: @navbar-link-hover-color;
-    border-bottom-color: @navbar-link-hover-color;
-  }
-
-  // Remove background color from open dropdown
-  > .open > a {
-    &,
-    &:hover,
-    &:focus {
-      background-color: @navbar-link-active-bg;
-      color: @navbar-link-active-color;
-      .caret {
-        border-top-color: @navbar-link-active-color;
-        border-bottom-color: @navbar-link-active-color;
-      }
-    }
-  }
-  > .dropdown > a .caret {
-    border-top-color: @navbar-link-color;
-    border-bottom-color: @navbar-link-color;
-  }
->>>>>>> upstream/master:assets/less/navbar.less
 }
 
 // Right aligned menus need alt position
-.navbar-nav.pull-right > li > .dropdown-menu,
-.navbar-nav > li > .dropdown-menu.pull-right {
+.navbar .pull-right > li > .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right {
   left: auto;
   right: 0;
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   &:before {
     left: auto;
     right: 12px;
@@ -514,16 +383,14 @@
     margin-right: -1px;
     @include border-radius(6px 0 6px 6px);
   }
-=======
->>>>>>> upstream/master:assets/less/navbar.less
 }
 
 
+// Inverted navbar
+// -------------------------
 
-// Inverse navbar
-// --------------------------------------------------
+.navbar-inverse {
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   .navbar-inner {
     @include gradient-vertical($navbarInverseBackgroundHighlight, $navbarInverseBackground);
     border-color: $navbarInverseBorder;
@@ -596,114 +463,8 @@
   .nav li.dropdown.open.active > .dropdown-toggle .caret {
     border-top-color: $navbarInverseLinkColorActive;
     border-bottom-color: $navbarInverseLinkColorActive;
-=======
-.navbar-inverse {
-  background-color: @navbar-inverse-bg;
-
-  .navbar-brand {
-    color: @navbar-inverse-brand-color;
-    &:hover,
-    &:focus {
-      color: @navbar-inverse-brand-hover-color;
-      background-color: @navbar-inverse-brand-hover-bg;
-    }
   }
 
-  .navbar-text {
-    color: @navbar-inverse-color;
-  }
-
-  .navbar-nav {
-    > li > a {
-      color: @navbar-inverse-link-color;
-
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-hover-color;
-        background-color: @navbar-inverse-link-hover-bg;
-      }
-    }
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-active-color;
-        background-color: @navbar-inverse-link-active-bg;
-      }
-    }
-    > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-disabled-color;
-        background-color: @navbar-inverse-link-disabled-bg;
-      }
-    }
-  }
-
-  // Darken the responsive nav toggle
-  .navbar-toggle {
-    border-color: @navbar-inverse-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: @navbar-inverse-toggle-hover-bg;
-    }
-    .icon-bar {
-      background-color: @navbar-inverse-toggle-icon-bar-bg;
-    }
-  }
-
-  // Dropdowns
-  .navbar-nav {
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        background-color: @navbar-inverse-link-active-bg;
-        color: @navbar-inverse-link-active-color;
-      }
-    }
-    > .dropdown > a:hover .caret {
-      border-top-color: @navbar-inverse-link-hover-color;
-      border-bottom-color: @navbar-inverse-link-hover-color;
-    }
-    > .dropdown > a .caret {
-      border-top-color: @navbar-inverse-link-color;
-      border-bottom-color: @navbar-inverse-link-color;
-    }
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        .caret {
-          border-top-color: @navbar-inverse-link-active-color;
-          border-bottom-color: @navbar-inverse-link-active-color;
-        }
-      }
-    }
-  }
-}
-
-
-
-// Responsive navbar
-// --------------------------------------------------
-
-@media screen and (min-width: @grid-float-breakpoint) {
-
-  .navbar-brand {
-    float: left;
-    margin-left: -(@navbar-padding-horizontal);
-    margin-right: 5px;
->>>>>>> upstream/master:assets/less/navbar.less
-  }
-  .navbar-nav {
-    float: left;
-    // undo margin to make nav extend full height of navbar
-    margin-top: 0;
-    margin-bottom: 0;
-
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   // Navbar search
   .navbar-search {
     .search-query {
@@ -724,80 +485,13 @@
         border: 0;
         @include box-shadow(0 0 3px rgba(0,0,0,.15));
         outline: 0;
-=======
-    > li {
-      float: left;
-      > a {
-        border-radius: 0;
->>>>>>> upstream/master:assets/less/navbar.less
       }
-    }
-
-    &.pull-right {
-      float: right;
-      width: auto;
     }
   }
 
-<<<<<<< HEAD:assets/sass/partials/bootstrap/_navbar.scss
   // Navbar collapse button
   .btn-navbar {
     @include buttonBackground(darken($navbarInverseBackgroundHighlight, 5%), darken($navbarInverseBackground, 5%));
-=======
-  // Required to make the collapsing navbar work on regular desktops
-  .navbar-toggle {
-    position: relative;
-    top: auto;
-    left: auto;
-    display: none;
-  }
-  .nav-collapse.collapse {
-    display: block !important;
-    height: auto !important;
-    overflow: visible !important;
->>>>>>> upstream/master:assets/less/navbar.less
   }
 
-}
-
-
-
-// Buttons in navbars
-//
-// Vertically center a button within a navbar (when *not* in a form).
-
-.navbar-btn {
-  margin-top: ((@navbar-height - @input-height-base) / 2);
-}
-
-
-
-// Text in navbars
-//
-// Add a class to make any element properly align itself vertically within the navbars.
-
-.navbar-text {
-  .navbar-vertical-align(@line-height-computed);
-}
-
-
-
-// Links in navbars
-//
-// Add a class to ensure links outside the navbar nav are colored correctly.
-
-// Default navbar variables
-.navbar-link {
-  color: @navbar-link-color;
-  &:hover {
-    color: @navbar-link-hover-color;
-  }
-}
-
-// Use the inverse navbar variables
-.navbar-inverse .navbar-link {
-  color: @navbar-inverse-link-color;
-  &:hover {
-    color: @navbar-inverse-link-hover-color;
-  }
 }
