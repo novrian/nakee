@@ -3,9 +3,8 @@
  * Clean up gallery_shortcode()
  *
  * Re-create the [gallery] shortcode and use thumbnails styling from Bootstrap
- * The number of columns must be a factor of 12.
  *
- * @link http://twbs.github.io/bootstrap/components/#thumbnails
+ * @link http://twitter.github.com/bootstrap/components.html#thumbnails
  */
 function roots_gallery($attr) {
   $post = get_post();
@@ -40,7 +39,7 @@ function roots_gallery($attr) {
     'itemtag'    => '',
     'icontag'    => '',
     'captiontag' => '',
-    'columns'    => 4,
+    'columns'    => 3,
     'size'       => 'thumbnail',
     'include'    => '',
     'exclude'    => '',
@@ -48,8 +47,6 @@ function roots_gallery($attr) {
   ), $attr));
 
   $id = intval($id);
-  $columns = (12 % $columns == 0) ? $columns: 4;
-  $grid = sprintf('col-sm-%1$s col-lg-%1$s', 12/$columns);
 
   if ($order === 'RAND') {
     $orderby = 'none';
@@ -80,41 +77,24 @@ function roots_gallery($attr) {
     return $output;
   }
 
-  $unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page'): $instance;
-  $output = '<div class="gallery gallery-' . $id . '-' . $unique . '">';
+  $output = '<ul class="thumbnails gallery">';
 
   $i = 0;
   foreach ($attachments as $id => $attachment) {
-    $image = ('file' == $link) ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
-    $output .= ($i % $columns == 0) ? '<div class="row gallery-row">': '';
-    $output .= '<div class="' . $grid .'">' . $image;
-    
+    $image = '<a class="thumbnail" href="' . get_attachment_link($id) . '" title="' . get_post_meta($id, '_wp_attachment_image_alt', true) . '">' . wp_get_attachment_image($id, 'thumbnail') . '</a>';
+
+    $output .= '<li>' . $image;
     if (trim($attachment->post_excerpt)) {
       $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
     }
-    
-    $output .= '</div>';
-    $i++;
-    $output .= ($i % $columns == 0) ? '</div>' : '';
+    $output .= '</li>';
   }
-  
-  $output .= ($i % $columns != 0 ) ? '</div>' : '';
-  $output .= '</div>';
+
+  $output .= '</ul>';
 
   return $output;
 }
 if (current_theme_supports('bootstrap-gallery')) {
   remove_shortcode('gallery');
   add_shortcode('gallery', 'roots_gallery');
-  add_filter('use_default_gallery_style', '__return_null');
 }
-
-/**
- * Add class="thumbnail img-thumbnail" to attachment items
- */
-function roots_attachment_link_class($html) {
-  $postid = get_the_ID();
-  $html = str_replace('<a', '<a class="thumbnail img-thumbnail"', $html);
-  return $html;
-}
-add_filter('wp_get_attachment_link', 'roots_attachment_link_class', 10, 1);

@@ -30,6 +30,11 @@ body {
 
 }
 
+a.thumbnail:hover,
+a.thumbnail:focus {
+    @include single-box-shadow(rgba($linkColor, 0.6), 0, 1px, 4px);
+}
+
 .nakee-front-teaser,
 .content-info {
 
