@@ -18,12 +18,11 @@
     <?php // Stop TypeKit ?>
 
     <?php // Favicon ?>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-144x144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-120x120-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-57x57-precomposed.png">
-    <link rel="shortcut icon" href="<?php echo home_url() . '/' . THEME_PATH; ?>/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico">
+    <link rel="apple-touch-icon-precomposed apple-touch-icon" href="<?php echo home_url(); ?>/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url(); ?>/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url(); ?>/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url(); ?>/apple-touch-icon-144x144-precomposed.png">
     <?php // Stop Favicon ?>
 
     <?php // Selectivizr ?>
