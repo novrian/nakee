@@ -909,11 +909,21 @@ section[class~="page"] .entry-content {
     .error404-info h1 { text-align: center; }
 }
 
+@media only screen and (min-width: 768px) {
+    .error404-info #searchform input[type="text"] {
+        display: block;
+        width: 450px;
+        margin: 0 auto;
+    }
+}
+
 @media only screen and (min-width: 1025px) {
     .error404-info {
         margin-top: 100px;
         margin-left: 600px + $gridGutterWidth;
     }
+
+
 }
 
 section.portfolio-category {
