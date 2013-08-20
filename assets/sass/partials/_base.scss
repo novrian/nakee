@@ -4,10 +4,16 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "sassy-buttons";
+@import "modular-scale";
 
 @import "bootstrap/variables";
 
+// Font Awesome
 $FontAwesomePath: "../fonts/FontAwesome";
+
+// Modular Scale
+$base-size: 14px 72px;
+$ratio: golden();
 
 // Bootstrap Color
 $white: #fff;

@@ -879,6 +879,43 @@ section[class~="page"] .entry-content {
 
 }
 
+// 404 Page
+// ----------------------------------------------------------------------------
+.error404-img {
+    text-align: center;
+
+    img {
+        @include inline-block;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .error404-img {
+        max-width: 600px;
+        float: left;
+    }
+}
+
+.error404-info {
+    p, li {
+        font-size: ms(1);
+        line-height: ms(1) * 1.5;
+    }
+
+    ul { list-style-type: circle; }
+}
+
+@media only screen and (max-width: 1024px) {
+    .error404-info h1 { text-align: center; }
+}
+
+@media only screen and (min-width: 1025px) {
+    .error404-info {
+        margin-top: 100px;
+        margin-left: 600px + $gridGutterWidth;
+    }
+}
+
 section.portfolio-category {
 
     margin-top: 15px;
