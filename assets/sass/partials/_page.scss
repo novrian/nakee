@@ -185,9 +185,9 @@ a.thumbnail:focus {
     border-bottom: 1px solid darken($nakee_dark_green, 10%);
 
     h3 {
-        @include single-text-shadow($white, 0, -1px, 1px);
+        @include single-text-shadow(#FFF8C9, 0, 1px, 1px);
         font-weight: 300;
-        font-size: 59px;
+        font-size: ms(6);
         line-height: 1.5;
         text-align: right;
 
@@ -198,7 +198,7 @@ a.thumbnail:focus {
     }
 
     @media only screen and (max-width: 480px) {
-        h3 { font-size: 44px; }
+        h3 { font-size: ms(5); }
     }
 }
 
@@ -215,10 +215,10 @@ a.thumbnail:focus {
 
     @include respond-to(desktop) {
         & > h3 {
-            font-size: 72px;
+            font-size: ms(7);
         }
         & > h3 > strong {
-            font-size: 72px;
+            font-size: ms(7);
         }
     }
 }
