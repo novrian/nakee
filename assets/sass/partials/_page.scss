@@ -197,8 +197,12 @@ a.thumbnail:focus {
         }
     }
 
+    @media only screen and (min-width: 481px) and (max-width: 1024px) {
+        h3 { font-size: ms(6, $ipad-size); }
+    }
+
     @media only screen and (max-width: 480px) {
-        h3 { font-size: ms(5); }
+        h3 { font-size: ms(4, $ipad-size); }
     }
 }
 
@@ -226,10 +230,10 @@ a.thumbnail:focus {
 .nakee-front-teaser .widget {
 
     .widget-inner > h3 {
-        font-size: 22.652px;
-        line-height: 1.25;
+        font-size: ms(2);
+        line-height: 1.2;
 
-        @media only screen and (max-width: 480px) { font-size: 20.652px; }
+        @media only screen and (max-width: 767px) { font-size: ms(1, $ipad-size) }
     }
 
     .widget-inner > div {
@@ -281,7 +285,13 @@ a.thumbnail:focus {
 
 }
 
-.page-header h1 { font-size: 45px; }
+.page-header h1 {
+    font-size: ms(5);
+
+    @media only screen and (max-width: 480px) {
+        font-size: ms(5, $ipad-size);
+    }
+}
 
 .breadcrumbs-container {
     margin-top: 20px;
@@ -336,8 +346,26 @@ a.thumbnail:focus {
 }
 
 h1.entry-title {
-    font-size: 44.45px;
-    line-height: 1;
+    font-size: ms(5);
+    line-height: 1.2;
+
+    @media only screen and (min-width: 769px) and (max-width: 1199px) {
+        font-size: ms(3);
+    }
+
+    @media only screen and (max-width: 768px) {
+        font-size: ms(4, $ipad-size);
+    }
+
+    @media only screen and (max-width: 320px) { font-size: ms(3, $ipad-size); line-height: 1.2; }
+}
+
+.single h1.entry-title,
+.page h1.entry-title {
+    font-size: ms(6);
+
+    @media only screen and (max-width: 1024px) { font-size: ms(5); }
+    @media only screen and (max-width: 767px) { font-size: ms(4, $ipad-size); }
 }
 
 .entry-title a:hover,
@@ -500,6 +528,13 @@ section[class~="page"] .entry-content {
         }
     }
 
+    @media only screen and (max-width: 768px) {
+        h1, h2, h3, h4, h5, h6 {
+            font-size: ms(2, $ipad-size);
+            line-height: 1.2;
+        }
+    }
+
     ul { list-style-type: square; }
     ul.thumbnails { list-style-type: none; }
 
@@ -540,6 +575,11 @@ section[class~="page"] .entry-content {
 
         &[class~="h3"] > li > h3,
         &[class~="h4"] > li > h4 { margin: 0 0 10px; }
+    }
+
+    .wp-caption {
+        @include box-sizing(border-box);
+        max-width: 100%;
     }
 
     .wp-caption,
@@ -1044,6 +1084,7 @@ nav.post-nav {
         color: $gray;
     }
 
+
     .widget-inner {
         p, li {
             @include single-text-shadow($white, 0, 1px, 1px);
@@ -1152,6 +1193,13 @@ nav.post-nav {
 /* ==========================================================================
    Widgets
    ========================================================================== */
+@media only screen and (max-width: 768px) {
+    .widget-inner h3 {
+        font-size: ms(2, $ipad-size);
+        line-height: 1.2;
+    }
+}
+
 .widget-inner .nakee-profile-widget {
 
     figure.nakee-gravatar {
@@ -1207,9 +1255,13 @@ nav.post-nav {
 .nakee-skills {
     li strong.skill-title {
         @include single-text-shadow(rgba($black, 0.8), 0, 1px, 1px);
-        font-size: 17px;
+        font-size: ms(1);
         text-transform: uppercase;
         color: $white;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 14px;
+        }
     }
 
     li div.progress {
@@ -1454,6 +1506,12 @@ nav.post-nav {
    ========================================================================== */
 
 .aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
-.alignright { float: right; }
+.alignleft {
+    float: left;
+    margin-right: 20px;
+}
+.alignright {
+    float: right;
+    margin-left: 20px;
+}
 figure.alignnone { margin-left: 0; margin-right: 0; }
