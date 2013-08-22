@@ -1,0 +1,250 @@
+// Maintenance Style
+
+// Ambil Base
+@import "partials/base";
+
+// Reset
+@import "partials/bootstrap/mixins";
+@import "partials/bootstrap/reset";
+
+::selectionn {
+    background-color: $selectionColor;
+    color: $white;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background-color: $selectionColor;
+    text-shadow: none;
+    color: $white;
+}
+
+body {
+    background: $white image-url('maintenance.jpg') no-repeat 50% 0 scroll;
+    font-family: $sansFontFamily;
+    font-size: 14px;
+    line-height: 14px * 1.5;
+    color: $black;
+}
+
+a {
+    color: $linkColor;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: $linkColorHover;
+    text-decoration: underline;
+}
+
+.row { padding: 20px; }
+
+.container {
+    @include box-sizing(border-box);
+    max-width: 600px;
+    margin: 420px auto 0;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.box {
+    @include border-radius(8px);
+    position: relative;
+    background-color: $white;
+    border: 1px solid $grayLighter;
+    border-bottom-width: 4px;
+
+    &:before,
+    &:after {
+        @include single-box-shadow(rgba($black, 0.5), 0, 15px, 10px);
+        @include rotate(-3deg);
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 10px;
+        left: 10px;
+        top: 80%;
+        width: 50%;
+        background-color: rgba($black, 0.5);
+    }
+
+    &:after {
+        @include rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+}
+
+h1 {
+    margin: 10px 0;
+    font-family: $headingsFontFamily;
+    font-size: ms(4);
+    font-weight: bold;
+    line-height: ms(4) * 1.2;
+    text-align: center;
+    color: $headingsColor;
+}
+
+footer {
+    margin: (40px) auto 40px;
+    text-align: center;
+}
+
+small {
+    font-size: 12px;
+    color: lighten($textColor, 20%);
+}
+
+.countdown {
+    @include clearfix;
+    margin-top: 20px;
+}
+
+.countdown > div {
+    @include box-sizing(border-box);
+    float: left;
+    padding: 20px 10px;
+    font-family: $headingsFontFamily;
+    font-weight: bold;
+
+    > span {
+        @include single-text-shadow($white, 0, 1px, 1px);
+        display: block;
+        text-align: center;
+        color: $gray;
+    }
+}
+
+.countdown {
+    .jam,
+    .menit,
+    .detik {
+        @include background(
+            linear-gradient(top, $grayLighter 50%, $grayLight 98%, rgba($black, 0.6))
+        );
+        @include border-radius(5px);
+        @include box-shadow(rgba($black, 0.3) 0 0 2px, rgba($black, 0.5) 0 2px 4px inset);
+        width: (90% / 3);
+        border: 1px solid rgba($black, 0.5);
+        border-bottom: none;
+    }
+
+    .sep {
+        width: 5%;
+        padding: {
+            left: 0;
+            right: 0;
+        }
+        font-size: ms(5);
+        line-height: ms(5) * 2;
+        text-align: center;
+        color: $gray;
+    }
+
+    span.period {
+        font-size: ms(6);
+        line-height: ms(6) * 1.5;
+    }
+
+    span.label {
+        font-size: ms(1);
+        line-height: ms(1) * 1.5;
+    }
+
+    @media only screen and (max-width: 767px) {
+        > div { padding: 5px; }
+        .sep { @include hide-text; }
+
+        span.period {
+            font-size: ms(4);
+            line-height: ms(4) * 1.5;
+        }
+    }
+}
+
+.statuses {
+    @include clearfix;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed $grayLighter;
+}
+
+.statuses .user {
+    float: left;
+    width: 74px;
+
+    .pic a {
+        display: block;
+    }
+
+    .pic a img {
+        @include single-box-shadow(none);
+        @include single-transition(all, 0.4s, ease);
+        @include box-sizing(border-box);
+        @include border-radius(200px);
+        display: block;
+        width: 100%;
+        padding: 4px;
+        border: 1px solid transparent;
+    }
+
+    .pic a:hover img,
+    .pic a:focus img {
+        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 8px);
+        @include single-transition(all, 0.6s, ease);
+        border-color: $linkColor;
+    }
+}
+
+.statuses .tweet {
+    @include border-radius(4px);
+    position: relative;
+    margin-left: 74px + 20;
+    padding: 20px;
+    border: 1px solid lighten($grayLight, 10%);
+    background-color: $grayLighter;
+
+    .bubble {
+        position: absolute;
+        top: 25px;
+        left: -8px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-right: 8px solid $grayLighter;
+        border-bottom: 8px solid transparent;
+    }
+
+    blockquote, small { display: block; }
+
+    blockquote p,
+    small {
+        @include single-text-shadow($white, 0, 1px, 1px);
+        font-family: $serifFontFamily;
+        font-style: italic;
+    }
+
+    blockquote p {
+        font-size: ms(1);
+        line-height: ms(1) * 1.5;
+        color: $headingsColor;
+    }
+
+    small {
+        margin-top: 10px;
+        font-size: 11px;
+        line-height: 11px * 1.5;
+        color: lighten($textColor, 30%);
+
+        &:before {
+            content: "— ";
+        }
+    }
+}
