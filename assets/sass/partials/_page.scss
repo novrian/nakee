@@ -20,11 +20,13 @@ body {
 
     background: white image-url("main-background.png") repeat 0 0 scroll;
 
-    &.admin-bar {
-        padding-top: 28px;
+    @media only screen and (min-width: $navbarCollapseDesktopWidth) {
+        &[class*="admin-bar"] {
+            padding-top: 28px;
 
-        .navbar-fixed-top {
-            top: 28px;
+            .navbar-fixed-top {
+                top: 28px;
+            }
         }
     }
 
@@ -87,6 +89,7 @@ a.thumbnail:focus {
         }
     }
 
+    /*
     @media only screen and (min-width: 981px) {
 
         .nav > li {
@@ -101,9 +104,9 @@ a.thumbnail:focus {
 
             @include reset-box-model;
             @include border-radius(15px);
-            @include transition-property(background-color, color, border-color);
-            @include transition-duration(0.2s);
-            @include transition-timing-function(linear);
+            @include transition-property(background, color);
+            @include transition-duration(0.8s);
+            @include transition-timing-function(ease-out);
             height: 30px;
             margin-top: 10px;
             padding: {
@@ -120,9 +123,9 @@ a.thumbnail:focus {
         .nav > li > a:focus {
 
             @include sassy-button-gradient("simple", $linkColor, $linkColorHover, $white, "inset", false);
-            @include transition-property(background-color, color, border-color);
-            @include transition-duration(0.2s);
-            @include transition-timing-function(linear);
+            @include transition-property(background, color);
+            @include transition-duration(0.4s);
+            @include transition-timing-function(ease-in);
             height: 29px;
             padding: {
                 left: 15px;
@@ -162,6 +165,102 @@ a.thumbnail:focus {
             height: 29px;
             padding: 0 15px;
         }
+
+    }
+    */
+
+    // Reset Bootstrap Nav
+    .nav li a {
+        @include single-text-shadow(none);
+        font-family: $headingsFontFamily;
+        font-weight: 500;
+    }
+
+    .nav > .active > a,
+    .nav > .active > a:hover,
+    .nav > .active > a:focus {
+        @include single-box-shadow(none);
+    }
+
+    // Custom Style Navbar Responsive
+    @media only screen and (max-width: $navbarCollapseWidth) {
+        .nav-collapse .nav li a {
+            font-weight: bold;
+        }
+
+        // Nav and dropdown links in navbar
+        .nav-collapse .nav > li > a,
+        .nav-collapse .dropdown-menu a {
+            padding: 9px 10px;
+        }
+
+        .nav-collapse .dropdown-menu > .active > a,
+        .nav-collapse .dropdown-menu > .active > a:hover,
+        .nav-collapse .dropdown-menu > .active > a:focus {
+            color: $white;
+        }
+
+        .nav-collapse .nav > li > a:hover,
+        .nav-collapse .nav > li > a:focus,
+        .nav-collapse .dropdown-menu a:hover,
+        .nav-collapse .dropdown-menu a:focus {
+            background-color: $linkColor;
+        }
+    }
+
+    // Custom Style Navbar Desktop
+    @media only screen and (min-width: $navbarCollapseDesktopWidth) {
+        // Reset Bootstrap Nav
+        .nav > li > a {
+            padding: 0;
+        }
+
+        .nav > li > a {
+            @include sassy-button-structure(($navbarHeight / 2), 16px, 5px 13px);
+            @include transition-property(color);
+            @include transition-duration(0.6s);
+            @include transition-timing-function(ease);
+            margin: 10px 5px 0;
+            border: 1px solid transparent;
+            color: $navbarLinkColor;
+        }
+
+        .nav > li:last-child > a { margin-right: 0; }
+
+        .nav > li > a:hover,
+        .nav > li > a:focus,
+        .nav li.dropdown.open > .dropdown-toggle {
+            @include sassy-button-gradient("matte", $linkColor, darken(desaturate($linkColor, 10%), 10%), $white, inset, false);
+            @include transition-property(color);
+            @include transition-duration(0.4s);
+            @include transition-timing-function(ease);
+        }
+
+        .nav > li > a:focus,
+        .nav > li > a:active,
+        .nav li.dropdown.open > .dropdown-toggle {
+            @include single-box-shadow(rgba($black, 0.4), 0, 1px, 2px, false, inset);
+        }
+
+        .nav > .active > a,
+        .nav > .active > a:hover,
+        .nav > .active > a:focus,
+        .nav li.dropdown.active > .dropdown-toggle,
+        .nav li.dropdown.open.active > .dropdown-toggle {
+            @include sassy-button-gradient("simple", $navbarLinkBackgroundActive, darken($navbarLinkBackgroundActive, 10%), $white, inset, false);
+        }
+
+        .nav > .active > a:focus,
+        .nav > .active > a:active,
+        .nav li.dropdown.open.active > .dropdown-toggle {
+            @include single-box-shadow($black, 0, 1px, 2px, false, true);
+        }
+
+        .nav .dropdown-menu { margin-top: 15px; }
+
+        .nav li.dropdown.open > .dropdown-toggle,
+        .nav li.dropdown.active > .dropdown-toggle,
+        .nav li.dropdown.open.active > .dropdown-toggle {}
 
     }
 

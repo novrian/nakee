@@ -70,18 +70,20 @@ $btnPrimaryBackgroundHighlight:     $linkColorHover;
 $navbarHeight:                    50px;
 $navbarBackgroundHighlight:       #ffffff;
 $navbarBackground:                $navbarBackgroundHighlight;
-$navbarBorder:                    darken($navbarBackground, 12%);
+$navbarBorder:                    rgba($black, 0.4);
 
 $navbarText:                      #777;
 $navbarLinkColor:                 $linkColor;
 $navbarLinkColorHover:            $white;
 $navbarLinkColorActive:           $white;
 $navbarLinkBackgroundHover:       $nakee_red;
-$navbarLinkBackgroundActive:      $grayDarker;
+$navbarLinkBackgroundActive:      $gray;
 
 // Dropdowns
 // -------------------------
 $dropdownLinkColor:             $linkColor;
+$dropdownLinkColorHover:        $white;
+$dropdownLinkColorActive:       $white;
 
 $dropdownLinkBackgroundActive:  $navbarLinkBackgroundActive;
 $dropdownLinkBackgroundHover:   $navbarLinkBackgroundHover;
