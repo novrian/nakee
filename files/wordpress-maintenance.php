@@ -32,13 +32,7 @@ if ($twitter) {
     // Get Last Twitter Status
     $nk_twit = Nakee_Twitter::getInstance();
     $statuses = $nk_twit->getLastTweet();
-
-    // Show User
-    Codebird::setConsumerKey(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET);
-    $cb = Codebird::getInstance();
-    $cb->setToken(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET);
-    Codebird::setBearerToken($cb->oauth2_token()->access_token);
-    $users = $cb->users_show(array( 'screen_name' => 'nono_gallankz' ));
+    $users = $nk_twit->showUser();
 }
 
 // Output HTTP Status 503
@@ -94,21 +88,21 @@ header('Retry-After: 172800');
         <!-- countdown timer -->
         <div class="countdown"></div>
 
-        <?php if ($twitter && ($statuses['httpstatus'] == 200) && ($users->httpstatus == 200)) : ?>
+        <?php if ($twitter && ($statuses['httpstatus'] == 200) && ($users['httpstatus'] == 200)) : ?>
         <!-- status -->
         <div class="statuses">
             <div class="user">
                 <figure class="pic">
-                    <a href="<?php echo 'https://twitter.com/' . $users->screen_name; ?>" title="<?php echo '@' . $users->screen_name . ' on Twitter'; ?>" target="_blank">
-                        <img src="<?php echo str_replace('_normal', '_bigger', $users->profile_image_url_https); ?>" alt="<?php echo '@' . $users->screen_name . ' Picture'; ?>" >
+                    <a href="<?php echo 'https://twitter.com/' . $users['screen_name']; ?>" title="<?php echo '@' . $users['screen_name'] . ' on Twitter'; ?>" target="_blank">
+                        <img src="<?php echo str_replace('_normal', '_bigger', $users['profile_image_url_https']); ?>" alt="<?php echo '@' . $users['screen_name'] . ' Picture'; ?>" >
                     </a>
                 </figure>
             </div>
             <div class="tweet">
                 <div class="bubble"></div>
-                <blockquote><p><?php echo str_replace("#web", "", $statuses['statuses'][0]->text); ?></p></blockquote>
+                <blockquote><p><?php echo Nakee_Twitter::parseTweet($statuses); ?></p></blockquote>
                 <?php $time = nakee_relative_time(nakee_tweet_date_to_unix($statuses['statuses'][0]->created_at)); ?>
-                <small><?php echo '<a href="https://twitter.com/' . $users->screen_name . '" title="@' . $users->screen_name . ' on Twitter">@' . $users->screen_name . '</a> | ' . $time . ' via <cite title="Twitter">Twitter</cite>'; ?></small>
+                <small><?php echo '<a href="https://twitter.com/' . $users['screen_name'] . '" title="@' . $users['screen_name'] . ' on Twitter">@' . $users['screen_name'] . '</a> | ' . $time . ' via <cite title="Twitter">Twitter</cite>'; ?></small>
             </div>
         </div>
     <?php endif; ?>
