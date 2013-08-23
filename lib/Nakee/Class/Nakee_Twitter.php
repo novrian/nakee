@@ -108,8 +108,92 @@ class Nakee_Twitter {
         return (array)$response;
     }
 
+    /**
+     * Retrieve user from Twitter
+     *
+     * @access public
+     * @param  string $username
+     * @return array
+     */
+    public function showUser($username = null) {
+        if (empty($username)) {
+            $username = TWITTER_USERNAME;
+        }
+
+        $q = array(
+            'screen_name' => trim($username)
+        );
+        $cb = self::$_cb;
+        $response = $cb->users_show($q, true);
+        return (array)$response;
+    }
+
+    /**
+     * Hashtag Getter
+     *
+     * @access public
+     * @return string
+     * @static
+     */
     public static function getHashTag() {
         return self::$_hashtag;
+    }
+
+    /**
+     * Tweet Parse
+     *
+     * Mem-parse elemen-elemen dalam tweet, seperti hashtag, url, dan mentions
+     * dengan cara mengkonversi elemen2 tersebut menjadi link
+     *
+     * @access public
+     * @param  array  $response response dari Codebird Instance
+     * @return string
+     * @static
+     */
+    public static function parseTweet($response = array()) {
+        if (empty($response)) {
+            return false;
+        }
+
+        // Split response
+        $tweet = $response['statuses'][0];
+        $entities = $tweet->entities;
+        $meta = $response['metadata'];
+        $httpStatus = $response['httpstatus'];
+
+        // base var
+        $out = str_replace('#' .self::$_hashtag, '', $tweet->text);
+
+        // Parse Mentions
+        if (!empty($entities->user_mentions)) {
+            foreach($entities->user_mentions as $mention) {
+                $profile = '<a href="http://twitter.com/' . $mention->screen_name . '" target="_blank" rel="nofollow">@' . $mention->screen_name . '</a>';
+                $out = str_replace('@' .$mention->screen_name, $profile, $out);
+            }
+        }
+
+        // Parse Hashtags
+        //
+        // Mem-parse semua hashtag kecuali Nakee_Twitter::$_hashtag
+        if (!empty($entities->hashtags)) {
+            foreach($entities->hashtags as $hashtag) {
+                if ($hashtag->text == self::$_hashtag) {
+                    continue;
+                }
+                $hashtagLink = '<a href="https://twitter.com/search?q=' . urlencode('#' . $hashtag->text) . '" target="_blank" rel="nofollow">#' . $hashtag->text . '</a>';
+                $out = str_replace('#' . $hashtag->text, $hashtagLink, $out);
+            }
+        }
+
+        // Parse URLs
+        if (!empty($entities->urls)) {
+            foreach($entities->urls as $url) {
+                $link = '<a href="' . $url->url . '" target="_blank" rel="nofollow">' . $url->display_url . '</a>';
+                $out = str_replace($url->url, $link, $out);
+            }
+        }
+
+        return trim($out);
     }
 
 }
