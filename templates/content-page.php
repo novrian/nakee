@@ -28,6 +28,4 @@
 
 </section>
 
-<?php comments_template('/templates/comments.php'); ?>
-
 <?php endwhile; ?>
