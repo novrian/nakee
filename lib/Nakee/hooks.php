@@ -16,6 +16,7 @@
  * @return type
  */
 function nakee_suffix_content($content) {
+    $suffix = '';
     if (get_post_type() == 'post' && is_single()) {
         $suffix = '<p>' . __('Jika ada tanggapan, kritik, saran, maupun pertanyaan tentang artikel ini, silahkan <a href="#disqus_thread">meninggalkan komentar</a> anda. Silahkan menginput email anda pada form di bawah ini untuk menerima update jurnal terbaru dari saya. :)', 'roots') . '</p>';
         $suffix .= '<form  class="subscribe-form form-search" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(\'http://feedburner.google.com/fb/a/mailverify?uri=NovrianBlog\', \'popupwindow\', \'scrollbars=yes,width=550,height=520\');return true">';
@@ -31,7 +32,7 @@ function nakee_suffix_content($content) {
         return $content;
     }
 
-    return $content . '<div class="clearfix"></div>' . $suffix;
+    return $content . $suffix;
 }
 add_filter('the_content', 'nakee_suffix_content');
 
