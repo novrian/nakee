@@ -292,22 +292,53 @@ a.thumbnail:focus {
    ========================================================================== */
 
 .main {
-    @include border-radius(15px);
-    @include single-box-shadow(rgba(black, 0.5), 0, 5px, 5px);
-    margin-bottom: 30px;
-    background-color: white;
+    @include border-radius(20px);
+    @include box-sizing(border-box);
+    position: relative;
+    border: {
+        top: 1px solid transparent;
+        left: 1px solid rgba($black, 0.1);
+        right: 1px solid rgba($black, 0.1);
+        bottom: 6px solid rgba($black, 0.1)
+    }
+    background-color: $white;
 
-    @include respond-to(desktop) {
-        @include single-box-shadow(none);
-        margin-bottom: 0;
-        padding-bottom: 60px;
-        background: white image-url('main-border-1170.png') no-repeat 50% 100% scroll;
+    @media only screen and (max-width: 767px) {
+        margin-bottom: $gridGutterWidth * 2;
+    }
 
-        &[class*="span8"] {
-            background: white image-url('main-border-770.png') no-repeat 50% 100% scroll;
+    &:before, &:after {
+        @include border-radius(20px);
+        @include single-box-shadow(rgba($black, 0.6), 0, 15px, 10px);
+        @include rotate(-3deg);
+        position: absolute;
+        top: 90%;
+        left: 20px;
+        bottom: 10px;
+        width: 50%;
+        z-index: -1;
+        content: "";
+        background: transparent;
+
+        @media only screen and (max-width: 767px) {
+            @include rotate(-5deg);
+            top: 99%;
+            left: 10px;
         }
     }
 
+    &:after {
+        @include rotate(3deg);
+        left: auto;
+        right: 20px;
+
+        @media only screen and (max-width: 767px) {
+            @include rotate(5deg);
+            top: 99%;
+            right: 10px;
+            left: auto;
+        }
+    }
 }
 
 .page-header h1 {
@@ -908,8 +939,6 @@ section[class~="page"] .entry-content {
 .page[class~="services"],
 .page[class~="about"] {
     .entry-content {
-        padding-bottom: 29px;
-        border-bottom: 1px solid #eee;
         color: $gray;
 
         // Section
@@ -1052,6 +1081,8 @@ section[class~="page"] .entry-content {
 .single-nakee_portfolio .type-nakee_portfolio {
 
     header h1 { line-height: 1.2; text-align: center; }
+
+    footer { border-top: 1px solid #eee; }
 
     // Kategori & Teknologi Container
     .single-widget-inner {
@@ -1231,8 +1262,9 @@ section.last-tweet-widget {
 
 }
 
-nav.post-nav {
-    margin-bottom: $gridGutterWidth;
+nav.post-nav,
+body[class~="page"] nav.page-nav {
+    margin-bottom: $gridGutterWidth * 2;
 }
 
 
@@ -1575,18 +1607,7 @@ nav.post-nav {
    Footer
    ========================================================================== */
 .content-info {
-    margin-top: $gridGutterWidth;
-    padding-top: 0;
-}
-
-.page[class~="home"] .content-info,
-.page[class~="services"] .content-info,
-.page[class~="about"] .content-info,
-.single[class~="single-nakee_portfolio"] .content-info,
-.archive[class~="post-type-archive-nakee_portfolio"] .content-info,
-.archive[class~="tax-nakee_portfolio_category"] .content-info,
-.archive[class~="tax-nakee_technology"] .content-info {
-    margin-top: 0;
+    margin-top: $gridGutterWidth * 2;
     padding-top: 0;
 }
 
