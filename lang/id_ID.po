@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nakee\n"
-"POT-Creation-Date: 2013-06-06 04:17+0800\n"
-"PO-Revision-Date: 2013-06-06 04:17+0800\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-26 18:36+0800\n"
+"PO-Revision-Date: 2013-08-26 18:40+0800\n"
 "Last-Translator: Novrian Y. F. <me@novrian.info>\n"
 "Language-Team: Novrian Y. F. <me@novrian.info>\n"
 "Language: Bahasa Indonesia\n"
@@ -15,496 +16,540 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ../.\n"
 
-#: .././404.php:5
-msgid "Sorry, but the page you were trying to view does not exist."
-msgstr "Maaf, kami tidak menemukan apa yang anda cari."
-
-#: .././404.php:8
-msgid "It looks like this was the result of either:"
-msgstr "Seperti ini disebabkan oleh:"
-
-#: .././404.php:10
-msgid "a mistyped address"
-msgstr "Pengetikan yang salah pada alamat (Address Bar)"
-
-#: .././404.php:11
-msgid "an out-of-date link"
-msgstr "Link yang sudah kadaluarsa"
-
-#: .././base.php:17
-msgid "Please enable Javascripts, we'll not harm you. Trust me! :)"
-msgstr ""
-"Mohon aktifkan Javascript, karna skrip saya tidak akan melukai anda. "
-"Percayalah! :)"
-
-#: .././front-page.php:40
-msgid "Portfolio Category"
-msgstr "Kategori Portfolio"
-
-#: .././front-page.php:42
-msgid "View All Portfolios"
-msgstr "Lihat Portfolio"
-
-#: .././front-page.php:42
-msgid "All"
-msgstr "Semua"
-
-#: .././front-page.php:53
+#: ../front-page.php:42
 msgid "Latest Tweet"
 msgstr "Tweet Terbaru"
 
-#: .././single-nakee_portfolio.php:46 .././templates/entry-meta.php:19
+#: ../single-nakee_portfolio.php:49
 msgid "Categories"
 msgstr "Kategori"
 
-#: .././single-nakee_portfolio.php:50
+#: ../single-nakee_portfolio.php:53
 #, php-format
 msgid "<a href=\"%s\" rel=\"tag tooltip\" title=\"View work on %s\">%s</a>"
-msgstr ""
-"<a href=\"%s\" rel=\"tag tooltip\" title=\"Lihat hasil untuk Kategori %s\">"
-"%s</a>"
+msgstr "<a href=\"%s\" rel=\"tag tooltip\" title=\"Lihat hasil untuk Kategori %s\">%s</a>"
 
-#: .././single-nakee_portfolio.php:62
+#: ../single-nakee_portfolio.php:65
 msgid "Technologies"
 msgstr "Teknologi"
 
-#: .././single-nakee_portfolio.php:66
+#: ../single-nakee_portfolio.php:69
 #, php-format
-msgid ""
-"<a href=\"%s\" rel=\"tag tooltip\" title=\"View work base on %s technology\">"
-"%s</a>"
-msgstr ""
-"<a href=\"%s\" rel=\"tag tooltip\" title=\"Lihat hasil yang dibuat "
-"berdasarkan Teknologi %s\">%s</a>"
+msgid "<a href=\"%s\" rel=\"tag tooltip\" title=\"View work base on %s technology\">%s</a>"
+msgstr "<a href=\"%s\" rel=\"tag tooltip\" title=\"Lihat hasil yang dibuat berdasarkan Teknologi %s\">%s</a>"
 
-#: .././lib/activation.php:33 .././lib/activation.php:34
-msgid "Theme Activation"
-msgstr "Aktivasi Theme"
+#: ../404.php:9
+msgid "It looks like this was the result of either:"
+msgstr "Seperti ini disebabkan oleh:"
 
-#: .././lib/activation.php:70
-#, php-format
-msgid "%s Theme Activation"
-msgstr "%s Aktivasi Theme"
+#: ../404.php:11
+msgid "a mistyped address"
+msgstr "Pengetikan yang salah pada alamat (Address Bar)"
 
-#: .././lib/activation.php:85 .././lib/activation.php:87
-msgid "Create static front page?"
-msgstr "Buat Static Front Page?"
+#: ../404.php:12
+msgid "an out-of-date link"
+msgstr "Link yang sudah kadaluarsa"
 
-#: .././lib/activation.php:89 .././lib/activation.php:102
-#: .././lib/activation.php:115 .././lib/activation.php:128
-#: .././lib/activation.php:141
-msgid "Yes"
-msgstr "Ya"
+#: ../base.php:15
+msgid "Please enable Javascripts, we'll not harm you. Trust me! :)"
+msgstr "Mohon aktifkan Javascript, karna skrip saya tidak akan melukai anda. Percayalah! :)"
 
-#: .././lib/activation.php:90 .././lib/activation.php:103
-#: .././lib/activation.php:116 .././lib/activation.php:129
-#: .././lib/activation.php:142
-msgid "No"
-msgstr "Tidak"
+#: ../base.php:16
+msgid "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr "Anda sedang menggunakan browser <strong>jadul</strong>. Silahkan <a http=\"http://browserhappy.com\">mengupdate browser</a> untuk meningkatkan kualitas browsing anda."
 
-#: .././lib/activation.php:93
-msgid "Create a page called Home and set it to be the static front page"
-msgstr ""
-"Buat Halaman dengan nama Home dan tentukan halaman tersebut sebagai Static "
-"Front Page"
-
-#: .././lib/activation.php:98
-msgid "Change permalink structure?"
-msgstr "Ganti struktur permalink?"
-
-#: .././lib/activation.php:100
-msgid "Update permalink structure?"
-msgstr "Perbaharui struktur permalink?"
-
-#: .././lib/activation.php:106
-msgid "Change permalink structure to /&#37;postname&#37;/"
-msgstr "Ganti struktur permalink ke /&#37;postname&#37;/"
-
-#: .././lib/activation.php:111
-msgid "Change uploads folder?"
-msgstr "Ganti folder upload?"
-
-#: .././lib/activation.php:113
-msgid "Update uploads folder?"
-msgstr "Perbaharui folder upload?"
-
-#: .././lib/activation.php:119
-msgid "Change uploads folder to /assets/ instead of /wp-content/uploads/"
-msgstr "Ganti folder upload ke /assets/ daripada /wp-content/uploads/"
-
-#: .././lib/activation.php:124 .././lib/activation.php:126
-msgid "Create navigation menu?"
-msgstr "Buat menu navigasi?"
-
-#: .././lib/activation.php:132
-msgid "Create the Primary Navigation menu and set the location"
-msgstr "Buat Menu Utama dan tentukan lokasinya"
-
-#: .././lib/activation.php:137 .././lib/activation.php:139
-msgid "Add pages to menu?"
-msgstr "Tambah semua halaman ke menu?"
-
-#: .././lib/activation.php:145
-msgid "Add all current published pages to the Primary Navigation"
-msgstr "Tambah semua Halaman yang terpublikasi ke Menu Utama"
-
-#: .././lib/cleanup.php:382 .././lib/Nakee/template-tags.php:63
-msgid "Continued  &raquo;"
-msgstr "Selengkapnya &raquo;"
-
-#: .././lib/comments.php:35
-#, php-format
-msgid "%1$s"
-msgstr "%1$s"
-
-#: .././lib/comments.php:36
-msgid "(Edit)"
-msgstr "(Edit)"
-
-#: .././lib/comments.php:40
-msgid "Your comment is awaiting moderation."
-msgstr "Komentas anda sedang dimoderasi."
-
-#: .././lib/init.php:11
-msgid "Primary Navigation"
-msgstr "Menu Utama"
-
-#: .././lib/utils.php:60
+#: ../lib/titles.php:10
 msgid "Latest Posts"
 msgstr "Jurnal Terbaru"
 
-#: .././lib/utils.php:69 .././lib/Nakee/template-tags.php:248
-#: .././lib/Nakee/template-tags.php:283
+#: ../lib/titles.php:19
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Arsip Harian: %s"
 
-#: .././lib/utils.php:71 .././lib/Nakee/template-tags.php:250
-#: .././lib/Nakee/template-tags.php:285
+#: ../lib/titles.php:21
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Arsip Bulanan: %s"
 
-#: .././lib/utils.php:73 .././lib/Nakee/template-tags.php:252
-#: .././lib/Nakee/template-tags.php:287
+#: ../lib/titles.php:23
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Arsip Tahunan: %s"
 
-#: .././lib/utils.php:75 .././lib/Nakee/template-tags.php:254
-#: .././lib/Nakee/template-tags.php:289
+#: ../lib/titles.php:26
 #, php-format
 msgid "Author Archives: %s"
 msgstr "Arsip Penulis: %s"
 
-#: .././lib/utils.php:80
+#: ../lib/titles.php:31
 #, php-format
 msgid "Search Results for %s"
 msgstr "Hasil Pencarian untuk %s"
 
-#: .././lib/utils.php:82
+#: ../lib/titles.php:33
 msgid "Not Found"
 msgstr "Tidak Ditemukan"
 
-#: .././lib/utils.php:94
-#, php-format
-msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
-msgstr ""
-"Harap memastikan bahwa file <a href=\"%s\">.htaccess</a> mampu ditulis "
-"(writable)"
+#: ../lib/widgets.php:8
+msgid "Primary"
+msgstr "Sidebar Utama"
 
-#: .././lib/widgets.php:8
-msgid "Primary Sidebar"
-msgstr "Sidebar Umum"
-
-#: .././lib/widgets.php:23
+#: ../lib/widgets.php:23
 msgid "Sticky Sidebar"
 msgstr "Sidebar Utama"
 
-#: .././lib/widgets.php:34
+#: ../lib/widgets.php:34
 msgid "Front Page Teaser"
 msgstr "Front Page Teaser"
 
-#: .././lib/widgets.php:45
+#: ../lib/widgets.php:44
 msgid "Front Page Footer"
 msgstr "Front Page Footer"
 
-#: .././lib/widgets.php:74
+#: ../lib/widgets.php:93
 msgid "Use this widget to add a vCard"
 msgstr "Gunakan widget ini untuk menambahkan vCard"
 
-#: .././lib/widgets.php:76
+#: ../lib/widgets.php:95
 msgid "Roots: vCard"
 msgstr "Roots: vCard"
 
-#: .././lib/widgets.php:103
+#: ../lib/widgets.php:122
 msgid "vCard"
 msgstr "vCard"
 
-#: .././lib/Nakee/hooks.php:19
-msgid ""
-"Jika ada tanggapan, kritik, saran, maupun pertanyaan tentang artikel ini, "
-"silahkan <a href=\"#disqus_thread\">meninggalkan komentar</a> anda. Silahkan "
-"menginput email anda pada form di bawah ini untuk menerima update jurnal "
-"terbaru dari saya. :)"
+#: ../lib/activation.php:28
+#: ../lib/activation.php:29
+msgid "Theme Activation"
+msgstr "Aktivasi Theme"
+
+#: ../lib/activation.php:51
+#, php-format
+msgid "%s Theme Activation"
+msgstr "%s Aktivasi Theme"
+
+#: ../lib/activation.php:62
+#: ../lib/activation.php:64
+msgid "Create static front page?"
+msgstr "Buat Static Front Page?"
+
+#: ../lib/activation.php:66
+#: ../lib/activation.php:79
+#: ../lib/activation.php:92
+#: ../lib/activation.php:105
+#: ../lib/activation.php:118
+msgid "Yes"
+msgstr "Ya"
+
+#: ../lib/activation.php:67
+#: ../lib/activation.php:80
+#: ../lib/activation.php:93
+#: ../lib/activation.php:106
+#: ../lib/activation.php:119
+msgid "No"
+msgstr "Tidak"
+
+#: ../lib/activation.php:70
+msgid "Create a page called Home and set it to be the static front page"
+msgstr "Buat Halaman dengan nama Home dan tentukan halaman tersebut sebagai Static Front Page"
+
+#: ../lib/activation.php:75
+msgid "Change permalink structure?"
+msgstr "Ganti struktur permalink?"
+
+#: ../lib/activation.php:77
+msgid "Update permalink structure?"
+msgstr "Perbaharui struktur permalink?"
+
+#: ../lib/activation.php:83
+msgid "Change permalink structure to /&#37;postname&#37;/"
+msgstr "Ganti struktur permalink ke /&#37;postname&#37;/"
+
+#: ../lib/activation.php:88
+msgid "Change uploads folder?"
+msgstr "Ganti folder upload?"
+
+#: ../lib/activation.php:90
+msgid "Update uploads folder?"
+msgstr "Perbaharui folder upload?"
+
+#: ../lib/activation.php:96
+msgid "Change uploads folder to /media/ instead of /wp-content/uploads/"
+msgstr "Ganti folder upload ke /assets/ ke /wp-content/uploads/"
+
+#: ../lib/activation.php:101
+#: ../lib/activation.php:103
+msgid "Create navigation menu?"
+msgstr "Buat menu navigasi?"
+
+#: ../lib/activation.php:109
+msgid "Create the Primary Navigation menu and set the location"
+msgstr "Buat Menu Utama dan tentukan lokasinya"
+
+#: ../lib/activation.php:114
+#: ../lib/activation.php:116
+msgid "Add pages to menu?"
+msgstr "Tambah semua halaman ke menu?"
+
+#: ../lib/activation.php:122
+msgid "Add all current published pages to the Primary Navigation"
+msgstr "Tambah semua Halaman yang terpublikasi ke Menu Utama"
+
+#: ../lib/init.php:11
+msgid "Primary Navigation"
+msgstr "Menu Utama"
+
+#: ../lib/cleanup.php:198
+msgid "Continued  &raquo;"
+msgstr "Selengkapnya &raquo;"
+
+#: ../lib/Nakee/hooks.php:20
+msgid "Jika ada tanggapan, kritik, saran, maupun pertanyaan tentang artikel ini, silahkan <a href=\"#disqus_thread\">meninggalkan komentar</a> anda. Silahkan menginput email anda pada form di bawah ini untuk menerima update jurnal terbaru dari saya. :)"
 msgstr ""
 
-#: .././lib/Nakee/hooks.php:22
+#: ../lib/Nakee/hooks.php:23
 msgid "Email anda"
 msgstr ""
 
-#: .././lib/Nakee/hooks.php:23
+#: ../lib/Nakee/hooks.php:24
 msgid "Langganan"
 msgstr ""
 
-#: .././lib/Nakee/init.php:22 .././lib/Nakee/template-tags.php:238
-#: .././lib/Nakee/template-tags.php:246
+#: ../lib/Nakee/init.php:23
+#: ../lib/Nakee/template-tags.php:240
+#: ../lib/Nakee/template-tags.php:248
 msgid "Portfolios"
 msgstr "Portfolio"
 
-#: .././lib/Nakee/init.php:30
+#: ../lib/Nakee/init.php:24
+#, fuzzy
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: ../lib/Nakee/init.php:26
+#, fuzzy
+msgid "Add Portfolios"
+msgstr "Portfolio"
+
+#: ../lib/Nakee/init.php:27
+#, fuzzy
+msgid "Edit Portfolios"
+msgstr "Portfolio"
+
+#: ../lib/Nakee/init.php:28
+#, fuzzy
+msgid "New Portfolios"
+msgstr "Portfolio"
+
+#: ../lib/Nakee/init.php:29
+#, fuzzy
+msgid "View Portfolios"
+msgstr "Lihat Portfolio"
+
+#: ../lib/Nakee/init.php:30
+#, fuzzy
+msgid "Search Portfolios"
+msgstr "Portfolio"
+
+#: ../lib/Nakee/init.php:31
+#, fuzzy
+msgid "No Portfolio found"
+msgstr "Buat Kategori Portfolio"
+
+#: ../lib/Nakee/init.php:32
+msgid "No Portfolio found in Trash"
+msgstr ""
+
+#: ../lib/Nakee/init.php:34
 msgid "Portfolio post types is use to save all portfolio post."
 msgstr "Tipe Post Portfolio digunakan untuk menyimpan semua Portfolio"
 
-#: .././lib/Nakee/init.php:65
+#: ../lib/Nakee/init.php:69
 msgid "All Portfolio Categories"
 msgstr "Semua Kategori Portfolio"
 
-#: .././lib/Nakee/init.php:66
+#: ../lib/Nakee/init.php:70
 msgid "Edit Portfolio Category"
 msgstr "Edit Kategori Portfolio"
 
-#: .././lib/Nakee/init.php:67
+#: ../lib/Nakee/init.php:71
 msgid "View Portfolio Category"
 msgstr "Lihat Kategori Portfolio"
 
-#: .././lib/Nakee/init.php:68
+#: ../lib/Nakee/init.php:72
 msgid "Update Portfolio Category"
 msgstr "Perbaharui Kategori Portfolio"
 
-#: .././lib/Nakee/init.php:69
+#: ../lib/Nakee/init.php:73
 msgid "Add Portfolio Category"
 msgstr "Tambah Kategori Portfolio"
 
-#: .././lib/Nakee/init.php:70
+#: ../lib/Nakee/init.php:74
 msgid "New Portfolio Category"
 msgstr "Buat Kategori Portfolio"
 
-#: .././lib/Nakee/init.php:85
+#: ../lib/Nakee/init.php:89
 msgid "All Technologies"
 msgstr "Semua Teknologi"
 
-#: .././lib/Nakee/init.php:86
+#: ../lib/Nakee/init.php:90
 msgid "Edit Technology"
 msgstr "Edit Teknologi"
 
-#: .././lib/Nakee/init.php:87
+#: ../lib/Nakee/init.php:91
 msgid "View Technology"
 msgstr "Lihat Teknologi"
 
-#: .././lib/Nakee/init.php:88
+#: ../lib/Nakee/init.php:92
 msgid "Update Technology"
 msgstr "Perbaharui Teknologi"
 
-#: .././lib/Nakee/init.php:89
+#: ../lib/Nakee/init.php:93
 msgid "Add Technology"
 msgstr "Tambah Teknologi"
 
-#: .././lib/Nakee/init.php:90
+#: ../lib/Nakee/init.php:94
 msgid "New Technology"
 msgstr "Buat Teknologi"
 
-#: .././lib/Nakee/template-tags.php:18
+#: ../lib/Nakee/template-tags.php:18
 msgid "Untitled"
 msgstr "Untitled"
 
-#: .././lib/Nakee/template-tags.php:217
+#: ../lib/Nakee/template-tags.php:219
 msgid "<strong>Sorry!</strong> No Related Posts Found"
 msgstr "<strong>Sorry!</strong> Tidak ada Jurnal yang berkaitan"
 
-#: .././lib/Nakee/template-tags.php:242 .././lib/Nakee/template-tags.php:277
+#: ../lib/Nakee/template-tags.php:244
 #, php-format
 msgid "Work on %s"
 msgstr ""
 
-#: .././lib/Nakee/template-tags.php:244 .././lib/Nakee/template-tags.php:279
+#: ../lib/Nakee/template-tags.php:246
 #, php-format
 msgid "%s Technology"
 msgstr "Teknologi %s"
 
-#: .././lib/Nakee/template-tags.php:256 .././lib/Nakee/template-tags.php:291
+#: ../lib/Nakee/template-tags.php:258
 msgid "Posts on "
 msgstr "Kategori Jurnal : "
 
-#: .././lib/Nakee/Class/Nakee_Category_Walker.php:31
+#: ../lib/Nakee/Class/Nakee_Category_Walker.php:31
 #, php-format
 msgid "View work on %s"
 msgstr "Lihat Portfolio pada Kategori %s"
 
-#: .././lib/Nakee/Class/Nakee_Category_Walker.php:33
+#: ../lib/Nakee/Class/Nakee_Category_Walker.php:33
 #, fuzzy, php-format
 msgid "View all posts filed under %s"
 msgstr "Lihat Jurnal pada %s"
 
-#: .././lib/Nakee/Class/Nakee_Category_Walker.php:49
+#: ../lib/Nakee/Class/Nakee_Category_Walker.php:49
 #, php-format
 msgid "Feed for all posts filed under %s"
 msgstr ""
 
-#: .././templates/comments.php:19
-msgid "&larr; Older comments"
-msgstr "&larr; Komentar sebelumnya"
-
-#: .././templates/comments.php:22
-msgid "Newer comments &rarr;"
-msgstr "Komentar terbaru &rarr;"
-
-#: .././templates/comments.php:30 .././templates/comments.php:39
-msgid "<strong>Sorry!</strong> Comments are closed."
-msgstr "<strong>Sorry!</strong> Komentar ditutup."
-
-#: .././templates/comments.php:46
-msgid "Leave a Reply"
-msgstr "Buat Komentar"
-
-#: .././templates/comments.php:46
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr "Balas Komentar %s"
-
-#: .././templates/comments.php:49
-#, php-format
-msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Anda harus <a href=\"%s\">login</a> untuk membuat komentar."
-
-#: .././templates/comments.php:54
-#, php-format
-msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr "Login sebagai <a href=\"%s/wp-admin/profile.php\">%s</a>."
-
-#: .././templates/comments.php:55
-msgid "Log out of this account"
-msgstr "Logout dari akun ini"
-
-#: .././templates/comments.php:55
-msgid "Log out &raquo;"
-msgstr "Logout &raquo;"
-
-#: .././templates/comments.php:58
-msgid "Name"
-msgstr "Nama"
-
-#: .././templates/comments.php:60 .././templates/comments.php:65
-msgid " (required)"
-msgstr "(wajib)"
-
-#: .././templates/comments.php:63
-msgid "Email (will not be published)"
-msgstr "Email (privat)"
-
-#: .././templates/comments.php:68
-msgid "Website"
-msgstr "Website"
-
-#: .././templates/comments.php:71
-msgid "Comment"
-msgstr "Komentar"
-
-#: .././templates/comments.php:73
-msgid "Submit Comment"
-msgstr "Kirim Komentar"
-
-#: .././templates/content-page.php:10 .././templates/content-single.php:23
-#: .././templates/content.php:39 .././templates/entry-meta.php:5
-#: .././templates/entry-meta.php:44
-msgid "By"
-msgstr "Oleh"
-
-#: .././templates/content-single.php:17 .././templates/content.php:33
-#, php-format
-msgid "View posts on %s"
-msgstr "Lihat Jurnal pada %s"
-
-#: .././templates/content-single.php:21 .././templates/content.php:37
-#, php-format
-msgid "About %s"
-msgstr "Tentang %s"
-
-#: .././templates/content-single.php:38
-msgid "Pages:"
-msgstr "Halaman:"
-
-#: .././templates/content-single.php:47
-msgid "Related Posts"
-msgstr "Jurnal Terkait"
-
-#: .././templates/content.php:4
-msgid "Ooops"
-msgstr "Ooops"
-
-#: .././templates/content.php:5
-msgid "No results were found."
-msgstr "Tidak ditemukan"
-
-#: .././templates/content.php:64 .././templates/portfolio-archive.php:82
-msgid "&larr; Older posts"
-msgstr "&larr; Jurnal sebelumnya"
-
-#: .././templates/content.php:67 .././templates/portfolio-archive.php:85
-msgid "Newer posts &rarr;"
-msgstr "Jurnal selanjutnya &rarr;"
-
-#: .././templates/entry-meta.php:33
-msgid "Tags"
-msgstr "Tag"
-
-#: .././templates/footer.php:43
-msgid "Copyright &copy; "
-msgstr "Copyright &copy; "
-
-#: .././templates/page-header.php:12
+#: ../templates/page-header.php:12
 msgid "Category"
 msgstr "Kategori"
 
-#: .././templates/page-header.php:12
+#: ../templates/page-header.php:12
 msgid "Tag"
 msgstr "Tag"
 
-#: .././templates/page-header.php:18
+#: ../templates/page-header.php:18
 #, php-format
 msgid "Berikut adalah daftar jurnal yang termasuk dalam %s <strong>%s</strong>"
 msgstr ""
 
-#: .././templates/page-header.php:23
+#: ../templates/page-header.php:23
 #, php-format
-msgid ""
-"Berikut adalah hasil pencarian Jurnal dengan menggunakan query <em>%s</em>"
+msgid "Berikut adalah hasil pencarian Jurnal dengan menggunakan query <em>%s</em>"
 msgstr ""
 
-#: .././templates/portfolio-archive.php:57
+#: ../templates/footer.php:43
+msgid "Copyright &copy; "
+msgstr "Copyright &copy; "
+
+#: ../templates/content.php:4
+msgid "Ooops"
+msgstr "Ooops"
+
+#: ../templates/content.php:5
+msgid "No results were found."
+msgstr "Tidak ditemukan"
+
+#: ../templates/content.php:33
+#: ../templates/content-single.php:17
+#, php-format
+msgid "View posts on %s"
+msgstr "Lihat Jurnal pada %s"
+
+#: ../templates/content.php:37
+#: ../templates/content-single.php:21
+#, php-format
+msgid "About %s"
+msgstr "Tentang %s"
+
+#: ../templates/content.php:39
+#: ../templates/content-page.php:10
+#: ../templates/content-single.php:23
+#: ../templates/entry-meta.php:5
+#: ../templates/entry-meta.php:44
+msgid "By"
+msgstr "Oleh"
+
+#: ../templates/content.php:64
+#: ../templates/portfolio-archive.php:82
+msgid "&larr; Older posts"
+msgstr "&larr; Jurnal sebelumnya"
+
+#: ../templates/content.php:67
+#: ../templates/portfolio-archive.php:85
+msgid "Newer posts &rarr;"
+msgstr "Jurnal selanjutnya &rarr;"
+
+#: ../templates/header-top-navbar.php:40
+#, fuzzy
+msgid "<strong>Ooops!</strong> Not Found"
+msgstr "<strong>Sorry!</strong> Tidak ada Jurnal yang berkaitan"
+
+#: ../templates/portfolio-archive.php:57
 msgid "Portfolio Categories: "
 msgstr "Kategori Portfolio:"
 
-#: .././templates/portfolio-archive.php:97
+#: ../templates/portfolio-archive.php:97
 msgid "Sorry"
 msgstr "Sori"
 
-#: .././templates/portfolio-archive.php:98
+#: ../templates/portfolio-archive.php:98
 #, fuzzy
 msgid "Portfolio belum tersedia"
 msgstr "Kategori Portfolio"
 
-#: .././templates/searchform.php:2
+#: ../templates/content-single.php:38
+msgid "Pages:"
+msgstr "Halaman:"
+
+#: ../templates/content-single.php:47
+msgid "Related Posts"
+msgstr "Jurnal Terkait"
+
+#: ../templates/comments.php:19
+msgid "&larr; Older comments"
+msgstr "&larr; Komentar sebelumnya"
+
+#: ../templates/comments.php:22
+msgid "Newer comments &rarr;"
+msgstr "Komentar terbaru &rarr;"
+
+#: ../templates/comments.php:30
+#: ../templates/comments.php:39
+msgid "<strong>Sorry!</strong> Comments are closed."
+msgstr "<strong>Sorry!</strong> Komentar ditutup."
+
+#: ../templates/comments.php:46
+msgid "Leave a Reply"
+msgstr "Buat Komentar"
+
+#: ../templates/comments.php:46
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Balas Komentar %s"
+
+#: ../templates/comments.php:49
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Anda harus <a href=\"%s\">login</a> untuk membuat komentar."
+
+#: ../templates/comments.php:54
+#, php-format
+msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr "Login sebagai <a href=\"%s/wp-admin/profile.php\">%s</a>."
+
+#: ../templates/comments.php:55
+msgid "Log out of this account"
+msgstr "Logout dari akun ini"
+
+#: ../templates/comments.php:55
+msgid "Log out &raquo;"
+msgstr "Logout &raquo;"
+
+#: ../templates/comments.php:58
+msgid "Name"
+msgstr "Nama"
+
+#: ../templates/comments.php:60
+#: ../templates/comments.php:65
+msgid " (required)"
+msgstr "(wajib)"
+
+#: ../templates/comments.php:63
+msgid "Email (will not be published)"
+msgstr "Email (privat)"
+
+#: ../templates/comments.php:68
+msgid "Website"
+msgstr "Website"
+
+#: ../templates/comments.php:71
+msgid "Comment"
+msgstr "Komentar"
+
+#: ../templates/comments.php:73
+msgid "Submit Comment"
+msgstr "Kirim Komentar"
+
+#: ../templates/searchform.php:2
 msgid "Search for:"
 msgstr "Pencarian untuk:"
 
-#: .././templates/searchform.php:3
-msgid "Search"
+#: ../templates/searchform.php:3
+#, fuzzy
+msgid "Search . . ."
 msgstr "Cari"
 
-#: .././templates/social-share.php:2
+#: ../templates/social-share.php:2
 msgid "Spread the Word"
 msgstr ""
+
+#: ../templates/entry-meta.php:33
+msgid "Tags"
+msgstr "Tag"
+
+#: ../templates/comment.php:4
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: ../templates/comment.php:5
+msgid "(Edit)"
+msgstr "(Edit)"
+
+#: ../templates/comment.php:9
+msgid "Your comment is awaiting moderation."
+msgstr "Komentas anda sedang dimoderasi."
+
+#: ../templates/portfolio-category-link.php:11
+msgid "Portfolio Category"
+msgstr "Kategori Portfolio"
+
+#: ../templates/portfolio-category-link.php:13
+msgid "View All Portfolios"
+msgstr "Lihat Portfolio"
+
+#: ../templates/portfolio-category-link.php:13
+msgid "All"
+msgstr "Semua"
+
+#~ msgid "Sorry, but the page you were trying to view does not exist."
+#~ msgstr "Maaf, kami tidak menemukan apa yang anda cari."
+
+#~ msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
+#~ msgstr ""
+#~ "Harap memastikan bahwa file <a href=\"%s\">.htaccess</a> mampu ditulis "
+#~ "(writable)"
 
 #~ msgid "No Post match your criteria."
 #~ msgstr "Tidak ada Jurnal yang ditemukan."
