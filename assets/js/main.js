@@ -91,10 +91,14 @@ jQuery(document).ready(function($) {
     });
 
 
-    if ($('.desktop').is('*') && $('.navbar-fixed-top').is('*')) {
-        $('body').css({
-            "padding-top" : $('.navbar-fixed-top').height() + "px"
-        });
-    }
+    $(window).resize(function() {
+        if ($('html.desktop').is('*') && $('.navbar-fixed-top').is('*')) {
+            $('body').css({
+                "padding-top" : $('.navbar-fixed-top').height() + "px"
+            });
+        } else {
+            $('body').css({ "padding-top" : 0 });
+        }
+    });
 
 });

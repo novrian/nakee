@@ -14,7 +14,6 @@ $FontAwesomePath: "../fonts/FontAwesome";
 // Modular Scale
 $base-size: 14px 72px;
 $ratio: golden();
-$ipad-size: 14px 44px;
 
 // Bootstrap Color
 $white: #fff;
@@ -47,7 +46,7 @@ $baseFontFamily:        $sansFontFamily;
 $baseLineHeight:        20px;
 $altFontFamily:         $serifFontFamily;
 
-$biggerBaseFontSize: 16.9px;
+$biggerBaseFontSize: ms(1);
 
 $headingsColor: $nakee_dark_green;
 
