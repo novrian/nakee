@@ -71,7 +71,9 @@ if (!isset($portfolio) || empty($portfolio)) {
     <?php // Pagenavi ?>
     <?php if (function_exists('wp_pagenavi')) : ?>
 
+    <nav class="post-nav">
         <?php nakee_wp_pagenavi('large', 'centered', false, $portfolio); ?>
+    </nav>
 
     <?php else : ?>
 

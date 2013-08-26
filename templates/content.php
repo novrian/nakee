@@ -53,7 +53,9 @@
 
     <?php if (function_exists('wp_pagenavi')) : ?>
 
+    <nav class="post-nav">
         <?php nakee_wp_pagenavi(); ?>
+    </nav>
 
     <?php else : ?>
 
