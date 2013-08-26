@@ -3,20 +3,20 @@
  * Register sidebars and widgets
  */
 function roots_widgets_init() {
-  // Sidebars
-  register_sidebar(array(
-    'name'          => __('Primary', 'roots'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
-    'after_widget'  => '</div></section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
-  ));
+    // Sidebars
+    register_sidebar(array(
+        'name'          => __('Primary', 'roots'),
+        'id'            => 'sidebar-primary',
+        'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+        ));
 
-  /**
-   * NAKEE CUSTOM SIDEBAR
-   * --------------------------------------------------------------------------
-   */
+    /**
+    * NAKEE CUSTOM SIDEBAR
+    * --------------------------------------------------------------------------
+    */
 
     // Sticky Sidebar
     register_sidebar(array(
@@ -27,32 +27,35 @@ function roots_widgets_init() {
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
         'class'         => 'sticky-sidebar'
-    ));
+        ));
 
-  // frontpage teaser
-  register_sidebar(array(
-      'name'            => __('Front Page Teaser', 'roots'),
-      'id'              => 'frontpage-teaser',
-      'before_widget'   => '<section class="widget span3 %1$s %2$s"><div class="widget-inner">',
-      'after_widget'    => '</div></section>',
-      'before_title'    => '<h3>',
-      'after_title'     => '</h3>',
-      // 'class' => 'your-class-here'   // Custom Class
-  ));
+    // frontpage teaser
+    register_sidebar(array(
+        'name'            => __('Front Page Teaser', 'roots'),
+        'id'              => 'frontpage-teaser',
+        'before_widget'   => '<section class="widget span3 %1$s %2$s"><div class="widget-inner">',
+        'after_widget'    => '</div></section>',
+        'before_title'    => '<h3>',
+        'after_title'     => '</h3>',
+        ));
 
-  // frontpage footer
-  register_sidebar(array(
-      'name'            => __('Front Page Footer', 'roots'),
-      'id'              => 'frontpage-footer',
-      'before_widget'   => '<section class="widget span6 %1$s %2$s"><div class="widget-inner">',
-      'after_widget'    => '</div></section>',
-      'before_title'    => '<h3>',
-      'after_title'     => '</h3>',
-      // 'class' => 'your-class-here' // Custom Class
-  ));
+    // frontpage footer
+    register_sidebar(array(
+        'name'            => __('Front Page Footer', 'roots'),
+        'id'              => 'frontpage-footer',
+        'before_widget'   => '<section class="widget span6 %1$s %2$s"><div class="widget-inner">',
+        'after_widget'    => '</div></section>',
+        'before_title'    => '<h3>',
+        'after_title'     => '</h3>',
+        ));
 
-  // Widgets
-  register_widget('Roots_Vcard_Widget');
+    // Widgets
+    register_widget('Roots_Vcard_Widget');
+
+    // Remove some default widget
+    unregister_widget('WP_Widget_RSS');
+    unregister_widget('WP_Widget_Meta');
+    unregister_widget('WP_Widget_Calendar');
 }
 add_action('widgets_init', 'roots_widgets_init');
 
@@ -67,7 +70,6 @@ add_action('widgets_init', 'roots_widgets_init');
 function nakee_widgets_link_args($args) {
     $args['show_description'] = 0;
     $args['show_rating'] = 0;
-    $args['show_images'] = 0;
 
     return $args;
 }
