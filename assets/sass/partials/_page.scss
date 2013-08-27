@@ -292,51 +292,76 @@ a.thumbnail:focus {
    ========================================================================== */
 
 .main {
-    @include border-radius(20px);
-    @include box-sizing(border-box);
     position: relative;
+
+    @media only screen and (max-width: 767px) { margin-bottom: $gridGutterWidth * 2; }
+}
+
+// Main Container Vars
+$mainContentRadius: 20px;
+$mainBorder: rgba($black, 0.1);
+$mainShadow: rgba($black, 0.4);
+$mainShadowElHeight: 500px;
+
+.main > .main-container {
+    @include box-sizing(border-box);
+    @include border-radius(20px);
+    position: relative;
+    margin-top: 1px;
+    padding: 1px 20px;
     border: {
-        top: 1px solid transparent;
-        left: 1px solid rgba($black, 0.1);
-        right: 1px solid rgba($black, 0.1);
-        bottom: 6px solid rgba($black, 0.1)
+        right: 1px solid $mainBorder;
+        left: 1px solid $mainBorder;
+        bottom: 8px solid $mainBorder;
     }
     background-color: $white;
+    z-index: 10;
+}
 
-    @media only screen and (max-width: 767px) {
-        margin-bottom: $gridGutterWidth * 2;
-    }
+.main > .shadow-effect {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $mainShadowElHeight;
+    background: transparent;
+    z-index: 8;
+    content: "";
+}
+
+.main > .shadow-effect > div {
+    @include border-radius(20px);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 7;
+    content: "";
 
     &:before, &:after {
-        @include border-radius(20px);
-        @include single-box-shadow(rgba($black, 0.6), 0, 15px, 10px);
+        @include single-box-shadow($mainShadow, 0, 15px, 10px);
+        @include border-radius(10px);
         @include rotate(-3deg);
         position: absolute;
         top: 90%;
         left: 20px;
-        bottom: 10px;
+        bottom: 15px;
         width: 50%;
-        z-index: -1;
+        z-index: 6;
         content: "";
-        background: transparent;
 
         @media only screen and (max-width: 767px) {
-            @include rotate(-5deg);
-            top: 99%;
-            left: 10px;
+            @include single-box-shadow($mainShadow, 0, 15px, 5px);
+            left: 15px;
         }
     }
 
     &:after {
         @include rotate(3deg);
-        left: auto;
         right: 20px;
+        left: auto;
 
         @media only screen and (max-width: 767px) {
-            @include rotate(5deg);
-            top: 99%;
-            right: 10px;
-            left: auto;
+            right: 15px;
         }
     }
 }
@@ -356,12 +381,6 @@ a.thumbnail:focus {
 .breadcrumb {
     padding: 6px 10px;
     font-size: 12px;
-}
-
-.main-container {
-    @include box-sizing(border-box);
-    margin-top: 1px;
-    padding: 1px 20px;
 }
 
 .nakee-term-desc {
@@ -647,8 +666,13 @@ section[class~="page"] .entry-content {
         &[class~="h4"] > li,
         &[class~="h4"] > li > h4 { line-height: $baseLineHeight; }
 
-        &[class~="h3"] > li { font-size: $largerH - 8; }
-        &[class~="h4"] > li { font-size: $largerH - 16; }
+        &[class~="h3"] > li,
+        &[class~="h3"] > li > h3,
+        &[class~="h3"] > li > h3 > a { font-size: $largerH - 8; }
+
+        &[class~="h4"] > li,
+        &[class~="h4"] > li > h4,
+        &[class~="h4"] > li > h4 > a { font-size: $largerH - 16; }
 
         // Tablet
         &[class~="h3"] > li,
@@ -1609,6 +1633,10 @@ body[class~="page"] nav.page-nav {
 .content-info {
     margin-top: $gridGutterWidth * 2;
     padding-top: 0;
+
+    @media only screen and (max-width: 767px) {
+        margin-top: 0;
+    }
 }
 
 .footer-triangle {

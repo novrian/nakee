@@ -31,6 +31,7 @@
         <div class="main-container">
             <?php include roots_template_path(); ?>
         </div>
+        <div class="shadow-effect"><div></div></div>
       </div><!-- /.main -->
       <?php if (roots_display_sidebar()) : ?>
       <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
