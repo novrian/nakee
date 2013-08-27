@@ -1,10 +1,11 @@
 # Require any additional compass plugins here.
 require 'sassy-buttons'
+require 'modular-scale'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "assets/css"
-sass_dir = "sass"
+sass_dir = "assets/sass"
 images_dir = "assets/img"
 javascripts_dir = "assets/js"
 fonts_dir = "assets/fonts"

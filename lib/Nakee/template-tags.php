@@ -65,15 +65,31 @@ function nakee_excerpt_more($more) {
 
 
 /**
- * Custom WP-Pagenavi Nakee
+ * Twitter Bootstrap Pagenavi
  *
- * @param string $size Pagination Size. Values: `normal | small | large | mini`
- * @param string $position Pagination Aligned Position. Values: `left
- *   | centered | right`
- * @param boolean $post WP Link Pages Switch
+ * This is tweaks function to display WP-Pagenavi markup that displayed like
+ * Twitter Bootstrap Pagination.
+ *
+ * Do not fille the pagenavi's options below:
+ * - Text For Number Of Pages
+ * - Text For `First` / `Last Page`
+ * - Text For `Previous ...` / `Next ...`
+ *
+ * Usage:
+ * Just put this code on your theme's function.php
+ *
+ * @author Novrian Nono <me@novrian.info>
+ * @param string $size Bootstrap Pagination Size: `normal | small | large | mini`
+ * @param string $position Bootstrap Pagination Position: `left | centered | right`
+ * @param boolean $post set it to true on multipart post
+ * @param object WP_Query Object if you use custom query
  */
 function nakee_wp_pagenavi($size = null, $position = null, $post = false, $queryArgs = null) {
-    $class[] = "pagination";    // Set Main Class
+    if (!function_exists('wp_pagenavi')) {
+        return null;
+    }
+
+    $class[] = "pagination"; // Set Main Class
 
     // Pagination Size Class
     if (!$size) {
@@ -88,14 +104,14 @@ function nakee_wp_pagenavi($size = null, $position = null, $post = false, $query
     $class[] = "pagination-" . $position;
 
     // Set Before & After Output
-    $before = "<nav id=\"main-pagination\"><div class=\"" . implode(" ", $class) . "\"><ul>";
-    $after = "</ul></div></nav>";
+    $before = "<div class=\"" . implode(" ", $class) . "\"><ul>";
+    $after = "</ul></div>";
 
     // Build Args
     $args = array(
         'before' => $before,
         'after' => $after
-    );
+        );
 
     // Cloning untuk wp_link_pages()
     if ($post) {
@@ -108,6 +124,24 @@ function nakee_wp_pagenavi($size = null, $position = null, $post = false, $query
 
     return wp_pagenavi($args);
 }
+
+/**
+* This is filter that help above template tags
+*/
+function nakee_pagenavi_filter($html) {
+    $out = str_replace('<div class=\'wp-pagenavi\'>', '', $html);
+    $out = str_replace('</div></ul></div>', '</ul></div>', $out);
+    $out = str_replace('<a ', '<li><a ', $out);
+    $out = str_replace('</a>', '</a></li>', $out);
+    $out = str_replace('<span', '<li><a href="#"><span', $out);
+    $out = str_replace('</span>', '</span></a></li>', $out);
+    $out = preg_replace('/<li><a href="#"><span class=[\'|"]pages[\'|"]>([0-9]+) of ([0-9]+)<\/span><\/a><\/li>/', '', $out);
+    $out = preg_replace('/<li><a href="#"><span class=[\'|"]extend[\'|"]>([^\n\r<]+)<\/span><\/a><\/li>/', '<li class="disabled"><a href="#">&hellip;</a></li>', $out);
+    $out = str_replace('<li><a href="#"><span class=\'current\'', '<li class="active disabled"><a href="#"><span class="current"', $out);
+
+    return $out;
+}
+add_filter('wp_pagenavi', 'nakee_pagenavi_filter', 10, 2);
 
 
 /**
@@ -259,41 +293,6 @@ function nakee_title() {
         }
     } else {
         echo roots_title();
-    }
-}
-
-
-/**
- * nakee_wp_title()
- *
- * Template Tags untuk override wp_title()
- *
- * @return string
- */
-function nakee_wp_title() {
-    if (is_front_page()) {
-        return get_bloginfo('name') . ' | ' . get_bloginfo('description');
-    } elseif (is_archive()) {
-        $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-        if (is_tax('nakee_portfolio_category')) {
-            return sprintf(__('Work on %s', 'roots'), $term->name) . ' | ' . get_bloginfo('name');
-        } elseif (is_tax('nakee_technology')) {
-            return sprintf(__('%s Technology', 'roots'), $term->name) . ' | ' . get_bloginfo('name');
-        } elseif (is_post_type_archive('nakee_portfolio')) {
-            return get_queried_object()->labels->name . ' | ' . get_bloginfo('name');
-        } elseif (is_day()) {
-            return sprintf(__('Daily Archives: %s', 'roots'), get_the_date()) . ' | ' . get_bloginfo('name');
-        } elseif (is_month()) {
-            return sprintf(__('Monthly Archives: %s', 'roots'), get_the_date('F Y')) . ' | ' . get_bloginfo('name');
-        } elseif (is_year()) {
-            return sprintf(__('Yearly Archives: %s', 'roots'), get_the_date('Y')) . ' | ' . get_bloginfo('name');
-        } elseif (is_author()) {
-            return sprintf(__('Author Archives: %s', 'roots'), get_the_author()) . ' | ' . get_bloginfo('name');
-        } else {
-            return single_cat_title(__('Posts on ', 'roots')) . ' | ' . get_bloginfo('name');
-        }
-    } else {
-        return wp_title(' | ', false, 'right');
     }
 }
 

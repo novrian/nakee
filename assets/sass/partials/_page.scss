@@ -20,14 +20,21 @@ body {
 
     background: white image-url("main-background.png") repeat 0 0 scroll;
 
-    &.admin-bar {
-        padding-top: 28px;
+    @media only screen and (min-width: $navbarCollapseDesktopWidth) {
+        &[class*="admin-bar"] {
+            padding-top: 28px;
 
-        .navbar-fixed-top {
-            top: 28px;
+            .navbar-fixed-top {
+                top: 28px;
+            }
         }
     }
 
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+    @include single-box-shadow(rgba($linkColor, 0.6), 0, 1px, 4px);
 }
 
 .nakee-front-teaser,
@@ -82,81 +89,98 @@ body {
         }
     }
 
-    @media only screen and (min-width: 981px) {
+    // Reset Bootstrap Nav
+    .nav li a {
+        @include single-text-shadow(none);
+        font-family: $headingsFontFamily;
+        font-weight: 500;
+    }
 
-        .nav > li {
+    .nav > .active > a,
+    .nav > .active > a:hover,
+    .nav > .active > a:focus {
+        @include single-box-shadow(none);
+    }
 
-            margin-right: 10px;
+    // Custom Style Navbar Responsive
+    @media only screen and (max-width: $navbarCollapseWidth) {
+        .nav-collapse .nav li a {
+            font-weight: bold;
+        }
 
-            &:last-child { margin-right: 0; }
+        // Nav and dropdown links in navbar
+        .nav-collapse .nav > li > a,
+        .nav-collapse .dropdown-menu a {
+            padding: 9px 10px;
+        }
 
+        .nav-collapse .dropdown-menu > .active > a,
+        .nav-collapse .dropdown-menu > .active > a:hover,
+        .nav-collapse .dropdown-menu > .active > a:focus {
+            color: $white;
+        }
+
+        .nav-collapse .nav > li > a:hover,
+        .nav-collapse .nav > li > a:focus,
+        .nav-collapse .dropdown-menu a:hover,
+        .nav-collapse .dropdown-menu a:focus {
+            background-color: $linkColor;
+        }
+    }
+
+    // Custom Style Navbar Desktop
+    @media only screen and (min-width: $navbarCollapseDesktopWidth) {
+        // Reset Bootstrap Nav
+        .nav > li > a {
+            padding: 0;
         }
 
         .nav > li > a {
-
-            @include reset-box-model;
-            @include border-radius(15px);
-            @include transition-property(background-color, color, border-color);
-            @include transition-duration(0.2s);
-            @include transition-timing-function(linear);
-            height: 30px;
-            margin-top: 10px;
-            padding: {
-                left: 16px;
-                right: 16px;
-            }
-            font-weight: bold;
-            line-height: 30px;
-            background: none;
-
+            @include sassy-button-structure(($navbarHeight / 2), 16px, 5px 13px);
+            @include transition-property(color);
+            @include transition-duration(0.6s);
+            @include transition-timing-function(ease);
+            margin: 10px 5px 0;
+            border: 1px solid transparent;
+            color: $navbarLinkColor;
         }
+
+        .nav > li:last-child > a { margin-right: 0; }
 
         .nav > li > a:hover,
-        .nav > li > a:focus {
-
-            @include sassy-button-gradient("simple", $linkColor, $linkColorHover, $white, "inset", false);
-            @include transition-property(background-color, color, border-color);
-            @include transition-duration(0.2s);
-            @include transition-timing-function(linear);
-            height: 29px;
-            padding: {
-                left: 15px;
-                right: 15px;
-            }
-
+        .nav > li > a:focus,
+        .nav li.dropdown.open > .dropdown-toggle {
+            @include sassy-button-gradient("matte", $linkColor, darken(desaturate($linkColor, 10%), 10%), $white, inset, false);
+            @include transition-property(color);
+            @include transition-duration(0.4s);
+            @include transition-timing-function(ease);
         }
 
-        .nav > li > a:active {
-
-            @include sassy-button-gradient("simple", darken($linkColorHover, 8%), darken($linkColor, 8%), $white, "inset", false);
-            border-color: darken($linkColorHover, 8%);
-
+        .nav > li > a:focus,
+        .nav > li > a:active,
+        .nav li.dropdown.open > .dropdown-toggle {
+            @include single-box-shadow(rgba($black, 0.4), 0, 1px, 2px, false, inset);
         }
 
         .nav > .active > a,
         .nav > .active > a:hover,
         .nav > .active > a:focus,
+        .nav li.dropdown.active > .dropdown-toggle,
+        .nav li.dropdown.open.active > .dropdown-toggle {
+            @include sassy-button-gradient("simple", $navbarLinkBackgroundActive, darken($navbarLinkBackgroundActive, 10%), $white, inset, false);
+        }
+
+        .nav > .active > a:focus,
         .nav > .active > a:active,
-        .nav li.dropdown.open > .dropdown-toggle,
-        .nav li.dropdown.active > .dropdown-toggle,
         .nav li.dropdown.open.active > .dropdown-toggle {
-
-            @include sassy-button-gradient("simple", $gray, darken($grayDark, 5%), $white, "inset", false);
-            height: 30px;
-            padding: 0 16px;
-
+            @include single-box-shadow($black, 0, 1px, 2px, false, true);
         }
 
-        .nav .dropdown-toggle .caret { margin-top: 14px; }
-        .dropdown .caret { margin-left: 7px; }
-        .dropdown-menu { margin-top: 18px; }
+        .nav .dropdown-menu { margin-top: 15px; }
 
         .nav li.dropdown.open > .dropdown-toggle,
         .nav li.dropdown.active > .dropdown-toggle,
-        .nav li.dropdown.open.active > .dropdown-toggle {
-            height: 29px;
-            padding: 0 15px;
-        }
+        .nav li.dropdown.open.active > .dropdown-toggle {}
 
     }
 
@@ -180,9 +204,9 @@ body {
     border-bottom: 1px solid darken($nakee_dark_green, 10%);
 
     h3 {
-        @include single-text-shadow($white, 0, -1px, 1px);
+        @include single-text-shadow(#FFF8C9, 0, 1px, 1px);
         font-weight: 300;
-        font-size: 59px;
+        font-size: ms(6);
         line-height: 1.5;
         text-align: right;
 
@@ -192,8 +216,12 @@ body {
         }
     }
 
-    @media only screen and (max-width: 480px) {
-        h3 { font-size: 44px; }
+    @media only screen and (min-width: 768px) and (max-width: 980px) {
+        h3 { font-size: ms(5); }
+    }
+
+    @media only screen and (max-width: 767px) {
+        h3 { font-size: ms(4); }
     }
 }
 
@@ -210,21 +238,27 @@ body {
 
     @include respond-to(desktop) {
         & > h3 {
-            font-size: 72px;
+            font-size: ms(7);
         }
         & > h3 > strong {
-            font-size: 72px;
+            font-size: ms(7);
         }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 980px) {
+        & > h3,
+        & > h3 > strong { font-size: ms(6); }
     }
 }
 
 .nakee-front-teaser .widget {
 
     .widget-inner > h3 {
-        font-size: 22.652px;
-        line-height: 1.25;
+        font-size: ms(2);
+        line-height: 1.2;
 
-        @media only screen and (max-width: 480px) { font-size: 20.652px; }
+        @media only screen and (min-width: 768px) and (max-width: 980px) { font-size: ms(1) + 2; }
+        @media only screen and (max-width: 767px) { font-size: ms(1); }
     }
 
     .widget-inner > div {
@@ -258,25 +292,87 @@ body {
    ========================================================================== */
 
 .main {
-    @include border-radius(15px);
-    @include single-box-shadow(rgba(black, 0.5), 0, 5px, 5px);
-    margin-bottom: 30px;
-    background-color: white;
+    position: relative;
 
-    @include respond-to(desktop) {
-        @include single-box-shadow(none);
-        margin-bottom: 0;
-        padding-bottom: 60px;
-        background: white image-url('main-border-1170.png') no-repeat 50% 100% scroll;
+    @media only screen and (max-width: 767px) { margin-bottom: $gridGutterWidth * 2; }
+}
 
-        &[class*="span8"] {
-            background: white image-url('main-border-770.png') no-repeat 50% 100% scroll;
+// Main Container Vars
+$mainContentRadius: 20px;
+$mainBorder: rgba($black, 0.1);
+$mainShadow: rgba($black, 0.4);
+$mainShadowElHeight: 500px;
+
+.main > .main-container {
+    @include box-sizing(border-box);
+    @include border-radius(20px);
+    position: relative;
+    margin-top: 1px;
+    padding: 1px 20px;
+    border: {
+        right: 1px solid $mainBorder;
+        left: 1px solid $mainBorder;
+        bottom: 8px solid $mainBorder;
+    }
+    background-color: $white;
+    z-index: 10;
+}
+
+.main > .shadow-effect {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $mainShadowElHeight;
+    background: transparent;
+    z-index: 8;
+    content: "";
+}
+
+.main > .shadow-effect > div {
+    @include border-radius(20px);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 7;
+    content: "";
+
+    &:before, &:after {
+        @include single-box-shadow($mainShadow, 0, 15px, 10px);
+        @include border-radius(10px);
+        @include rotate(-3deg);
+        position: absolute;
+        top: 90%;
+        left: 20px;
+        bottom: 15px;
+        width: 50%;
+        z-index: 6;
+        content: "";
+
+        @media only screen and (max-width: 767px) {
+            @include single-box-shadow($mainShadow, 0, 15px, 5px);
+            left: 15px;
         }
     }
 
+    &:after {
+        @include rotate(3deg);
+        right: 20px;
+        left: auto;
+
+        @media only screen and (max-width: 767px) {
+            right: 15px;
+        }
+    }
 }
 
-.page-header h1 { font-size: 45px; }
+.page-header h1 {
+    font-size: ms(5);
+
+    @media only screen and (max-width: 767px) {
+        font-size: ms(4);
+    }
+}
 
 .breadcrumbs-container {
     margin-top: 20px;
@@ -285,12 +381,6 @@ body {
 .breadcrumb {
     padding: 6px 10px;
     font-size: 12px;
-}
-
-.main-container {
-    @include box-sizing(border-box);
-    margin-top: 1px;
-    padding: 1px 20px;
 }
 
 .nakee-term-desc {
@@ -331,8 +421,26 @@ body {
 }
 
 h1.entry-title {
-    font-size: 44.45px;
-    line-height: 1;
+    font-size: ms(5);
+    line-height: 1.2;
+
+    @media only screen and (min-width: 769px) and (max-width: 1199px) {
+        font-size: ms(3);
+    }
+
+    @media only screen and (max-width: 768px) {
+        font-size: ms(4);
+    }
+
+    @media only screen and (max-width: 320px) { font-size: ms(3); }
+}
+
+.single h1.entry-title,
+.page h1.entry-title {
+    font-size: ms(5);
+
+    @media only screen and (max-width: 1024px) { font-size: ms(5); }
+    @media only screen and (max-width: 767px) { font-size: ms(4) - 4; }
 }
 
 .entry-title a:hover,
@@ -399,7 +507,7 @@ figure.nakee-portfolio-figure {
 
     .entry-meta,
     .entry-summary {
-        @media only screen and (min-width: 769px) {
+        @media only screen and (min-width: 980px) {
             margin-left: 200px + ($gridGutterWidth * 2);
         }
     }
@@ -495,6 +603,47 @@ section[class~="page"] .entry-content {
         }
     }
 
+    $largerH: ms(4) + 2;
+    h1 { font-size: $largerH; }
+    h2 { font-size: $largerH - 4; }
+    h3 { font-size: $largerH - 8; }
+    h4 { font-size: $largerH - 16; }
+
+    // Smartphone Content Responsive Headings
+    @media only screen and (max-width: 767px) {
+        h1, h2, h3, h4, h5, h6 {
+            font-size: ms(2);
+            line-height: 1.2;
+        }
+    }
+
+    // Section El
+    p, address, aside, table, blockquote, pre, figure { margin-bottom: 20px; }
+    > ul, > ol { margin-bottom: 20px; }
+
+    // Phrasing El
+    p, a, li, dt, dd, address, ins, del, aside, td,
+    th, em, strong, mark, abbr, q, cite, span {
+        font-size: $baseFontSize + 2;
+        line-height: 1.5;
+    }
+
+    code, pre {
+        font-size: $baseFontSize + 1;
+        line-height: 1;
+    }
+
+    blockquote p { font-size: $baseFontSize + 4; }
+
+    small, blockquote cite { font-size: $baseFontSize; }
+
+    // Tablet Phrasing element
+    @media only screen and (max-width: 980px) {
+        p, a, li, dt, dd, address, ins, del, aside, td, th, em, strong, mark, abbr, q, cite, span, code, pre { font-size: $baseFontSize; }
+        code, pre { font-size: $baseFontSize - 1; }
+        small, blockquote cite { font-size: $baseFontSize - 2; }
+    }
+
     ul { list-style-type: square; }
     ul.thumbnails { list-style-type: none; }
 
@@ -504,6 +653,9 @@ section[class~="page"] .entry-content {
     ol.l-roman { list-style-type: lower-roman; }
     ol.u-roman { list-style-type: upper-roman; }
 
+    // Custom Typo
+    //
+    // ul.h3, ul.h4, ol.h3, ol.h4
     ul, ol {
         &[class~="h3"] > li > h3,
         &[class~="h4"] > li > h4 { font-family: $sansFontFamily; }
@@ -514,8 +666,21 @@ section[class~="page"] .entry-content {
         &[class~="h4"] > li,
         &[class~="h4"] > li > h4 { line-height: $baseLineHeight; }
 
-        &[class~="h3"] > li { font-size: 24.5px; }
-        &[class~="h4"] > li { font-size: 17.5px; }
+        &[class~="h3"] > li,
+        &[class~="h3"] > li > h3,
+        &[class~="h3"] > li > h3 > a { font-size: $largerH - 8; }
+
+        &[class~="h4"] > li,
+        &[class~="h4"] > li > h4,
+        &[class~="h4"] > li > h4 > a { font-size: $largerH - 16; }
+
+        // Tablet
+        &[class~="h3"] > li,
+        &[class~="h4"] > li {
+            @media only screen and (max-width: 767px) {
+                font-size: ms(2);
+            }
+        }
 
         &[class~="h3"] > li p,
         &[class~="h4"] > li p,
@@ -529,19 +694,40 @@ section[class~="page"] .entry-content {
         &[class~="h4"] > li address,
         &[class~="h3"] > li span,
         &[class~="h4"] > li span {
-            font-size: $baseFontSize;
-            line-height: $baseLineHeight;
+            font-size: $baseFontSize + 2;
+            line-height: 1.5;
+
+            // Tablet
+            @media only screen and (max-width: 980px) { font-size: $baseFontSize; }
         }
 
         &[class~="h3"] > li > h3,
         &[class~="h4"] > li > h4 { margin: 0 0 10px; }
     }
 
+    // Image Setting
+    .wp-caption {
+        @include box-sizing(border-box);
+        max-width: 100%;
+    }
+
     .wp-caption,
     .size-full,
     .size-large,
     .size-medium,
-    .size-thumbnail { margin-bottom: $gridGutterWidth; }
+    .size-thumbnail {
+        margin-bottom: $gridGutterWidth;
+
+        &[class*="alignleft"],
+        &[class*="alignright"] {
+            @media only screen and (max-width: 767px) {
+                display: block;
+                float: none;
+                margin: 0 auto 20px;
+                text-align: center;
+            }
+        }
+    }
 
     .size-full,
     .size-large,
@@ -570,6 +756,11 @@ section[class~="page"] .entry-content {
         color: $grayLight;
     }
 
+    .wp-caption figcaption a {
+        font-size: 10px !important;
+        color: $linkColor !important;
+    }
+
     .wp-caption,
     a .size-full,
     a .size-large,
@@ -577,7 +768,7 @@ section[class~="page"] .entry-content {
     a .size-thumbnail {
         @include transition-property(all);
         @include transition-duration(.4s);
-        @include transition-timing-function(linear);
+        @include transition-timing-function(ease);
     }
 
     .wp-caption:hover,
@@ -592,6 +783,30 @@ section[class~="page"] .entry-content {
         @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 4px);
     }
 
+    // Form Setting, input-append dan input-prepend
+    @media only screen and (max-width: 480px) {
+        .input-append,
+        .input-prepend {
+            width: 100%;
+
+            input[type="text"],
+            input[type="email"],
+            button[class~="btn"] { @include box-sizing(border-box); }
+
+            input[type="text"],
+            input[type="email"] { width: 70% }
+
+            button[class~="btn"] { width: 30%; }
+        }
+    }
+
+    @media only screen and (max-width: 479px) {
+        .input-append,
+        .input-prepend {
+            button[class~="btn"] { font-size: 12px; padding: 4px; }
+        }
+    }
+
 }
 
 .single-nakee_portfolio article .entry-content {
@@ -602,7 +817,7 @@ section[class~="page"] .entry-content {
         & > p,
         & > ul li,
         & > ol li {
-            font-size: 22px;
+            font-size: $biggerBaseFontSize + 1;
             line-height: 1.5;
         }
 
@@ -647,10 +862,10 @@ section[class~="page"] .entry-content {
 }
 
 .label[class~="nakee-label"] { padding: 4px 8px; }
-.label.nakee-label[class~="nakee-label-normal"] { font-size: 16.998px; }
+.label.nakee-label[class~="nakee-label-normal"] { font-size: ms(1) + 2; }
 .label.nakee-label[class~="nakee-label-large"] {
     padding: 8px 16px;
-    font-size: 22.652px;
+    font-size: ms(2) + 2;
 }
 
 .table {
@@ -670,43 +885,12 @@ section[class~="page"] .entry-content {
     }
 }
 
-.contact-link {
-
-    @include border-radius(10px);
-    @include sassy-button-gradient('simple', $linkColor, $linkColorHover, $white, 'inset', false);
-    display: inline-block;
-    padding: 0 10px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: $white;
-
-    &:hover,
-    &:focus {
-        @include sassy-button-gradient('simple', $linkColor, darken($linkColorHover, 5%), $white, 'inset', false);
-        text-decoration: none;
-        color: $white;
-    }
-
-    &:active {
-        @include sassy-button-gradient('simple', darken($linkColorHover, 5%), $linkColor, $white, 'inset', false);
-        border: 1px solid darken($linkColorHover, 10%);
-        color: $white;
-    }
-
-}
-
 .pager,
 .pagination {
     margin-bottom: 0;
-}
-
-@media only screen and (max-width: 1223px) {
-
-    .pager, .pagination {
+    @media only screen and (max-width: 1223px) {
         margin-bottom: 40px;
     }
-
 }
 
 .single-section-container {
@@ -765,11 +949,88 @@ section[class~="page"] .entry-content {
         margin-top: $gridGutterWidth / 2;
         font-size: 18px;
 
+        // Tablet Title
+        @media only screen and (max-width: 980px) { font-size: $baseFontSize; }
+
         @media only screen and (max-width: 767px) {
             display: block;
         }
     }
 
+}
+
+.single-nakee_portfolio .type-nakee_portfolio,
+.page[class~="services"],
+.page[class~="about"] {
+    .entry-content {
+        color: $gray;
+
+        // Section
+        p, address, aside, table, blockquote, pre, figure { margin-bottom: 20px; }
+        > ul, > ol { margin-bottom: 20px; }
+
+        // Phrasing El
+        p, a, li, dt, dd, address, ins, del, aside, td,
+        th, em, strong, mark, abbr, q, cite, span {
+            font-size: $biggerBaseFontSize + 1;
+            line-height: 1.5;
+        }
+
+        code, pre {
+            font-size: $biggerBaseFontSize + 1;
+            line-height: 1;
+        }
+
+        blockquote p { font-size: $biggerBaseFontSize + 3; }
+
+        small, blockquote cite { font-size: $biggerBaseFontSize - 2; }
+
+        // Small Tab to Phone typos
+        @media only screen and (max-width: 767px) {
+            p, a, li, dt, dd, address, ins, del, aside, td,
+            th, em, strong, mark, abbr, q, cite, span {
+                font-size: $baseFontSize;
+            }
+
+            code, pre {
+                font-size: $baseFontSize - 1;
+            }
+
+            blockquote p { font-size: $baseFontSize + 2; }
+
+            small, blockquote cite { font-size: $baseFontSize - 2; }
+        }
+
+        a[class~="btn"] {
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        span.hide-text { @include hide-text; }
+
+        &[class~="h3"] > li p,
+        &[class~="h4"] > li p,
+        &[class~="h3"] > li ul li,
+        &[class~="h4"] > li ul li,
+        &[class~="h3"] > li ol li,
+        &[class~="h4"] > li ol li,
+        &[class~="h3"] > li table,
+        &[class~="h4"] > li table,
+        &[class~="h3"] > li address,
+        &[class~="h4"] > li address,
+        &[class~="h3"] > li span,
+        &[class~="h4"] > li span {
+            font-size: $biggerBaseFontSize + 1;
+            line-height: 1.5;
+
+            @media only screen and (max-width: 767px) { font-size: $baseFontSize; }
+        }
+
+        .wp-caption figcaption a {
+            font-size: 10px !important;
+            color: $linkColor !important;
+        }
+    }
 }
 
 /**
@@ -793,6 +1054,16 @@ section[class~="page"] .entry-content {
 
 }
 
+// Tablet Portfolio Full Width
+.home,
+.archive.post-type-archive-nakee_portfolio,
+.archive.tax-nakee_portfolio_category,
+.archive.tax-nakee_technology {
+    @media only screen and (min-width: 768px) and (max-width: 980px) {
+        .main-container > .row-fluid div[class~="span4"] { margin: 0; width: 100%; }
+    }
+}
+
 .home .type-nakee_portfolio,
 .archive .type-nakee_portfolio {
 
@@ -801,9 +1072,11 @@ section[class~="page"] .entry-content {
     }
 
     h2.entry-title {
-        font-size: 22px;
-        line-height: 1.25;
+        font-size: ms(2);
+        line-height: 1.2;
         text-align: center;
+
+        @media only screen and (max-width: 767px) { font-size: ms(2) - 2; }
     }
 
     .nakee-portfolio-figure {
@@ -812,12 +1085,15 @@ section[class~="page"] .entry-content {
 
     .entry-summary {
         font-size: 13px;
+        line-height: 1.5;
         color: $gray;
+
+        @media only screen and (min-width: 768px) and (max-width: 980px) { font-size: 14px; }
     }
 
     footer {
 
-        @media only screen and (max-width: 799px) {
+        @media only screen and (max-width: 768px) {
             margin-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
@@ -828,20 +1104,11 @@ section[class~="page"] .entry-content {
 
 .single-nakee_portfolio .type-nakee_portfolio {
 
-    header h1 { line-height: 1.5; text-align: center; }
+    header h1 { line-height: 1.2; text-align: center; }
 
-    .entry-content {
-        padding-bottom: 29px;
-        border-bottom: 1px solid #eee;
-        font-size: $biggerBaseFontSize;
-        line-height: 1.5;
-        color: $gray;
+    footer { border-top: 1px solid #eee; }
 
-        @media only screen and (max-width: 767px) {
-            font-size: 16px;
-        }
-    }
-
+    // Kategori & Teknologi Container
     .single-widget-inner {
 
         li > a {
@@ -874,15 +1141,64 @@ section[class~="page"] .entry-content {
 
 }
 
+// 404 Page
+// ----------------------------------------------------------------------------
+.error404-img {
+    text-align: center;
+
+    img {
+        @include inline-block;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .error404-img {
+        max-width: 600px;
+        float: left;
+    }
+}
+
+.error404-info {
+    p, li {
+        font-size: ms(1);
+        line-height: 1.5;
+    }
+
+    ul { list-style-type: circle; }
+}
+
+@media only screen and (max-width: 1024px) {
+    .error404-info h1 { text-align: center; }
+}
+
+@media only screen and (min-width: 768px) {
+    .error404-info #searchform input[type="text"] {
+        display: block;
+        width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .error404-info {
+        margin-top: 100px;
+        margin-left: 600px + $gridGutterWidth;
+    }
+
+
+}
+
 section.portfolio-category {
 
     margin-top: 15px;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
+    border-top: 1px solid #eee;
 
-    @media only screen and (min-width: 981px) {
-        border-top: 1px solid #eee;
+    @media only screen and (max-width: 768px) {
+        padding: 20px 0;
+        border-color: transparent;
     }
 
     h3 {
@@ -895,7 +1211,7 @@ section.portfolio-category {
         @include transition-duration(0.3s);
         @include transition-timing-function(linear);
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: ms(1);
         font-weight: bold;
         line-height: 1.5;
 
@@ -923,7 +1239,7 @@ section.last-tweet-widget {
         }
 
         @media only screen and (max-width: 979px) { text-align: center; }
-        @media only screen and (min-width: 769px) and (max-width: 1023px) {
+        @media only screen and (min-width: 769px) and (max-width: 980px) {
             @include box-sizing(border-box);
             width: 100%;
             margin: 0;
@@ -936,8 +1252,7 @@ section.last-tweet-widget {
         display: none;
         visibility: hidden;
 
-        @include respond-to(desktop) {
-
+        @media only screen and (min-width: 980px) {
             display: block;
             visibility: visible;
             float: left;
@@ -945,23 +1260,20 @@ section.last-tweet-widget {
             height: 150px;
             padding: 15px;
             background: transparent image-url('twitter-logo.png') no-repeat 50% 50% scroll;
-
         }
 
     }
 
     .tweet-container {
 
-        @include respond-to(desktop) {
-
+        @media only screen and (min-width: 980px) {
             margin-left: 30px + 150;
-
         }
 
     }
 
     .tweet-container .tweet-text {
-        font-size: 32px;
+        font-size: ms(3) + 4;
         font-family: $serifFontFamily;
         font-weight: normal;
         font-style: italic;
@@ -974,8 +1286,9 @@ section.last-tweet-widget {
 
 }
 
-nav.post-nav {
-    margin-bottom: $gridGutterWidth;
+nav.post-nav,
+body[class~="page"] nav.page-nav {
+    margin-bottom: $gridGutterWidth * 2;
 }
 
 
@@ -999,24 +1312,34 @@ nav.post-nav {
         }
     }
 
-    .widget_recent_entries ul,
-    .widget_archive ul,
-    .widget_categories ul,
-    .widget_meta ul,
-    .widget_nav_menu .widget-inner > ul,
-    .widget_links ul {
-        @include reset-box-model;
+    // wordpress default widget general style
+    //
+    // daftar :
+    // - Recent Post
+    // - Archive
+    // - Category
+    // - Meta
+    // - Custom Menu
+    // - Pages
+    .widget_recent_entries,
+    .widget_archive,
+    .widget_categories,
+    .widget_meta,
+    .widget_nav_menu,
+    .widget_pages,
+    .widget_links, {
+        ul { @include reset-box-model; }
 
-        & > li {
+        .widget-inner > ul > li {
             &:first-child > a { border-top: none; }
             &:last-child > a { border-bottom: none; }
         }
 
-        & > li > a {
+        ul li > a {
             @include single-text-shadow($white, 0, -1px, 1px);
-            @include transition-property(background-color, border-color);
-            @include transition-duration(.15s);
-            @include transition-timing-function(linear);
+            @include transition-property(padding, background-color, border-color);
+            @include transition-duration(.4s);
+            @include transition-timing-function(ease);
             display: block;
             padding: 3px 0 3px $gridGutterWidth;
             border: {
@@ -1026,13 +1349,14 @@ nav.post-nav {
             line-height: 2;
         }
 
-        & > li > a:hover,
-        & > li > a:active,
-        & > li.dropdown.open > a {
+        ul li > a:hover,
+        ul li > a:active,
+        ul li.dropdown.open > a {
             @include single-text-shadow(rgba($black, 0.4), 0, -1px, 1px);
-            @include transition-property(background-color, border-color);
-            @include transition-duration(0s);
-            @include transition-timing-function(linear);
+            @include transition-property(padding, background-color, border-color);
+            @include transition-duration(.1s);
+            @include transition-timing-function(ease);
+            padding-left: $gridGutterWidth + 10;
             border-top-color: rgba($white, 0.4);
             border-bottom-color: rgba($black, 0.4);
             background-color: $linkColor;
@@ -1040,14 +1364,21 @@ nav.post-nav {
             text-decoration: none;
         }
 
-        & > li > a:active {
+        ul li > a:active {
             @include single-box-shadow(rgba($black, 0.4), 0, 1px, 4px, false, true);
         }
 
         a:hover,
         a:active { text-decoration: none; }
+
+        // ul level 2
+        .widget-inner > ul > li > ul li a { padding-left: $gridGutterWidth + 20; }
+
+        .widget-inner > ul > li > ul li a:hover,
+        .widget-inner > ul > li > ul li a:focus { padding-left: $gridGutterWidth + 30; }
     }
 
+    // Recent Comment Widget
     .widget_recent_comments ul {
         @include reset-box-model;
 
@@ -1064,10 +1395,12 @@ nav.post-nav {
         li:last-child { border-bottom: none; }
     }
 
+    // Hilangkan Tanggal pada Recent Posts
     .widget_recent_entries .widget-inner span.post-date {
         display: none !important;
     }
 
+    // Styling khusus untuk widget Custom Menu
     .widget_nav_menu .widget-inner > ul {
         .dropdown .caret {
             margin: {
@@ -1083,6 +1416,37 @@ nav.post-nav {
         .dropdown.open > a:active > .caret {
             border-top-color: $white;
         }
+
+        .dropdown.open .dropdown-menu {
+            margin: 5px 0 0 20px;
+            padding: 5px 0;
+        }
+
+        .dropdown.open .dropdown-menu li a,
+        .dropdown.open .dropdown-menu li a:hover,
+        .dropdown.open .dropdown-menu li a:focus {
+            @include reset-box-model;
+            padding: 3px 20px;
+            line-height: 20px;
+        }
+    }
+
+    // Link Widget a.k.a. Blogroll
+    .widget_links li a {
+        @include clearfix;
+        line-height: 1;
+    }
+
+    .widget_links img {
+        @include box-sizing(border-box);
+        display: block;
+        float: left;
+        width: 100%;
+        max-width: 64px;
+        margin: 5px 10px 5px 0;
+        padding: 4px;
+        border: 1px solid #eee;
+        background-color: $white;
     }
 }
 
@@ -1100,24 +1464,35 @@ nav.post-nav {
 /* ==========================================================================
    Widgets
    ========================================================================== */
+@media only screen and (max-width: 768px) {
+    .widget-inner h3 {
+        font-size: ms(2);
+        line-height: 1.2;
+    }
+}
+
 .widget-inner .nakee-profile-widget {
 
     figure.nakee-gravatar {
         width: 100%;
+        margin-bottom: $gridGutterWidth;
 
-        @media only screen and (min-width: 769px) { max-width: 100px; }
-        @media only screen and (max-width: 768px) { margin-bottom: $gridGutterWidth / 2; }
-    }
-
-    &.nakee-widget-homepage figure.nakee-gravatar {
-
-        @media only screen and (min-width: 769px) { max-width: 150px; }
-
+        @media only screen and (min-width: 980px) { max-width: 100px; }
+        @media only screen and (min-width: 321px) and (max-width: 767px) { max-width: 100px; }
     }
 
     figure.nakee-gravatar[class*="alignleft"],
     figure.nakee-gravatar[class*="alignright"] {
-        @media only screen and (max-width: 768px) {
+        @media only screen and (min-width: 768px) and (max-width: 980px) {
+            float: none;
+            margin: {
+                right: 0;
+                left: 0;
+            }
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 320px) {
             float: none;
             margin: {
                 right: 0;
@@ -1127,15 +1502,45 @@ nav.post-nav {
         }
     }
 
-    @media only screen and (min-width: 769px) {
+    // Avatar (Widget Profil) pada Homepage
+    &.nakee-widget-homepage figure.nakee-gravatar {
+        @media only screen and (min-width: 980px) { max-width: 150px; }
+        @media only screen and (min-width: 321px) and (max-width: 767px) { max-width: 150px; }
+    }
+
+    @media only screen and (min-width: 980px) {
         figure[class*="alignleft"] ~ p,
         figure[class*="alignleft"] ~ address { margin-left: 100px + $gridGutterWidth; }
-        &.nakee-widget-homepage figure[class*="alignleft"] ~ p,
-        &.nakee-widget-homepage figure[class*="alignleft"] ~ address { margin-left: 150px + $gridGutterWidth; }
         figure[class*="alignright"] ~ p,
         figure[class*="alignright"] ~ address { margin-right: 100px + $gridGutterWidth; }
+
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ address { margin-left: 150px + $gridGutterWidth; }
         &.nakee-widget-homepage figure[class*="alignright"] ~ p,
         &.nakee-widget-homepage figure[class*="alignright"] ~ address { margin-right: 150px + $gridGutterWidth; }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 767px) {
+        figure[class*="alignleft"] ~ p,
+        figure[class*="alignleft"] ~ address { margin-left: 100px + $gridGutterWidth; }
+        figure[class*="alignright"] ~ p,
+        figure[class*="alignright"] ~ address { margin-right: 100px + $gridGutterWidth; }
+
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignleft"] ~ address { margin-left: 150px + $gridGutterWidth; }
+        &.nakee-widget-homepage figure[class*="alignright"] ~ p,
+        &.nakee-widget-homepage figure[class*="alignright"] ~ address { margin-right: 150px + $gridGutterWidth; }
+    }
+
+    // Paragraph Setting
+    p {
+        @media only screen and (max-width: 1199px) { font-size: $baseFontSize - 1; }
+    }
+
+    // Elemen p (Widget Profil) pada homepage
+    &.nakee-widget-homepage p {
+        @media only screen and (min-width: 981px) and (max-width: 1199px) { font-size: $baseFontSize; }
+        @media only screen and (max-width: 980px) { font-size: $baseFontSize - 1; }
     }
 
     .social-link li a:hover,
@@ -1155,9 +1560,13 @@ nav.post-nav {
 .nakee-skills {
     li strong.skill-title {
         @include single-text-shadow(rgba($black, 0.8), 0, 1px, 1px);
-        font-size: 17px;
+        font-size: ms(1);
         text-transform: uppercase;
         color: $white;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 14px;
+        }
     }
 
     li div.progress {
@@ -1222,19 +1631,12 @@ nav.post-nav {
    Footer
    ========================================================================== */
 .content-info {
-    margin-top: $gridGutterWidth;
+    margin-top: $gridGutterWidth * 2;
     padding-top: 0;
-}
 
-.page[class~="home"] .content-info,
-.page[class~="services"] .content-info,
-.page[class~="about"] .content-info,
-.single[class~="single-nakee_portfolio"] .content-info,
-.archive[class~="post-type-archive-nakee_portfolio"] .content-info,
-.archive[class~="tax-nakee_portfolio_category"] .content-info,
-.archive[class~="tax-nakee_technology"] .content-info {
-    margin-top: 0;
-    padding-top: 0;
+    @media only screen and (max-width: 767px) {
+        margin-top: 0;
+    }
 }
 
 .footer-triangle {
@@ -1402,6 +1804,12 @@ nav.post-nav {
    ========================================================================== */
 
 .aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
-.alignright { float: right; }
+.alignleft {
+    float: left;
+    margin-right: 20px;
+}
+.alignright {
+    float: right;
+    margin-left: 20px;
+}
 figure.alignnone { margin-left: 0; margin-right: 0; }

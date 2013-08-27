@@ -29,7 +29,7 @@ if (!isset($portfolio) || empty($portfolio)) {
     <?php $total_post = $portfolio->post_count; ?>
     <?php while($portfolio->have_posts()) : $portfolio->the_post(); ?>
 
-        <?php if ($result % 3 === 0) : ?>
+        <?php if (($result > 0) && ($result % 3 === 0)) : ?>
 </div>
 <div class="row-fluid">
         <?php endif; ?>
@@ -71,7 +71,9 @@ if (!isset($portfolio) || empty($portfolio)) {
     <?php // Pagenavi ?>
     <?php if (function_exists('wp_pagenavi')) : ?>
 
+    <nav class="post-nav">
         <?php nakee_wp_pagenavi('large', 'centered', false, $portfolio); ?>
+    </nav>
 
     <?php else : ?>
 

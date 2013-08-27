@@ -13,6 +13,12 @@
 # Ganti angka di bawah dengan IP Address anda :)
 # RewriteCond %{REMOTE_ADDR} !^111\.222\.333\.444$
 
+# Asset Rewrite
+# RewriteRule ^assets/css/(.*) /content/themes/nakee/assets/css/$1 [QSA,L]
+# RewriteRule ^assets/js/(.*) /content/themes/nakee/assets/js/$1 [QSA,L]
+# RewriteRule ^assets/img/(.*) /content/themes/nakee/assets/img/$1 [QSA,L]
+# RewriteRule ^assets/fonts/(.*) /content/themes/nakee/assets/fonts/$1 [QSA,L]
+
 # Ganti path/to/maintenance.php ke path file maintenance anda
 # biasanya cukup /maintenance.php
 # RewriteCond %{REQUEST_URI} !^/maintenance\.php$

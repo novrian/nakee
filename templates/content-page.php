@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <section id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
+
     <header>
         <div class="page-header">
             <h1 class="entry-title"><?php echo nakee_get_title(); ?></h1>
@@ -11,21 +11,22 @@
             </div>
         </div>
     </header>
-    
+
     <div class="entry-content">
         <?php the_content(); ?>
+        <div class="clearfix"></div>
     </div>
-    
+
     <footer>
         <?php if (function_exists('wp_pagenavi') && function_exists('nakee_wp_pagenavi')) : ?>
-            <?php nakee_wp_pagenavi(null, null, true); ?>
+        <nav class="page-nav">
+            <?php nakee_wp_pagenavi('large', null, true); ?>
+        </nav>
         <?php else : ?>
-            <?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+            <?php wp_link_pages(array('before' => '<nav class="page-nav">', 'after' => '</nav>')); ?>
         <?php endif; ?>
     </footer>
-    
-</section>
 
-<?php comments_template('/templates/comments.php'); ?>
+</section>
 
 <?php endwhile; ?>

@@ -3,7 +3,6 @@
  */
 
 jQuery(document).ready(function($) {
-
     /*
     * Inspired by:
     * http://designedbythomas.co.uk/blog/how-detect-width-web-browser-using-jquery
@@ -56,9 +55,11 @@ jQuery(document).ready(function($) {
 
     if(current_width > 651)
         $('html').addClass("desktop-menu").removeClass("mobile-menu");
-
     });
+});
 
+
+jQuery(document).ready(function($) {
 
     /**
      * Init Tweaks
@@ -68,12 +69,6 @@ jQuery(document).ready(function($) {
         "position"  : "absolute",
         "top"       : 0
     });
-
-    if ($('.desktop').is('*') && $('.navbar-fixed-top').is('*')) {
-        $('body').css({
-            "padding-top" : $('.navbar-fixed-top').outerHeight(true) + "px"
-        });
-    }
 
     // Localscroll Init
     $.localScroll({
@@ -96,6 +91,25 @@ jQuery(document).ready(function($) {
             verticalFit : false
         },
         type : "image"
+    });
+
+
+    if ($('html.desktop').is('*') && $('.navbar-fixed-top').is('*')) {
+        $('body').css({
+            "padding-top" : $('.navbar-fixed-top').height() + "px"
+        });
+    } else {
+        $('body').css({ "padding-top" : 0 });
+    }
+
+    $(window).resize(function() {
+        if ($('html.desktop').is('*') && $('.navbar-fixed-top').is('*')) {
+            $('body').css({
+                "padding-top" : $('.navbar-fixed-top').height() + "px"
+            });
+        } else {
+            $('body').css({ "padding-top" : 0 });
+        }
     });
 
 });

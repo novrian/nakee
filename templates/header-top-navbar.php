@@ -36,6 +36,8 @@
         $header_class = 'nakee-main-header';
     } elseif (is_page('kontak')) {
         $tagline = CONTACT_TAGLINE;
+    } elseif (is_404()) {
+        $tagline = __('<strong>Ooops!</strong> Not Found', 'roots');
     } else {
         $tagline = BLOG_TAGLINE;
     }

@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title><?php echo nakee_wp_title(); ?></title>
+    <title><?php wp_title('|'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php wp_head(); ?>
@@ -18,11 +18,11 @@
     <?php // Stop TypeKit ?>
 
     <?php // Favicon ?>
-    <link rel="apple-touch-icon-precomposed apple-touch-icon favicon shortcut icon" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url() . '/' . THEME_PATH; ?>/apple-touch-icon-144x144-precomposed.png">
+    <link rel="shortcut icon" href="<?php echo home_url(); ?>/favicon.ico">
+    <link rel="apple-touch-icon-precomposed apple-touch-icon" href="<?php echo home_url(); ?>/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url(); ?>/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url(); ?>/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url(); ?>/apple-touch-icon-144x144-precomposed.png">
     <?php // Stop Favicon ?>
 
     <?php // Selectivizr ?>

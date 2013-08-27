@@ -4,10 +4,16 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "sassy-buttons";
+@import "modular-scale";
 
 @import "bootstrap/variables";
 
+// Font Awesome
 $FontAwesomePath: "../fonts/FontAwesome";
+
+// Modular Scale
+$base-size: 14px 72px;
+$ratio: golden();
 
 // Bootstrap Color
 $white: #fff;
@@ -40,7 +46,7 @@ $baseFontFamily:        $sansFontFamily;
 $baseLineHeight:        20px;
 $altFontFamily:         $serifFontFamily;
 
-$biggerBaseFontSize: 16.9px;
+$biggerBaseFontSize: ms(1);
 
 $headingsColor: $nakee_dark_green;
 
@@ -63,18 +69,20 @@ $btnPrimaryBackgroundHighlight:     $linkColorHover;
 $navbarHeight:                    50px;
 $navbarBackgroundHighlight:       #ffffff;
 $navbarBackground:                $navbarBackgroundHighlight;
-$navbarBorder:                    darken($navbarBackground, 12%);
+$navbarBorder:                    rgba($black, 0.4);
 
 $navbarText:                      #777;
 $navbarLinkColor:                 $linkColor;
 $navbarLinkColorHover:            $white;
 $navbarLinkColorActive:           $white;
 $navbarLinkBackgroundHover:       $nakee_red;
-$navbarLinkBackgroundActive:      $grayDarker;
+$navbarLinkBackgroundActive:      $gray;
 
 // Dropdowns
 // -------------------------
 $dropdownLinkColor:             $linkColor;
+$dropdownLinkColorHover:        $white;
+$dropdownLinkColorActive:       $white;
 
 $dropdownLinkBackgroundActive:  $navbarLinkBackgroundActive;
 $dropdownLinkBackgroundHover:   $navbarLinkBackgroundHover;

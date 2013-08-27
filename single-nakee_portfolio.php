@@ -37,6 +37,7 @@ get_template_part('templates/breadcrumbs');
 
         <div class="entry-content">
             <?php the_content(); ?>
+            <div class="clearfix"></div>
         </div>
 
         <footer>

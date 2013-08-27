@@ -33,7 +33,9 @@
 
         <footer>
             <?php if (function_exists('wp_pagenavi') && function_exists('nakee_wp_pagenavi')) : ?>
+            <nav class="page-nav">
                 <?php nakee_wp_pagenavi('small', null, true); ?>
+            </nav>
             <?php else : ?>
                 <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
             <?php endif; ?>
