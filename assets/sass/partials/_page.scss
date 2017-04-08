@@ -34,7 +34,7 @@ body {
 
 a.thumbnail:hover,
 a.thumbnail:focus {
-    @include single-box-shadow(rgba($linkColor, 0.6), 0, 1px, 4px);
+    @include single-box-shadow(0, 1px, 4px, false, rgba($linkColor, 0.6));
 }
 
 .nakee-front-teaser,
@@ -159,7 +159,7 @@ a.thumbnail:focus {
         .nav > li > a:focus,
         .nav > li > a:active,
         .nav li.dropdown.open > .dropdown-toggle {
-            @include single-box-shadow(rgba($black, 0.4), 0, 1px, 2px, false, inset);
+            @include single-box-shadow(0, 1px, 2px, false, rgba($black, 0.4), inset);
         }
 
         .nav > .active > a,
@@ -173,7 +173,7 @@ a.thumbnail:focus {
         .nav > .active > a:focus,
         .nav > .active > a:active,
         .nav li.dropdown.open.active > .dropdown-toggle {
-            @include single-box-shadow($black, 0, 1px, 2px, false, true);
+            @include single-box-shadow(0, 1px, 2px, false, $black, true);
         }
 
         .nav .dropdown-menu { margin-top: 15px; }
@@ -193,7 +193,7 @@ a.thumbnail:focus {
 }
 
 .navbar-fixed-top .navbar-inner {
-    @include single-box-shadow(rgba(black, 0.5), 0, 1px, 5px);
+    @include single-box-shadow(0, 1px, 5px, rgba(black, 0.5));
 }
 
 .nakee-header {
@@ -270,7 +270,7 @@ a.thumbnail:focus {
 .nakee-banner-border {
 
     @include responsive-full-width;
-    @include single-box-shadow(black, 0, 1px, 2px);
+    @include single-box-shadow(0, 1px, 2px, false, black);
     height: 1px;
     background-color: white;
 
@@ -338,7 +338,7 @@ $mainShadowElHeight: 500px;
     content: "";
 
     &:before, &:after {
-        @include single-box-shadow($mainShadow, 0, 15px, 10px);
+        @include single-box-shadow(0, 15px, 10px, false, $mainShadow);
         @include border-radius(10px);
         @include rotate(-3deg);
         position: absolute;
@@ -350,7 +350,7 @@ $mainShadowElHeight: 500px;
         content: "";
 
         @media only screen and (max-width: 767px) {
-            @include single-box-shadow($mainShadow, 0, 15px, 5px);
+            @include single-box-shadow(0, 15px, 5px, false, $mainShadow);
             left: 15px;
         }
     }
@@ -467,7 +467,7 @@ figure.nakee-portfolio-figure {
     }
 
     img:hover {
-        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 6px);
+        @include single-box-shadow(0, 0, 6px, false, rgba($linkColor, 0.8));
         @include transition-property(box-shadow);
         @include transition-duration(0.3s);
         @include transition-timing-function(linear);
@@ -493,7 +493,7 @@ figure.nakee-portfolio-figure {
 
     &:hover,
     &:focus {
-        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 6px);
+        @include single-box-shadow(0, 0, 6px, false, rgba($linkColor, 0.8));
         @include transition-duration(0.4s);
         @include transition-property("all");
         @include transition-timing-function(linear);
@@ -780,7 +780,7 @@ section[class~="page"] .entry-content {
     a:active .size-medium,
     a:hover .size-thumbnail,
     a:active .size-thumbnail {
-        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 4px);
+        @include single-box-shadow(0, 0, 4px, false, rgba($linkColor, 0.8));
     }
 
     // Form Setting, input-append dan input-prepend
@@ -938,7 +938,7 @@ section[class~="page"] .entry-content {
 
     a:hover img,
     a:focus img {
-        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 6px);
+        @include single-box-shadow(0, 0, 6px, false, rgba($linkColor, 0.8));
         @include transition-property(box-shadow);
         @include transition-duration(0.3s);
         @include transition-timing-function(linear);
@@ -1365,7 +1365,7 @@ body[class~="page"] nav.page-nav {
         }
 
         ul li > a:active {
-            @include single-box-shadow(rgba($black, 0.4), 0, 1px, 4px, false, true);
+            @include single-box-shadow(0, 1px, 4px, false, rgba($black, 0.4), true);
         }
 
         a:hover,
@@ -1452,7 +1452,7 @@ body[class~="page"] nav.page-nav {
 
 .sticky-sidebar-container {
     @include border-radius($gridGutterWidth / 2);
-    @include single-box-shadow(rgba($black, 0.4), 0, 2px, 2px);
+    @include single-box-shadow(0, 2px, 2px, false, rgba($black, 0.4));
     @include box-sizing(border-box);
     margin: {
         bottom: $gridGutterWidth;
@@ -1599,7 +1599,7 @@ body[class~="page"] nav.page-nav {
         &:last-child { border-bottom: none; }
 
         &:hover {
-            @include single-box-shadow(rgba($black, 0.4), 0, 2px, 2px);
+            @include single-box-shadow(0, 2px, 2px, false, rgba($black, 0.4));
             padding: ($gridGutterWidth - 1) ($gridGutterWidth / 2);
             border-bottom: 1px solid transparent;
             background-color: $white;
