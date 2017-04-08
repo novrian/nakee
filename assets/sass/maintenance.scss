@@ -63,7 +63,7 @@ a:active {
 
     &:before,
     &:after {
-        @include single-box-shadow(rgba($black, 0.5), 0, 15px, 10px);
+        @include single-box-shadow(0, 15px, 10px, false, rgba($black, 0.5));
         @include rotate(-3deg);
         z-index: -1;
         position: absolute;
@@ -197,7 +197,7 @@ small {
 
     .pic a:hover img,
     .pic a:focus img {
-        @include single-box-shadow(rgba($linkColor, 0.8), 0, 0, 8px);
+        @include single-box-shadow(0, 0, 8px, false, rgba($linkColor, 0.8));
         @include single-transition(all, 0.6s, ease);
         border-color: $linkColor;
     }

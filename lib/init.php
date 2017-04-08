@@ -21,6 +21,9 @@ function roots_setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style('/assets/css/editor-style.css');
+
+  // Required by theme check tools :p
+  add_theme_support('automatic-feed-links');
 }
 add_action('after_setup_theme', 'roots_setup');
 

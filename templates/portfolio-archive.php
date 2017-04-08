@@ -54,7 +54,7 @@ if (!isset($portfolio) || empty($portfolio)) {
                 <?php echo nakee_excerpt(20); ?>
             </div>
             <footer>
-                <div class="entry-category hide-text"><?php the_terms($post->ID, 'nakee_portfolio_category', __('Portfolio Categories: '), ',', ''); ?></div>
+                <div class="entry-category hide-text"><?php the_terms($post->ID, 'nakee_portfolio_category', __('Portfolio Categories: ', 'roots'), ',', ''); ?></div>
                 <address class="author vcard hide-text">
                     <span class="fn"><?php echo get_the_author_meta('first_name') . ' ' . get_the_author_meta('last_name'); ?></span>
                     <span class="nickname"><?php the_author_meta('nickname'); ?></span>

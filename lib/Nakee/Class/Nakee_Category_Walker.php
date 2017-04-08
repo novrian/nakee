@@ -30,7 +30,7 @@ class Nakee_Category_Walker extends Walker_Category {
         if ($category->taxonomy == 'nakee_portfolio_category') {
             $link .= 'title="' . esc_attr( sprintf(__('View work on %s', 'roots'), $category->name) ) . '"';
         } elseif ( $use_desc_for_title == 0 || empty($category->description) ) {
-            $link .= 'title="' . esc_attr( sprintf(__( 'View all posts filed under %s' ), $cat_name) ) . '"';
+            $link .= 'title="' . esc_attr( sprintf(__( 'View all posts filed under %s', 'roots' ), $cat_name) ) . '"';
         } else {
             $link .= 'title="' . esc_attr( strip_tags( apply_filters( 'category_description', $category->description, $category ) ) ) . '"';
         }
@@ -46,7 +46,7 @@ class Nakee_Category_Walker extends Walker_Category {
             $link .= '<a href="' . esc_url( get_term_feed_link( $category->term_id, $category->taxonomy, $feed_type ) ) . '"';
 
             if ( empty($feed) ) {
-                $alt = ' alt="' . sprintf(__( 'Feed for all posts filed under %s' ), $cat_name ) . '"';
+                $alt = ' alt="' . sprintf(__( 'Feed for all posts filed under %s', 'roots' ), $cat_name ) . '"';
             } else {
                 $title = ' title="' . $feed . '"';
                 $alt = ' alt="' . $feed . '"';

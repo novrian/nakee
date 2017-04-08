@@ -1,10 +1,10 @@
 // Base.scss - Base Variables
 
+@import "sassy-buttons";
+@import "modularscale";
 @import "compass";
 @import "compass/reset";
 @import "compass/css3";
-@import "sassy-buttons";
-@import "modular-scale";
 
 @import "bootstrap/variables";
 
@@ -12,8 +12,12 @@
 $FontAwesomePath: "../fonts/FontAwesome";
 
 // Modular Scale
-$base-size: 14px 72px;
-$ratio: golden();
+// $base-size: 14px 72px;
+// $ratio: golden();
+$modularscale: (
+    base: 14px 72px,
+    ratio: 1.618
+);
 
 // Bootstrap Color
 $white: #fff;

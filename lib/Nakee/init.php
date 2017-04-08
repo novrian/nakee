@@ -64,8 +64,8 @@ function nakee_taxonomy_settings() {
      */
     register_taxonomy('nakee_portfolio_category', 'nakee_portfolio', array(
         'labels' => array(
-            'name' => _x('Portfolio Categories', 'taxonomy general name'),
-            'singular_name' => _x('Portfolio Category', 'taxonomy singular name'),
+            'name' => _x('Portfolio Categories', 'taxonomy general name', 'roots'),
+            'singular_name' => _x('Portfolio Category', 'taxonomy singular name', 'roots'),
             'all_items' => __('All Portfolio Categories', 'roots'),
             'edit_item' => __('Edit Portfolio Category', 'roots'),
             'view_item' => __('View Portfolio Category', 'roots'),
@@ -84,8 +84,8 @@ function nakee_taxonomy_settings() {
      */
     register_taxonomy('nakee_technology', 'nakee_portfolio', array(
         'labels' => array(
-            'name' => _x('Technologies', 'taxonomy general name'),
-            'singular_name' => _x('Technology', 'taxonomy singular name'),
+            'name' => _x('Technologies', 'taxonomy general name', 'roots'),
+            'singular_name' => _x('Technology', 'taxonomy singular name', 'roots'),
             'all_items' => __('All Technologies', 'roots'),
             'edit_item' => __('Edit Technology', 'roots'),
             'view_item' => __('View Technology', 'roots'),

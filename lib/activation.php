@@ -47,7 +47,7 @@ function roots_get_theme_activation_options() {
 
 function roots_theme_activation_options_render_page() { ?>
   <div class="wrap">
-    <?php screen_icon(); ?>
+    <?php // screen_icon(); Deprecated WP 3.8 ?>
     <h2><?php printf(__('%s Theme Activation', 'roots'), wp_get_theme()); ?></h2>
     <?php settings_errors(); ?>
 
