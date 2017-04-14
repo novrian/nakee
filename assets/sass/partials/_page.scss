@@ -193,11 +193,11 @@ a.thumbnail:focus {
 }
 
 .navbar-fixed-top .navbar-inner {
-    @include single-box-shadow(0, 1px, 5px, rgba(black, 0.5));
+    @include single-box-shadow(0, 1px, 5px, false, rgba(black, 0.5));
 }
 
 .nakee-header {
-    @include single-text-shadow(0, 1px, 0, nil, white);
+    @include single-text-shadow(0, 1px, 0, false, white);
     @include responsive-full-width;
     padding: 15px 0;
     background: transparent image-url("banner-background.png") repeat 50% 0 scroll;
@@ -458,7 +458,7 @@ figure.nakee-portfolio-figure {
 
     img {
         @include box-sizing(border-box);
-        @include single-box-shadow(none);
+        // @include single-box-shadow(none);
         @include transition-property(box-shadow);
         @include transition-duration(0.3s);
         @include transition-timing-function(linear);
