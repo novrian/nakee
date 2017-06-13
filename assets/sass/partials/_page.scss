@@ -1701,6 +1701,12 @@ body[class~="page"] nav.page-nav {
         &.nakee-ruby-icon { @include icons-sprite('ruby-logo'); }
         &.nakee-cake-icon { @include icons-sprite('cake-logo'); }
         &.nakee-wp-icon { @include icons-sprite('wp-logo'); }
+        &.nakee-apache-icon { @include icons-sprite('apache-logo'); }
+        &.nakee-debian-icon { @include icons-sprite('debian-logo'); }
+        &.nakee-gulp-icon { @include icons-sprite('gulp-logo'); }
+        &.nakee-mariadb-icon { @include icons-sprite('mariadb-logo'); }
+        &.nakee-nginx-icon { @include icons-sprite('nginx-logo'); }
+        &.nakee-yii-icon { @include icons-sprite('yii-logo'); }
     }
 
     li:hover > abbr > i {
@@ -1716,6 +1722,12 @@ body[class~="page"] nav.page-nav {
         &.nakee-ruby-icon { @include icons-sprite('ruby-logo-hover'); }
         &.nakee-cake-icon { @include icons-sprite('cake-logo-hover'); }
         &.nakee-wp-icon { @include icons-sprite('wp-logo-hover'); }
+        &.nakee-apache-icon { @include icons-sprite('apache-logo-hover'); }
+        &.nakee-debian-icon { @include icons-sprite('debian-logo-hover'); }
+        &.nakee-gulp-icon { @include icons-sprite('gulp-logo-hover'); }
+        &.nakee-mariadb-icon { @include icons-sprite('mariadb-logo-hover'); }
+        &.nakee-nginx-icon { @include icons-sprite('nginx-logo-hover'); }
+        &.nakee-yii-icon { @include icons-sprite('yii-logo-hover'); }
     }
 
 }

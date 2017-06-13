@@ -17,18 +17,18 @@
     <div class="technology-widget-container visible-desktop">
         <div class="container">
             <?php echo display_technology(array(
-                'html5' => 'HTML5',
-                'css3' => 'CSS3',
-                'jquery' => 'jQuery',
                 'php' => 'PHP',
+                'yii' => 'Yii Framework',
                 'mysql' => 'MySQL',
+                'mariadb' => 'MariaDB',
                 'git' => 'Git',
-                'ps' => 'Adobe Photoshop',
-                'ai' => 'Adobe Illustrator',
+                'apache' => 'Apache',
+                'nginx' => 'nginx',
+                'debian' => 'Debian',
+                'jquery' => 'jQuery',
+                'gulp' => 'GulpJS',
                 'sass' => 'SASS',
                 'ruby' => 'Ruby',
-                'cake' => 'cakePHP',
-                'wp' => 'Wordpress'
             )); ?>
         </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="span6 footer-text">
-                    <small><?php echo __('Copyright &copy; ' . date('Y') . ' <a href="' . home_url('/') . '" title="' . get_bloginfo('name') . ' - ' . get_bloginfo('description') . '">' . get_bloginfo('name') . '</a>.', 'roots'); ?> Hack Cipta dilindungi Undang-Undang ;)</small>
+                    <small><?php echo __('Copyright &copy; ' . date('Y') . ' <a href="' . home_url('/') . '" title="' . get_bloginfo('name') . ' - ' . get_bloginfo('description') . '">' . get_bloginfo('name') . '</a>.', 'roots'); ?> Hosted by <a href="http://losarihost.com/" target="_blank">losarihost.com</a></small>
                 </div>
                 <div class="span6 social-footer">
                     <ul class="inline pull-right">
